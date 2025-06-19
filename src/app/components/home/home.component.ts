@@ -57,49 +57,49 @@ import { LanguageService } from '../../services/language.service';
               <span class="window-title">portfolio.ts</span>
             </div>
             <div class="window-content">
-              <pre class="code-block"><code><span class="keyword">interface</span> <span class="interface-name">Developer</span> {{ '{' }}
-  <span class="property">name</span>: <span class="string">'Philip Ramkeerat'</span>;
-  <span class="property">role</span>: <span class="string">'Senior Angular Developer'</span>;
-  <span class="property">experience</span>: <span class="string">'8+ years'</span>;
-  <span class="property">expertise</span>: {{ '{' }}
-    <span class="property">frontend</span>: <span class="string">'Angular & TypeScript'</span>,
-    <span class="property">architecture</span>: <span class="string">'Enterprise Applications'</span>,
-    <span class="property">performance</span>: <span class="string">'High-Scale Solutions'</span>
+              <pre class="code-block"><code><span class="keyword">{{ translations?.home?.codeSnippet?.interface || 'interface' }}</span> <span class="interface-name">{{ translations?.home?.codeSnippet?.developer || 'Developer' }}</span> {{ '{' }}
+  <span class="property">{{ translations?.home?.codeSnippet?.name || 'name' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.nameValue || "'Philip Ramkeerat'" }}</span>;
+  <span class="property">{{ translations?.home?.codeSnippet?.role || 'role' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.roleValue || "'Senior Angular Developer'" }}</span>;
+  <span class="property">{{ translations?.home?.codeSnippet?.experience || 'experience' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.experienceValue || "'8+ years'" }}</span>;
+  <span class="property">{{ translations?.home?.codeSnippet?.expertise || 'expertise' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.frontend || 'frontend' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.frontendValue || "'Angular & TypeScript'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.architecture || 'architecture' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.architectureValue || "'Enterprise Applications'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.performance || 'performance' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.performanceValue || "'High-Scale Solutions'" }}</span>
   {{ '}' }};
-  <span class="property">skills</span>: [
+  <span class="property">{{ translations?.home?.codeSnippet?.skills || 'skills' }}</span>: [
     <span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>, 
     <span class="string">'RxJS'</span>, <span class="string">'NgRx'</span>,
     <span class="string">'Material Design'</span>, <span class="string">'SCSS'</span>
   ];
-  <span class="property">focus</span>: {{ '{' }}
-    <span class="property">quality</span>: <span class="string">'Clean Code & Best Practices'</span>,
-    <span class="property">innovation</span>: <span class="string">'Modern Solutions'</span>,
-    <span class="property">delivery</span>: <span class="string">'Efficient & Scalable'</span>
+  <span class="property">{{ translations?.home?.codeSnippet?.focus || 'focus' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.quality || 'quality' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.qualityValue || "'Clean Code & Best Practices'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.innovation || 'innovation' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.innovationValue || "'Modern Solutions'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.delivery || 'delivery' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.deliveryValue || "'Efficient & Scalable'" }}</span>
   {{ '}' }};
 {{ '}' }}
 
-<span class="keyword">const</span> <span class="variable">philip</span>: <span class="type">Developer</span> = {{ '{' }}
-  <span class="property">name</span>: <span class="string">'Philip Ramkeerat'</span>,
-  <span class="property">role</span>: <span class="string">'Senior Angular Developer'</span>,
-  <span class="property">experience</span>: <span class="string">'8+ years'</span>,
-  <span class="property">expertise</span>: {{ '{' }}
-    <span class="property">frontend</span>: <span class="string">'Angular & TypeScript'</span>,
-    <span class="property">architecture</span>: <span class="string">'Enterprise Applications'</span>,
-    <span class="property">performance</span>: <span class="string">'High-Scale Solutions'</span>
+<span class="keyword">{{ translations?.home?.codeSnippet?.const || 'const' }}</span> <span class="variable">{{ translations?.home?.codeSnippet?.philip || 'philip' }}</span>: <span class="type">{{ translations?.home?.codeSnippet?.developer || 'Developer' }}</span> = {{ '{' }}
+  <span class="property">{{ translations?.home?.codeSnippet?.name || 'name' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.nameValue || "'Philip Ramkeerat'" }}</span>,
+  <span class="property">{{ translations?.home?.codeSnippet?.role || 'role' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.roleValue || "'Senior Angular Developer'" }}</span>,
+  <span class="property">{{ translations?.home?.codeSnippet?.experience || 'experience' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.experienceValue || "'8+ years'" }}</span>,
+  <span class="property">{{ translations?.home?.codeSnippet?.expertise || 'expertise' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.frontend || 'frontend' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.frontendValue || "'Angular & TypeScript'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.architecture || 'architecture' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.architectureValue || "'Enterprise Applications'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.performance || 'performance' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.performanceValue || "'High-Scale Solutions'" }}</span>
   {{ '}' }},
-  <span class="property">skills</span>: [
+  <span class="property">{{ translations?.home?.codeSnippet?.skills || 'skills' }}</span>: [
     <span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>, 
     <span class="string">'RxJS'</span>, <span class="string">'NgRx'</span>,
     <span class="string">'Material Design'</span>, <span class="string">'SCSS'</span>
   ],
-  <span class="property">focus</span>: {{ '{' }}
-    <span class="property">quality</span>: <span class="string">'Clean Code & Best Practices'</span>,
-    <span class="property">innovation</span>: <span class="string">'Modern Solutions'</span>,
-    <span class="property">delivery</span>: <span class="string">'Efficient & Scalable'</span>
+  <span class="property">{{ translations?.home?.codeSnippet?.focus || 'focus' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.quality || 'quality' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.qualityValue || "'Clean Code & Best Practices'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.innovation || 'innovation' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.innovationValue || "'Modern Solutions'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.delivery || 'delivery' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.deliveryValue || "'Efficient & Scalable'" }}</span>
   {{ '}' }}
 {{ '}' }};
 
-<span class="comment">// Ready to build amazing web experiences! 🚀</span></code></pre>
+<span class="comment">{{ translations?.home?.codeSnippet?.comment || '// Ready to build amazing web experiences! 🚀' }}</span></code></pre>
             </div>
           </div>
         </div>

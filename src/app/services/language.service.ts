@@ -27,6 +27,38 @@ export interface Translations {
       contact: string;
     };
     scrollDown: string;
+    codeSnippet: {
+      interface: string;
+      developer: string;
+      name: string;
+      nameValue: string;
+      role: string;
+      roleValue: string;
+      experience: string;
+      experienceValue: string;
+      expertise: string;
+      expertiseValue: {
+        frontend: string;
+        frontendValue: string;
+        architecture: string;
+        architectureValue: string;
+        performance: string;
+        performanceValue: string;
+      };
+      skills: string;
+      focus: string;
+      focusValue: {
+        quality: string;
+        qualityValue: string;
+        innovation: string;
+        innovationValue: string;
+        delivery: string;
+        deliveryValue: string;
+      };
+      const: string;
+      philip: string;
+      comment: string;
+    };
   };
   about: {
     title: string;
@@ -78,6 +110,43 @@ export interface Translations {
         title: string;
         description: string;
       };
+    };
+    actions: {
+      learnMore: string;
+      contact: string;
+    };
+    scrollDown: string;
+    codeSnippet: {
+      interface: string;
+      developer: string;
+      name: string;
+      nameValue: string;
+      role: string;
+      roleValue: string;
+      experience: string;
+      experienceValue: string;
+      expertise: string;
+      expertiseValue: {
+        frontend: string;
+        frontendValue: string;
+        architecture: string;
+        architectureValue: string;
+        performance: string;
+        performanceValue: string;
+      };
+      skills: string;
+      focus: string;
+      focusValue: {
+        quality: string;
+        qualityValue: string;
+        innovation: string;
+        innovationValue: string;
+        delivery: string;
+        deliveryValue: string;
+      };
+      const: string;
+      philip: string;
+      comment: string;
     };
   };
   experience: {
@@ -220,7 +289,39 @@ export class LanguageService {
           learnMore: 'Learn More',
           contact: 'Get in Touch'
         },
-        scrollDown: 'Scroll down'
+        scrollDown: 'Scroll down',
+        codeSnippet: {
+          interface: 'interface',
+          developer: 'Developer',
+          name: 'name',
+          nameValue: "'Philip Ramkeerat'",
+          role: 'role',
+          roleValue: "'Senior Angular Developer'",
+          experience: 'experience',
+          experienceValue: "'8+ years'",
+          expertise: 'expertise',
+          expertiseValue: {
+            frontend: 'frontend',
+            frontendValue: "'Angular & TypeScript'",
+            architecture: 'architecture',
+            architectureValue: "'Enterprise Applications'",
+            performance: 'performance',
+            performanceValue: "'High-Scale Solutions'"
+          },
+          skills: 'skills',
+          focus: 'focus',
+          focusValue: {
+            quality: 'quality',
+            qualityValue: "'Clean Code & Best Practices'",
+            innovation: 'innovation',
+            innovationValue: "'Modern Solutions'",
+            delivery: 'delivery',
+            deliveryValue: "'Efficient & Scalable'"
+          },
+          const: 'const',
+          philip: 'philip',
+          comment: '// Ready to build amazing web experiences! 🚀'
+        }
       },
       about: {
         title: 'About Me',
@@ -272,6 +373,43 @@ export class LanguageService {
             title: 'Growth',
             description: 'I am always looking for ways to improve and learn'
           }
+        },
+        actions: {
+          learnMore: 'Learn More',
+          contact: 'Get in Touch'
+        },
+        scrollDown: 'Scroll down',
+        codeSnippet: {
+          interface: 'interface',
+          developer: 'Developer',
+          name: 'name',
+          nameValue: "'Philip Ramkeerat'",
+          role: 'role',
+          roleValue: "'Senior Angular Developer'",
+          experience: 'experience',
+          experienceValue: "'8+ years'",
+          expertise: 'expertise',
+          expertiseValue: {
+            frontend: 'frontend',
+            frontendValue: "'Angular & TypeScript'",
+            architecture: 'architecture',
+            architectureValue: "'Enterprise Applications'",
+            performance: 'performance',
+            performanceValue: "'High-Scale Solutions'"
+          },
+          skills: 'skills',
+          focus: 'focus',
+          focusValue: {
+            quality: 'quality',
+            qualityValue: "'Clean Code & Best Practices'",
+            innovation: 'innovation',
+            innovationValue: "'Modern Solutions'",
+            delivery: 'delivery',
+            deliveryValue: "'Efficient & Scalable'"
+          },
+          const: 'const',
+          philip: 'philip',
+          comment: '// Ready to build amazing web experiences! 🚀'
         }
       },
       experience: {
@@ -405,7 +543,39 @@ export class LanguageService {
           learnMore: 'Conheça Mais',
           contact: 'Entre em Contato'
         },
-        scrollDown: 'Role para baixo'
+        scrollDown: 'Role para baixo',
+        codeSnippet: {
+          interface: 'interface',
+          developer: 'Developer',
+          name: 'nome',
+          nameValue: "'Philip Ramkeerat'",
+          role: 'cargo',
+          roleValue: "'Desenvolvedor Angular Sênior'",
+          experience: 'experiencia',
+          experienceValue: "'8+ anos'",
+          expertise: 'especialidades',
+          expertiseValue: {
+            frontend: 'frontend',
+            frontendValue: "'Angular & TypeScript'",
+            architecture: 'arquitetura',
+            architectureValue: "'Aplicações Corporativas'",
+            performance: 'performance',
+            performanceValue: "'Soluções de Alta Escalabilidade'"
+          },
+          skills: 'habilidades',
+          focus: 'foco',
+          focusValue: {
+            quality: 'qualidade',
+            qualityValue: "'Código Limpo & Boas Práticas'",
+            innovation: 'inovacao',
+            innovationValue: "'Soluções Modernas'",
+            delivery: 'entrega',
+            deliveryValue: "'Eficiente & Escalável'"
+          },
+          const: 'const',
+          philip: 'philip',
+          comment: '// Pronto para construir experiências web incríveis! 🚀'
+        }
       },
       about: {
         title: 'Sobre Mim',
@@ -457,6 +627,43 @@ export class LanguageService {
             title: 'Crescimento',
             description: 'Sempre busco melhorar e aprender'
           }
+        },
+        actions: {
+          learnMore: 'Conheça Mais',
+          contact: 'Entre em Contato'
+        },
+        scrollDown: 'Role para baixo',
+        codeSnippet: {
+          interface: 'interface',
+          developer: 'Developer',
+          name: 'nome',
+          nameValue: "'Philip Ramkeerat'",
+          role: 'cargo',
+          roleValue: "'Desenvolvedor Angular Sênior'",
+          experience: 'experiencia',
+          experienceValue: "'8+ anos'",
+          expertise: 'especialidades',
+          expertiseValue: {
+            frontend: 'frontend',
+            frontendValue: "'Angular & TypeScript'",
+            architecture: 'arquitetura',
+            architectureValue: "'Aplicações Corporativas'",
+            performance: 'performance',
+            performanceValue: "'Soluções de Alta Escalabilidade'"
+          },
+          skills: 'habilidades',
+          focus: 'foco',
+          focusValue: {
+            quality: 'qualidade',
+            qualityValue: "'Código Limpo & Boas Práticas'",
+            innovation: 'inovacao',
+            innovationValue: "'Soluções Modernas'",
+            delivery: 'entrega',
+            deliveryValue: "'Eficiente & Escalável'"
+          },
+          const: 'const',
+          philip: 'philip',
+          comment: '// Pronto para construir experiências web incríveis! 🚀'
         }
       },
       experience: {
