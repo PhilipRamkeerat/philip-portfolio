@@ -1,0 +1,582 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-skills',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">
+            <span class="text-gradient">Skills & Tecnologias</span>
+          </h2>
+          <p class="section-subtitle">
+            Stack completa de um desenvolvedor Angular senior
+          </p>
+        </div>
+        
+        <div class="skills-grid">
+          <!-- Frontend Core -->
+          <div class="skill-category" data-aos="fade-up">
+            <h3 class="category-title">
+              <i class="fas fa-code"></i>
+              Frontend Core
+            </h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-icon">🅰️</div>
+                <div class="skill-info">
+                  <h4>Angular</h4>
+                  <p>v2 até latest (v17+)</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 95%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">📘</div>
+                <div class="skill-info">
+                  <h4>TypeScript</h4>
+                  <p>ES6+, Interfaces, Generics</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-info">
+                  <h4>JavaScript</h4>
+                  <p>ES6+, Async/Await, Promises</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🎨</div>
+                <div class="skill-info">
+                  <h4>HTML5 & CSS3</h4>
+                  <p>Semântica, Flexbox, Grid</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Styling & UI -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="category-title">
+              <i class="fas fa-palette"></i>
+              Styling & UI
+            </h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-icon">🎯</div>
+                <div class="skill-info">
+                  <h4>SASS/SCSS</h4>
+                  <p>Mixins, Variables, Nesting</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🎨</div>
+                <div class="skill-info">
+                  <h4>Material Design</h4>
+                  <p>Angular Material, Theming</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🎪</div>
+                <div class="skill-info">
+                  <h4>Bootstrap</h4>
+                  <p>Responsive Design, Components</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🎭</div>
+                <div class="skill-info">
+                  <h4>CSS Frameworks</h4>
+                  <p>Tailwind, Bulma, Foundation</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- State Management -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="category-title">
+              <i class="fas fa-database"></i>
+              State Management
+            </h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-icon">🔄</div>
+                <div class="skill-info">
+                  <h4>RxJS</h4>
+                  <p>Observables, Operators, Subjects</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 92%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">📦</div>
+                <div class="skill-info">
+                  <h4>NgRx</h4>
+                  <p>Store, Effects, Selectors</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">📡</div>
+                <div class="skill-info">
+                  <h4>Angular Signals</h4>
+                  <p>Reactive Programming</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🏪</div>
+                <div class="skill-info">
+                  <h4>State Management</h4>
+                  <p>Redux, MobX, Zustand</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testing -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="category-title">
+              <i class="fas fa-vial"></i>
+              Testing
+            </h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-icon">🧪</div>
+                <div class="skill-info">
+                  <h4>Jest</h4>
+                  <p>Unit Testing, Mocking</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🎭</div>
+                <div class="skill-info">
+                  <h4>Karma</h4>
+                  <p>Test Runner, Coverage</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🌲</div>
+                <div class="skill-info">
+                  <h4>Cypress</h4>
+                    <p>E2E Testing, Component Testing</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 82%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">📖</div>
+                <div class="skill-info">
+                  <h4>Storybook</h4>
+                  <p>Component Documentation</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 78%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Performance & Optimization -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="category-title">
+              <i class="fas fa-tachometer-alt"></i>
+              Performance & SEO
+            </h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-info">
+                  <h4>SSR (Server-Side Rendering)</h4>
+                  <p>Angular Universal</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🚀</div>
+                <div class="skill-info">
+                  <h4>Performance Optimization</h4>
+                  <p>Lazy Loading, Tree Shaking</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🔍</div>
+                <div class="skill-info">
+                  <h4>SEO</h4>
+                  <p>Meta Tags, Structured Data</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">📊</div>
+                <div class="skill-info">
+                  <h4>Analytics</h4>
+                  <p>Google Analytics, Performance Monitoring</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tools & DevOps -->
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+            <h3 class="category-title">
+              <i class="fas fa-tools"></i>
+              Tools & DevOps
+            </h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-icon">📦</div>
+                <div class="skill-info">
+                  <h4>Nx Monorepo</h4>
+                  <p>Workspace Management</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🐙</div>
+                <div class="skill-info">
+                  <h4>Git & GitHub</h4>
+                    <p>Version Control, CI/CD</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">🏗️</div>
+                <div class="skill-info">
+                  <h4>CI/CD</h4>
+                  <p>Jenkins, GitHub Actions, Azure DevOps</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">☁️</div>
+                <div class="skill-info">
+                  <h4>Cloud Platforms</h4>
+                  <p>AWS, Azure, Google Cloud</p>
+                  <div class="skill-level">
+                    <div class="skill-bar" style="width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skills-summary" data-aos="fade-up">
+          <div class="summary-card">
+            <h3>Nível de Expertise</h3>
+            <div class="expertise-levels">
+              <div class="level-item">
+                <span class="level-label">Expert</span>
+                <span class="level-percentage">90%+</span>
+                <div class="level-bar">
+                  <div class="level-fill expert"></div>
+                </div>
+              </div>
+              <div class="level-item">
+                <span class="level-label">Advanced</span>
+                <span class="level-percentage">80-89%</span>
+                <div class="level-bar">
+                  <div class="level-fill advanced"></div>
+                </div>
+              </div>
+              <div class="level-item">
+                <span class="level-label">Intermediate</span>
+                <span class="level-percentage">70-79%</span>
+                <div class="level-bar">
+                  <div class="level-fill intermediate"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+  styles: [`
+    .skills-section {
+      padding: var(--spacing-xxl) 0;
+      background: var(--darker-bg);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-xxl);
+    }
+    
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-xl);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-lg);
+      }
+    }
+    
+    .category-title {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-lg);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      
+      i {
+        font-size: 1.2rem;
+      }
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+    
+    .skill-icon {
+      font-size: 1.5rem;
+      width: 40px;
+      text-align: center;
+    }
+    
+    .skill-info {
+      flex: 1;
+      
+      h4 {
+        color: var(--text-primary);
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+        font-weight: 600;
+      }
+      
+      p {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin-bottom: var(--spacing-sm);
+      }
+    }
+    
+    .skill-level {
+      width: 100%;
+      height: 6px;
+      background: var(--border-color);
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+    }
+    
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      border-radius: var(--border-radius-sm);
+      transition: width 1s ease;
+    }
+    
+    .skills-summary {
+      .summary-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-xl);
+        max-width: 600px;
+        margin: 0 auto;
+        
+        h3 {
+          color: var(--text-primary);
+          font-size: 1.5rem;
+          margin-bottom: var(--spacing-lg);
+          text-align: center;
+          font-weight: 600;
+        }
+      }
+    }
+    
+    .expertise-levels {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .level-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+    
+    .level-label {
+      color: var(--text-primary);
+      font-weight: 500;
+      min-width: 100px;
+    }
+    
+    .level-percentage {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      min-width: 60px;
+    }
+    
+    .level-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--border-color);
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+    }
+    
+    .level-fill {
+      height: 100%;
+      border-radius: var(--border-radius-sm);
+      
+      &.expert {
+        background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+        width: 95%;
+      }
+      
+      &.advanced {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        width: 85%;
+      }
+      
+      &.intermediate {
+        background: linear-gradient(90deg, var(--warning-color), var(--accent-color));
+        width: 75%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .skill-category {
+        padding: var(--spacing-lg);
+      }
+      
+      .level-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+      }
+      
+      .level-bar {
+        width: 100%;
+      }
+    }
+  `]
+})
+export class SkillsComponent {} 

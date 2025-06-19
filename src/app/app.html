@@ -1,1 +1,73 @@
-<h1>{{title}}</h1>
+<div class="app-container">
+  <!-- Header/Navigation -->
+  <header class="header" data-aos="fade-down">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-text">&lt;Philip/&gt;</span>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <ul class="nav-menu desktop-nav">
+        <li><a routerLink="/home" routerLinkActive="active" class="nav-link">{{ translations?.nav?.home || 'Home' }}</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" class="nav-link">{{ translations?.nav?.about || 'About' }}</a></li>
+        <li><a routerLink="/skills" routerLinkActive="active" class="nav-link">{{ translations?.nav?.skills || 'Skills' }}</a></li>
+        <li><a routerLink="/experience" routerLinkActive="active" class="nav-link">{{ translations?.nav?.experience || 'Experience' }}</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" class="nav-link">{{ translations?.nav?.contact || 'Contact' }}</a></li>
+      </ul>
+      
+      <!-- Desktop Language Switcher -->
+      <div class="language-switcher desktop-language-switcher">
+        <button 
+          class="language-btn" 
+          [class.active]="currentLanguage === 'en'"
+          (click)="switchLanguage('en')">
+          EN
+        </button>
+        <button 
+          class="language-btn" 
+          [class.active]="currentLanguage === 'pt'"
+          (click)="switchLanguage('pt')">
+          PT
+        </button>
+      </div>
+
+      <!-- Theme Toggle Button -->
+      <button class="theme-toggle-btn" (click)="toggleTheme()" [attr.aria-label]="currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+        <i *ngIf="currentTheme === 'dark'" class="fas fa-moon"></i>
+        <i *ngIf="currentTheme === 'light'" class="fas fa-sun"></i>
+      </button>
+      
+      <!-- Mobile Menu Toggle -->
+      <app-mobile-menu
+        [isOpen]="isMobileMenuOpen"
+        [currentLanguage]="currentLanguage"
+        [translations]="translations"
+        (menuToggle)="toggleMobileMenu()"
+        (languageChange)="onMobileLanguageChange($event)">
+      </app-mobile-menu>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" data-aos="fade-up">
+    <div class="footer-content">
+      <p>{{ translations?.footer?.copyright || '© 2024 Philip Ramkeerat. All rights reserved.' }}</p>
+      <div class="footer-links">
+        <a href="https://github.com/PhilipRamkeerat" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:philip_ramkeerat@hotmail.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
