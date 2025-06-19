@@ -45,6 +45,40 @@ export interface Translations {
       projects: string;
       satisfaction: string;
     };
+    education: {
+      title: string;
+      uninorte: {
+        title: string;
+        degree: string;
+        period: string;
+        activities: string;
+        description: string;
+      };
+      ufpa: {
+        title: string;
+        degree: string;
+        period: string;
+      };
+    };
+    values: {
+      title: string;
+      innovation: {
+        title: string;
+        description: string;
+      };
+      quality: {
+        title: string;
+        description: string;
+      };
+      collaboration: {
+        title: string;
+        description: string;
+      };
+      growth: {
+        title: string;
+        description: string;
+      };
+    };
   };
   experience: {
     title: string;
@@ -204,6 +238,40 @@ export class LanguageService {
           years: 'Years',
           projects: 'Projects',
           satisfaction: 'Satisfaction'
+        },
+        education: {
+          title: 'Education',
+          uninorte: {
+            title: 'UniNorte (Centro Universitário do Norte)',
+            degree: 'Bachelor in Computer Science',
+            period: '2014 - 2017',
+            activities: 'Activities and groups: CENARTEC computer week lecture. Creation of complete documentation of a final project for a tourism website.',
+            description: 'Learn about computer science in a deeper way, and know the mathematics involved in its environment, use, create well-designed programs that offer performance to users.'
+          },
+          ufpa: {
+            title: 'Universidade Federal do Pará',
+            degree: 'Master\'s Degree, Process Engineering',
+            period: '2017 - 2018'
+          }
+        },
+        values: {
+          title: 'Values',
+          innovation: {
+            title: 'Innovation',
+            description: 'I believe in pushing boundaries and creating new solutions'
+          },
+          quality: {
+            title: 'Quality',
+            description: 'I am committed to delivering high-quality solutions'
+          },
+          collaboration: {
+            title: 'Collaboration',
+            description: 'I thrive in team environments and enjoy working with others'
+          },
+          growth: {
+            title: 'Growth',
+            description: 'I am always looking for ways to improve and learn'
+          }
         }
       },
       experience: {
@@ -355,6 +423,40 @@ export class LanguageService {
           years: 'Anos',
           projects: 'Projetos',
           satisfaction: 'Satisfação'
+        },
+        education: {
+          title: 'Formação acadêmica',
+          uninorte: {
+            title: 'UniNorte (Centro Universitário do Norte)',
+            degree: 'Bacharelado em Ciência da Computação',
+            period: '2014 - 2017',
+            activities: 'Atividades e grupos: Palestra CENARTEC semana de informática. Criação da documentação completa de um projeto final, para um site sobre turismo.',
+            description: 'Aprender sobre a ciência da informática em uma forma mais profunda, e conhecer as matemáticas que se envolve no seu meio, de utilização, criar programas bem elaborados que ofereçam desempenho aos usuários.'
+          },
+          ufpa: {
+            title: 'Universidade Federal do Pará',
+            degree: 'Mestrado, Engenharia de Processos',
+            period: '2017 - 2018'
+          }
+        },
+        values: {
+          title: 'Valores',
+          innovation: {
+            title: 'Inovação',
+            description: 'Acredito em impulsionar limites e criar novas soluções'
+          },
+          quality: {
+            title: 'Qualidade',
+            description: 'Sou comprometido com a entrega de soluções de alta qualidade'
+          },
+          collaboration: {
+            title: 'Colaboração',
+            description: 'Amo trabalhar em equipe e gosto de trabalhar com outros'
+          },
+          growth: {
+            title: 'Crescimento',
+            description: 'Sempre busco melhorar e aprender'
+          }
         }
       },
       experience: {

@@ -337,35 +337,6 @@ import { LanguageService, Language } from '../../services/language.service';
             </div>
           </div>
         </div>
-        
-        <div class="skills-summary" data-aos="fade-up">
-          <div class="summary-card">
-            <h3>{{ translations?.skills?.summary?.title || 'Nível de Expertise' }}</h3>
-            <div class="expertise-levels">
-              <div class="level-item">
-                <span class="level-label">{{ translations?.skills?.summary?.expert || 'Expert' }}</span>
-                <span class="level-percentage">90%+</span>
-                <div class="level-bar">
-                  <div class="level-fill expert"></div>
-                </div>
-              </div>
-              <div class="level-item">
-                <span class="level-label">{{ translations?.skills?.summary?.advanced || 'Advanced' }}</span>
-                <span class="level-percentage">80-89%</span>
-                <div class="level-bar">
-                  <div class="level-fill advanced"></div>
-                </div>
-              </div>
-              <div class="level-item">
-                <span class="level-label">{{ translations?.skills?.summary?.intermediate || 'Intermediate' }}</span>
-                <span class="level-percentage">70-79%</span>
-                <div class="level-bar">
-                  <div class="level-fill intermediate"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   `,
@@ -403,7 +374,6 @@ import { LanguageService, Language } from '../../services/language.service';
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: var(--spacing-xl);
-      margin-bottom: var(--spacing-xxl);
     }
     
     .skill-category {
@@ -484,77 +454,6 @@ import { LanguageService, Language } from '../../services/language.service';
       transition: width 1s ease;
     }
     
-    .skills-summary {
-      .summary-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-lg);
-        padding: var(--spacing-xl);
-        max-width: 600px;
-        margin: 0 auto;
-        
-        h3 {
-          color: var(--text-primary);
-          font-size: 1.5rem;
-          margin-bottom: var(--spacing-lg);
-          text-align: center;
-          font-weight: 600;
-        }
-      }
-    }
-    
-    .expertise-levels {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-lg);
-    }
-    
-    .level-item {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-md);
-    }
-    
-    .level-label {
-      color: var(--text-primary);
-      font-weight: 500;
-      min-width: 100px;
-    }
-    
-    .level-percentage {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      min-width: 60px;
-    }
-    
-    .level-bar {
-      flex: 1;
-      height: 8px;
-      background: var(--border-color);
-      border-radius: var(--border-radius-sm);
-      overflow: hidden;
-    }
-    
-    .level-fill {
-      height: 100%;
-      border-radius: var(--border-radius-sm);
-      
-      &.expert {
-        background: linear-gradient(90deg, var(--success-color), var(--primary-color));
-        width: 95%;
-      }
-      
-      &.advanced {
-        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-        width: 85%;
-      }
-      
-      &.intermediate {
-        background: linear-gradient(90deg, var(--warning-color), var(--accent-color));
-        width: 75%;
-      }
-    }
-    
     @media (max-width: 768px) {
       .skills-grid {
         grid-template-columns: 1fr;
@@ -566,16 +465,6 @@ import { LanguageService, Language } from '../../services/language.service';
       
       .skill-category {
         padding: var(--spacing-lg);
-      }
-      
-      .level-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-sm);
-      }
-      
-      .level-bar {
-        width: 100%;
       }
     }
   `]

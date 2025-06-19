@@ -43,19 +43,21 @@ import { LanguageService } from '../../services/language.service';
             </div>
             
             <div class="about-card">
-              <h3>Formação Acadêmica</h3>
+              <h3>{{ translations?.about?.education?.title || 'Formação Acadêmica' }}</h3>
               <div class="education-item">
-                <div class="education-icon">🎓</div>
                 <div class="education-content">
-                  <h4>Mestrado em Engenharia de Processos</h4>
-                  <p>Especialização em otimização e melhoria de processos</p>
+                  <h4>{{ translations?.about?.education?.uninorte?.title }}</h4>
+                  <p class="education-degree">{{ translations?.about?.education?.uninorte?.degree }}</p>
+                  <p class="education-period">{{ translations?.about?.education?.uninorte?.period }}</p>
+                  <p class="education-activities">{{ translations?.about?.education?.uninorte?.activities }}</p>
+                  <p class="education-description">{{ translations?.about?.education?.uninorte?.description }}</p>
                 </div>
               </div>
               <div class="education-item">
-                <div class="education-icon">📚</div>
                 <div class="education-content">
-                  <h4>Bacharelado em Ciência da Computação</h4>
-                  <p>Base sólida em fundamentos da computação e programação</p>
+                  <h4>{{ translations?.about?.education?.ufpa?.title }}</h4>
+                  <p class="education-degree">{{ translations?.about?.education?.ufpa?.degree }}</p>
+                  <p class="education-period">{{ translations?.about?.education?.ufpa?.period }}</p>
                 </div>
               </div>
             </div>
@@ -89,27 +91,27 @@ import { LanguageService } from '../../services/language.service';
         </div>
         
         <div class="values-section" data-aos="fade-up">
-          <h3>Meus Valores</h3>
+          <h3>{{ translations?.about?.values?.title || 'Meus Valores' }}</h3>
           <div class="values-grid">
             <div class="value-card">
               <div class="value-icon">🚀</div>
-              <h4>Inovação</h4>
-              <p>Sempre buscando as melhores práticas e tecnologias emergentes</p>
+              <h4>{{ translations?.about?.values?.innovation?.title || 'Inovação' }}</h4>
+              <p>{{ translations?.about?.values?.innovation?.description || 'Sempre buscando as melhores práticas e tecnologias emergentes' }}</p>
             </div>
             <div class="value-card">
               <div class="value-icon">🎯</div>
-              <h4>Qualidade</h4>
-              <p>Comprometido com código limpo, testável e manutenível</p>
+              <h4>{{ translations?.about?.values?.quality?.title || 'Qualidade' }}</h4>
+              <p>{{ translations?.about?.values?.quality?.description || 'Comprometido com código limpo, testável e manutenível' }}</p>
             </div>
             <div class="value-card">
               <div class="value-icon">🤝</div>
-              <h4>Colaboração</h4>
-              <p>Trabalho em equipe e compartilhamento de conhecimento</p>
+              <h4>{{ translations?.about?.values?.collaboration?.title || 'Colaboração' }}</h4>
+              <p>{{ translations?.about?.values?.collaboration?.description || 'Trabalho em equipe e compartilhamento de conhecimento' }}</p>
             </div>
             <div class="value-card">
               <div class="value-icon">📈</div>
-              <h4>Crescimento</h4>
-              <p>Aprendizado contínuo e evolução profissional</p>
+              <h4>{{ translations?.about?.values?.growth?.title || 'Crescimento' }}</h4>
+              <p>{{ translations?.about?.values?.growth?.description || 'Aprendizado contínuo e evolução profissional' }}</p>
             </div>
           </div>
         </div>
@@ -136,6 +138,7 @@ import { LanguageService } from '../../services/language.service';
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: var(--spacing-md);
+      font-family: var(--font-mono);
     }
     
     .section-subtitle {
@@ -143,13 +146,15 @@ import { LanguageService } from '../../services/language.service';
       color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
+      font-family: var(--font-sans);
     }
     
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--spacing-xxl);
-      align-items: center;
+      align-items: start;
+      margin-bottom: var(--spacing-xxl);
     }
     
     .about-text {
@@ -164,10 +169,12 @@ import { LanguageService } from '../../services/language.service';
       border-radius: var(--border-radius-lg);
       box-shadow: var(--shadow-soft);
       transition: var(--transition-normal);
+      border: 1px solid var(--border-light);
       
       &:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-medium);
+        border-color: var(--primary-color);
       }
       
       h3 {
@@ -175,6 +182,7 @@ import { LanguageService } from '../../services/language.service';
         font-weight: 600;
         margin-bottom: var(--spacing-lg);
         color: var(--text-primary);
+        font-family: var(--font-mono);
       }
       
       p {
@@ -182,6 +190,7 @@ import { LanguageService } from '../../services/language.service';
         line-height: 1.7;
         color: var(--text-secondary);
         margin-bottom: var(--spacing-lg);
+        font-family: var(--font-sans);
       }
     }
     
@@ -198,12 +207,14 @@ import { LanguageService } from '../../services/language.service';
       padding: var(--spacing-md);
       background: var(--bg-secondary);
       border-radius: var(--border-radius-md);
+      border: 1px solid var(--border-light);
       box-shadow: var(--shadow-soft-inset);
       transition: var(--transition-normal);
       
       &:hover {
         box-shadow: var(--shadow-soft);
         transform: translateY(-2px);
+        border-color: var(--primary-color);
       }
       
       i {
@@ -214,6 +225,7 @@ import { LanguageService } from '../../services/language.service';
       span {
         font-weight: 500;
         color: var(--text-primary);
+        font-family: var(--font-sans);
       }
     }
     
@@ -222,29 +234,59 @@ import { LanguageService } from '../../services/language.service';
       align-items: flex-start;
       gap: var(--spacing-md);
       margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-lg);
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--border-light);
+      transition: var(--transition-normal);
       
       &:last-child {
         margin-bottom: 0;
       }
-    }
-    
-    .education-icon {
-      font-size: 1.5rem;
-      margin-top: var(--spacing-xs);
-    }
-    
-    .education-content {
-      h4 {
-        color: var(--text-primary);
-        font-size: 1.1rem;
-        margin-bottom: var(--spacing-xs);
-        font-weight: 600;
-      }
       
-      p {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        margin: 0;
+      &:hover {
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-soft);
+        transform: translateY(-2px);
+      }
+
+      .education-content {
+        width: 100%;
+        
+        h4 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: var(--spacing-sm);
+          font-family: var(--font-mono);
+        }
+        
+        .education-degree {
+          font-size: 1.1rem;
+          color: var(--text-secondary);
+          margin-bottom: var(--spacing-xs);
+          font-weight: 500;
+        }
+        
+        .education-period {
+          font-size: 0.9rem;
+          color: var(--text-tertiary);
+          margin-bottom: var(--spacing-md);
+          font-family: var(--font-mono);
+        }
+        
+        .education-activities {
+          font-size: 1rem;
+          color: var(--text-secondary);
+          margin-bottom: var(--spacing-sm);
+          line-height: 1.6;
+        }
+        
+        .education-description {
+          font-size: 1rem;
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
       }
     }
     
@@ -255,10 +297,14 @@ import { LanguageService } from '../../services/language.service';
       box-shadow: var(--shadow-soft);
       text-align: center;
       transition: var(--transition-normal);
+      border: 1px solid var(--border-light);
+      position: sticky;
+      top: 120px;
       
       &:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-medium);
+        border-color: var(--primary-color);
       }
     }
     
@@ -276,11 +322,13 @@ import { LanguageService } from '../../services/language.service';
       font-weight: 600;
       margin-bottom: var(--spacing-sm);
       color: var(--text-primary);
+      font-family: var(--font-mono);
     }
     
     .profile-info p {
       color: var(--text-secondary);
       margin-bottom: var(--spacing-lg);
+      font-family: var(--font-sans);
     }
     
     .profile-stats {
@@ -304,6 +352,7 @@ import { LanguageService } from '../../services/language.service';
         font-size: 0.9rem;
         color: var(--text-muted);
         font-weight: 500;
+        font-family: var(--font-sans);
       }
     }
     
@@ -314,12 +363,13 @@ import { LanguageService } from '../../services/language.service';
         font-weight: 700;
         margin-bottom: var(--spacing-xl);
         color: var(--text-primary);
+        font-family: var(--font-mono);
       }
     }
     
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: var(--spacing-lg);
     }
     
@@ -347,12 +397,24 @@ import { LanguageService } from '../../services/language.service';
         font-size: 1.2rem;
         margin-bottom: var(--spacing-md);
         font-weight: 600;
+        font-family: var(--font-mono);
       }
       
       p {
         color: var(--text-secondary);
         font-size: 0.95rem;
         line-height: 1.6;
+        font-family: var(--font-sans);
+      }
+    }
+    
+    @media (max-width: 1200px) {
+      .about-content {
+        gap: var(--spacing-xl);
+      }
+      
+      .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
     
@@ -363,6 +425,10 @@ import { LanguageService } from '../../services/language.service';
       
       .section-title {
         font-size: 2rem;
+      }
+      
+      .profile-card {
+        position: static;
       }
     }
     
@@ -384,6 +450,16 @@ import { LanguageService } from '../../services/language.service';
         flex-direction: column;
         gap: var(--spacing-md);
       }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      
+      .about-card,
+      .profile-card {
+        padding: var(--spacing-lg);
+      }
     }
     
     @media (max-width: 480px) {
@@ -397,7 +473,21 @@ import { LanguageService } from '../../services/language.service';
       
       .about-card,
       .profile-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
+      }
+      
+      .education-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+      }
+      
+      .about-features {
+        gap: var(--spacing-sm);
+      }
+      
+      .feature-item {
+        padding: var(--spacing-sm);
       }
     }
   `]
