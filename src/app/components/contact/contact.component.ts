@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   template: `
     <section id="contact" class="contact-section">
       <div class="container">
@@ -19,7 +18,7 @@ import { FormsModule } from '@angular/forms';
         </div>
         
         <div class="contact-content">
-          <div class="contact-info" data-aos="fade-right">
+          <div class="contact-info" data-aos="fade-up">
             <div class="info-card">
               <h3>Vamos Conversar!</h3>
               <p>
@@ -35,7 +34,7 @@ import { FormsModule } from '@angular/forms';
                   </div>
                   <div class="method-content">
                     <h4>Email</h4>
-                    <p>philip.ramkeerat&#64;example.com</p>
+                    <p>philip_ramkeerat&#64;hotmail.com</p>
                     <span class="method-note">Resposta em até 24h</span>
                   </div>
                 </div>
@@ -87,93 +86,6 @@ import { FormsModule } from '@angular/forms';
               </p>
             </div>
           </div>
-          
-          <div class="contact-form" data-aos="fade-left">
-            <div class="form-card">
-              <h3>Envie uma Mensagem</h3>
-              <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-                <div class="form-group">
-                  <label for="name">Nome *</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    [(ngModel)]="formData.name" 
-                    required
-                    class="form-input"
-                    placeholder="Seu nome completo"
-                  >
-                </div>
-                
-                <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    [(ngModel)]="formData.email" 
-                    required
-                    class="form-input"
-                    placeholder="seu.email@exemplo.com"
-                  >
-                </div>
-                
-                <div class="form-group">
-                  <label for="subject">Assunto *</label>
-                  <select 
-                    id="subject" 
-                    name="subject" 
-                    [(ngModel)]="formData.subject" 
-                    required
-                    class="form-input"
-                  >
-                    <option value="">Selecione um assunto</option>
-                    <option value="projeto">Projeto Freelance</option>
-                    <option value="colaboracao">Colaboração</option>
-                    <option value="mentoria">Mentoria</option>
-                    <option value="consulta">Consulta Técnica</option>
-                    <option value="outro">Outro</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label for="message">Mensagem *</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    [(ngModel)]="formData.message" 
-                    required
-                    rows="6"
-                    class="form-input"
-                    placeholder="Conte-me sobre seu projeto ou proposta..."
-                  ></textarea>
-                </div>
-                
-                <div class="form-group">
-                  <label class="checkbox-label">
-                    <input 
-                      type="checkbox" 
-                      [(ngModel)]="formData.newsletter" 
-                      name="newsletter"
-                    >
-                    <span class="checkmark"></span>
-                    Quero receber novidades sobre desenvolvimento Angular
-                  </label>
-                </div>
-                
-                <button type="submit" class="btn btn-primary submit-btn" [disabled]="!contactForm.form.valid || isSubmitting">
-                  <span *ngIf="!isSubmitting">
-                    <i class="fas fa-paper-plane"></i>
-                    Enviar Mensagem
-                  </span>
-                  <span *ngIf="isSubmitting">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    Enviando...
-                  </span>
-                </button>
-              </form>
-            </div>
-          </div>
         </div>
         
         <div class="cta-section" data-aos="fade-up">
@@ -185,7 +97,7 @@ import { FormsModule } from '@angular/forms';
               no seu próximo projeto.
             </p>
             <div class="cta-actions">
-              <a href="mailto:philip.ramkeerat&#64;example.com" class="btn btn-primary">
+              <a href="mailto:philip_ramkeerat@hotmail.com" class="btn btn-primary">
                 <i class="fas fa-envelope"></i>
                 Enviar Email
               </a>
@@ -230,9 +142,6 @@ import { FormsModule } from '@angular/forms';
     }
     
     .contact-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-xxl);
       margin-bottom: var(--spacing-xxl);
     }
     
@@ -240,6 +149,8 @@ import { FormsModule } from '@angular/forms';
       display: flex;
       flex-direction: column;
       gap: var(--spacing-xl);
+      max-width: 600px;
+      margin: 0 auto;
     }
     
     .info-card {
@@ -352,115 +263,6 @@ import { FormsModule } from '@angular/forms';
       }
     }
     
-    .form-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: var(--spacing-xl);
-      
-      h3 {
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        margin-bottom: var(--spacing-xl);
-        font-weight: 600;
-      }
-    }
-    
-    .form-group {
-      margin-bottom: var(--spacing-lg);
-      
-      label {
-        display: block;
-        color: var(--text-primary);
-        font-weight: 500;
-        margin-bottom: var(--spacing-sm);
-      }
-    }
-    
-    .form-input {
-      width: 100%;
-      padding: var(--spacing-md);
-      background: var(--darker-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      color: var(--text-primary);
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      
-      &:focus {
-        outline: none;
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
-      }
-      
-      &::placeholder {
-        color: var(--text-muted);
-      }
-    }
-    
-    textarea.form-input {
-      resize: vertical;
-      min-height: 120px;
-    }
-    
-    .checkbox-label {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--spacing-sm);
-      cursor: pointer;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.5;
-      
-      input[type="checkbox"] {
-        display: none;
-      }
-      
-      .checkmark {
-        width: 18px;
-        height: 18px;
-        border: 2px solid var(--border-color);
-        border-radius: var(--border-radius-sm);
-        position: relative;
-        flex-shrink: 0;
-        margin-top: 2px;
-        transition: all 0.3s ease;
-      }
-      
-      input[type="checkbox"]:checked + .checkmark {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-        
-        &::after {
-          content: '✓';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: var(--dark-bg);
-          font-size: 0.8rem;
-          font-weight: bold;
-        }
-      }
-    }
-    
-    .submit-btn {
-      width: 100%;
-      padding: var(--spacing-md) var(--spacing-xl);
-      font-size: 1rem;
-      font-weight: 600;
-      
-      &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-      
-      i {
-        margin-right: var(--spacing-sm);
-      }
-    }
-    
     .cta-section {
       .cta-card {
         background: linear-gradient(135deg, var(--card-bg), var(--darker-bg));
@@ -504,11 +306,6 @@ import { FormsModule } from '@angular/forms';
     }
     
     @media (max-width: 768px) {
-      .contact-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-      }
-      
       .section-title {
         font-size: 2rem;
       }
@@ -532,36 +329,4 @@ import { FormsModule } from '@angular/forms';
   `]
 })
 export class ContactComponent {
-  formData = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    newsletter: false
-  };
-  
-  isSubmitting = false;
-  
-  onSubmit() {
-    if (this.isSubmitting) return;
-    
-    this.isSubmitting = true;
-    
-    // Simular envio do formulário
-    setTimeout(() => {
-      console.log('Formulário enviado:', this.formData);
-      alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-      
-      // Reset do formulário
-      this.formData = {
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        newsletter: false
-      };
-      
-      this.isSubmitting = false;
-    }, 2000);
-  }
 } 

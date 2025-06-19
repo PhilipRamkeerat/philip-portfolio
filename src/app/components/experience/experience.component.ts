@@ -20,9 +20,8 @@ import { LanguageService, Language } from '../../services/language.service';
         
         <div class="timeline" data-aos="fade-up">
           <ng-container *ngFor="let item of experiences; let i = index">
-            <div class="timeline-item" [ngClass]="{ current: i === 0 }" [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'">
-              <div class="timeline-marker" [ngClass]="{ current: i === 0 }">
-                <i class="fas" [ngClass]="i === 0 ? 'fa-star' : 'fa-briefcase'"></i>
+            <div class="timeline-item" [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'">
+              <div class="timeline-marker">
               </div>
               <div class="timeline-content">
                 <div class="timeline-header">
@@ -50,32 +49,6 @@ import { LanguageService, Language } from '../../services/language.service';
               </div>
             </div>
           </ng-container>
-        </div>
-        
-        <div class="achievements-section" data-aos="fade-up">
-          <h3>Conquistas e Certificações</h3>
-          <div class="achievements-grid">
-            <div class="achievement-card">
-              <div class="achievement-icon">🏆</div>
-              <h4>Angular Expert</h4>
-              <p>Certificação oficial Angular Developer</p>
-            </div>
-            <div class="achievement-card">
-              <div class="achievement-icon">📈</div>
-              <h4>Performance Champion</h4>
-              <p>Otimização de aplicações com 50%+ de melhoria</p>
-            </div>
-            <div class="achievement-card">
-              <div class="achievement-icon">👥</div>
-              <h4>Team Leader</h4>
-              <p>Liderança de equipes de até 8 desenvolvedores</p>
-            </div>
-            <div class="achievement-card">
-              <div class="achievement-icon">🚀</div>
-              <h4>Innovation Award</h4>
-              <p>Prêmio por implementação de novas tecnologias</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -112,7 +85,6 @@ import { LanguageService, Language } from '../../services/language.service';
     
     .timeline {
       position: relative;
-      margin-bottom: var(--spacing-xxl);
       
       &::before {
         content: '';
@@ -147,16 +119,7 @@ import { LanguageService, Language } from '../../services/language.service';
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      color: var(--text-secondary);
       transition: all 0.3s ease;
-      
-      &.current {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-        color: var(--dark-bg);
-        box-shadow: var(--shadow-glow);
-      }
     }
     
     .timeline-content {
@@ -229,14 +192,6 @@ import { LanguageService, Language } from '../../services/language.service';
         margin-bottom: var(--spacing-sm);
         padding-left: var(--spacing-md);
         position: relative;
-        
-        &::before {
-          content: '▸';
-          position: absolute;
-          left: 0;
-          color: var(--primary-color);
-          font-weight: bold;
-        }
       }
     }
     
@@ -266,55 +221,6 @@ import { LanguageService, Language } from '../../services/language.service';
       font-family: var(--font-mono);
     }
     
-    .achievements-section {
-      h3 {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: var(--spacing-xl);
-        color: var(--text-primary);
-      }
-    }
-    
-    .achievements-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--spacing-lg);
-    }
-    
-    .achievement-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: var(--spacing-xl);
-      text-align: center;
-      transition: all 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-        border-color: var(--primary-color);
-        box-shadow: var(--shadow-lg);
-      }
-      
-      .achievement-icon {
-        font-size: 2.5rem;
-        margin-bottom: var(--spacing-md);
-      }
-      
-      h4 {
-        color: var(--text-primary);
-        font-size: 1.2rem;
-        margin-bottom: var(--spacing-md);
-        font-weight: 600;
-      }
-      
-      p {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-    }
-    
     @media (max-width: 768px) {
       .timeline {
         &::before {
@@ -329,15 +235,10 @@ import { LanguageService, Language } from '../../services/language.service';
       .timeline-marker {
         width: 40px;
         height: 40px;
-        font-size: 1rem;
       }
       
       .section-title {
         font-size: 2rem;
-      }
-      
-      .achievements-grid {
-        grid-template-columns: 1fr;
       }
       
       .tech-tags {
