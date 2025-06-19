@@ -279,9 +279,15 @@ import { LanguageService } from '../../services/language.service';
       transition: var(--transition-normal);
       width: 100%;
       max-width: 600px;
+      text-align: left;
+      
+      @media (max-width: 1024px) {
+        margin: 0 auto;
+      }
       
       @media (max-width: 768px) {
-        font-size: 0.9rem;
+        max-width: 100%;
+        margin: 0 var(--spacing-sm);
       }
       
       &:hover {
@@ -320,11 +326,20 @@ import { LanguageService } from '../../services/language.service';
       color: var(--text-code-muted);
       margin-left: var(--spacing-md);
       font-family: var(--font-mono);
+      
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+      }
     }
     
     .window-content {
       padding: var(--spacing-lg);
       overflow-x: auto;
+      background: var(--bg-code);
+      
+      @media (max-width: 768px) {
+        padding: var(--spacing-md);
+      }
       
       &::-webkit-scrollbar {
         height: 8px;
@@ -346,12 +361,17 @@ import { LanguageService } from '../../services/language.service';
       font-family: var(--font-mono);
       font-size: 0.9rem;
       line-height: 1.6;
+      tab-size: 2;
       
       @media (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        white-space: pre;
       }
       
       code {
+        display: block;
+        
         .keyword {
           color: var(--code-keyword);
           font-weight: 600;
@@ -372,6 +392,11 @@ import { LanguageService } from '../../services/language.service';
         
         .property {
           color: var(--code-property);
+          margin-left: var(--spacing-md);
+          
+          @media (max-width: 768px) {
+            margin-left: var(--spacing-sm);
+          }
         }
         
         .string {
