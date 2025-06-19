@@ -52,6 +52,76 @@ export interface Translations {
     responsibilitiesTitle: string;
     techStackTitle: string;
   };
+  skills: {
+    title: string;
+    subtitle: string;
+    categories: {
+      frontendCore: string;
+      stylingUI: string;
+      stateManagement: string;
+      testing: string;
+      performanceSEO: string;
+      toolsDevOps: string;
+    };
+    skills: {
+      angular: string;
+      typescript: string;
+      javascript: string;
+      htmlCss: string;
+      sass: string;
+      materialDesign: string;
+      bootstrap: string;
+      cssFrameworks: string;
+      rxjs: string;
+      ngrx: string;
+      angularSignals: string;
+      stateManagement: string;
+      jest: string;
+      karma: string;
+      cypress: string;
+      storybook: string;
+      ssr: string;
+      performanceOptimization: string;
+      seo: string;
+      analytics: string;
+      nxMonorepo: string;
+      gitGithub: string;
+      cicd: string;
+      cloudPlatforms: string;
+    };
+    descriptions: {
+      angular: string;
+      typescript: string;
+      javascript: string;
+      htmlCss: string;
+      sass: string;
+      materialDesign: string;
+      bootstrap: string;
+      cssFrameworks: string;
+      rxjs: string;
+      ngrx: string;
+      angularSignals: string;
+      stateManagement: string;
+      jest: string;
+      karma: string;
+      cypress: string;
+      storybook: string;
+      ssr: string;
+      performanceOptimization: string;
+      seo: string;
+      analytics: string;
+      nxMonorepo: string;
+      gitGithub: string;
+      cicd: string;
+      cloudPlatforms: string;
+    };
+    summary: {
+      title: string;
+      expert: string;
+      advanced: string;
+      intermediate: string;
+    };
+  };
   contact: {
     title: string;
     subtitle: string;
@@ -142,6 +212,76 @@ export class LanguageService {
         responsibilitiesTitle: 'Main Responsibilities:',
         techStackTitle: 'Tech Stack:'
       },
+      skills: {
+        title: 'Skills & Technologies',
+        subtitle: 'Complete stack of a senior Angular developer',
+        categories: {
+          frontendCore: 'Frontend Core',
+          stylingUI: 'Styling & UI',
+          stateManagement: 'State Management',
+          testing: 'Testing',
+          performanceSEO: 'Performance & SEO',
+          toolsDevOps: 'Tools & DevOps'
+        },
+        skills: {
+          angular: 'Angular',
+          typescript: 'TypeScript',
+          javascript: 'JavaScript',
+          htmlCss: 'HTML5 & CSS3',
+          sass: 'SASS/SCSS',
+          materialDesign: 'Material Design',
+          bootstrap: 'Bootstrap',
+          cssFrameworks: 'CSS Frameworks',
+          rxjs: 'RxJS',
+          ngrx: 'NgRx',
+          angularSignals: 'Angular Signals',
+          stateManagement: 'State Management',
+          jest: 'Jest',
+          karma: 'Karma',
+          cypress: 'Cypress',
+          storybook: 'Storybook',
+          ssr: 'SSR (Server-Side Rendering)',
+          performanceOptimization: 'Performance Optimization',
+          seo: 'SEO',
+          analytics: 'Analytics',
+          nxMonorepo: 'Nx Monorepo',
+          gitGithub: 'Git & GitHub',
+          cicd: 'CI/CD',
+          cloudPlatforms: 'Cloud Platforms'
+        },
+        descriptions: {
+          angular: 'v2 to latest (v17+)',
+          typescript: 'ES6+, Interfaces, Generics',
+          javascript: 'ES6+, Async/Await, Promises',
+          htmlCss: 'Semantics, Flexbox, Grid',
+          sass: 'Mixins, Variables, Nesting',
+          materialDesign: 'Angular Material, Theming',
+          bootstrap: 'Responsive Design, Components',
+          cssFrameworks: 'Tailwind, Bulma, Foundation',
+          rxjs: 'Observables, Operators, Subjects',
+          ngrx: 'Store, Effects, Selectors',
+          angularSignals: 'Reactive Programming',
+          stateManagement: 'Redux, MobX, Zustand',
+          jest: 'Unit Testing, Mocking',
+          karma: 'Test Runner, Coverage',
+          cypress: 'E2E Testing, Component Testing',
+          storybook: 'Component Documentation',
+          ssr: 'Angular Universal',
+          performanceOptimization: 'Lazy Loading, Tree Shaking',
+          seo: 'Meta Tags, Structured Data',
+          analytics: 'Google Analytics, Performance Monitoring',
+          nxMonorepo: 'Workspace Management',
+          gitGithub: 'Version Control, CI/CD',
+          cicd: 'Jenkins, GitHub Actions, Azure DevOps',
+          cloudPlatforms: 'AWS, Azure, Google Cloud'
+        },
+        summary: {
+          title: 'Expertise Level',
+          expert: 'Expert',
+          advanced: 'Advanced',
+          intermediate: 'Intermediate'
+        }
+      },
       contact: {
         title: 'Get in Touch',
         subtitle: 'Let\'s work together on your next project',
@@ -222,6 +362,76 @@ export class LanguageService {
         subtitle: 'Jornada de 8+ anos em desenvolvimento frontend',
         responsibilitiesTitle: 'Principais Responsabilidades:',
         techStackTitle: 'Stack Tecnológica:'
+      },
+      skills: {
+        title: 'Skills & Tecnologias',
+        subtitle: 'Stack completa de um desenvolvedor Angular senior',
+        categories: {
+          frontendCore: 'Frontend Core',
+          stylingUI: 'Styling & UI',
+          stateManagement: 'State Management',
+          testing: 'Testing',
+          performanceSEO: 'Performance & SEO',
+          toolsDevOps: 'Tools & DevOps'
+        },
+        skills: {
+          angular: 'Angular',
+          typescript: 'TypeScript',
+          javascript: 'JavaScript',
+          htmlCss: 'HTML5 & CSS3',
+          sass: 'SASS/SCSS',
+          materialDesign: 'Material Design',
+          bootstrap: 'Bootstrap',
+          cssFrameworks: 'CSS Frameworks',
+          rxjs: 'RxJS',
+          ngrx: 'NgRx',
+          angularSignals: 'Angular Signals',
+          stateManagement: 'State Management',
+          jest: 'Jest',
+          karma: 'Karma',
+          cypress: 'Cypress',
+          storybook: 'Storybook',
+          ssr: 'SSR (Server-Side Rendering)',
+          performanceOptimization: 'Performance Optimization',
+          seo: 'SEO',
+          analytics: 'Analytics',
+          nxMonorepo: 'Nx Monorepo',
+          gitGithub: 'Git & GitHub',
+          cicd: 'CI/CD',
+          cloudPlatforms: 'Cloud Platforms'
+        },
+        descriptions: {
+          angular: 'v2 até latest (v17+)',
+          typescript: 'ES6+, Interfaces, Generics',
+          javascript: 'ES6+, Async/Await, Promises',
+          htmlCss: 'Semântica, Flexbox, Grid',
+          sass: 'Mixins, Variables, Nesting',
+          materialDesign: 'Angular Material, Theming',
+          bootstrap: 'Responsive Design, Components',
+          cssFrameworks: 'Tailwind, Bulma, Foundation',
+          rxjs: 'Observables, Operators, Subjects',
+          ngrx: 'Store, Effects, Selectors',
+          angularSignals: 'Reactive Programming',
+          stateManagement: 'Redux, MobX, Zustand',
+          jest: 'Unit Testing, Mocking',
+          karma: 'Test Runner, Coverage',
+          cypress: 'E2E Testing, Component Testing',
+          storybook: 'Component Documentation',
+          ssr: 'Angular Universal',
+          performanceOptimization: 'Lazy Loading, Tree Shaking',
+          seo: 'Meta Tags, Structured Data',
+          analytics: 'Google Analytics, Performance Monitoring',
+          nxMonorepo: 'Workspace Management',
+          gitGithub: 'Version Control, CI/CD',
+          cicd: 'Jenkins, GitHub Actions, Azure DevOps',
+          cloudPlatforms: 'AWS, Azure, Google Cloud'
+        },
+        summary: {
+          title: 'Nível de Expertise',
+          expert: 'Expert',
+          advanced: 'Advanced',
+          intermediate: 'Intermediate'
+        }
       },
       contact: {
         title: 'Entre em Contato',

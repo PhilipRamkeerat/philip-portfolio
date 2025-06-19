@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService, Language } from '../../services/language.service';
 
 @Component({
   selector: 'app-skills',
@@ -10,10 +11,10 @@ import { CommonModule } from '@angular/common';
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2 class="section-title">
-            <span class="text-gradient">Skills & Tecnologias</span>
+            <span class="text-gradient">{{ translations?.skills?.title || 'Skills & Tecnologias' }}</span>
           </h2>
           <p class="section-subtitle">
-            Stack completa de um desenvolvedor Angular senior
+            {{ translations?.skills?.subtitle || 'Stack completa de um desenvolvedor Angular senior' }}
           </p>
         </div>
         
@@ -22,14 +23,14 @@ import { CommonModule } from '@angular/common';
           <div class="skill-category" data-aos="fade-up">
             <h3 class="category-title">
               <i class="fas fa-code"></i>
-              Frontend Core
+              {{ translations?.skills?.categories?.frontendCore || 'Frontend Core' }}
             </h3>
             <div class="skills-list">
               <div class="skill-item">
                 <div class="skill-icon">🅰️</div>
                 <div class="skill-info">
-                  <h4>Angular</h4>
-                  <p>v2 até latest (v17+)</p>
+                  <h4>{{ translations?.skills?.skills?.angular || 'Angular' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.angular || 'v2 até latest (v17+)' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 95%"></div>
                   </div>
@@ -39,8 +40,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">📘</div>
                 <div class="skill-info">
-                  <h4>TypeScript</h4>
-                  <p>ES6+, Interfaces, Generics</p>
+                  <h4>{{ translations?.skills?.skills?.typescript || 'TypeScript' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.typescript || 'ES6+, Interfaces, Generics' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 90%"></div>
                   </div>
@@ -50,8 +51,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">⚡</div>
                 <div class="skill-info">
-                  <h4>JavaScript</h4>
-                  <p>ES6+, Async/Await, Promises</p>
+                  <h4>{{ translations?.skills?.skills?.javascript || 'JavaScript' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.javascript || 'ES6+, Async/Await, Promises' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 85%"></div>
                   </div>
@@ -61,8 +62,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🎨</div>
                 <div class="skill-info">
-                  <h4>HTML5 & CSS3</h4>
-                  <p>Semântica, Flexbox, Grid</p>
+                  <h4>{{ translations?.skills?.skills?.htmlCss || 'HTML5 & CSS3' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.htmlCss || 'Semântica, Flexbox, Grid' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 90%"></div>
                   </div>
@@ -75,14 +76,14 @@ import { CommonModule } from '@angular/common';
           <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
             <h3 class="category-title">
               <i class="fas fa-palette"></i>
-              Styling & UI
+              {{ translations?.skills?.categories?.stylingUI || 'Styling & UI' }}
             </h3>
             <div class="skills-list">
               <div class="skill-item">
                 <div class="skill-icon">🎯</div>
                 <div class="skill-info">
-                  <h4>SASS/SCSS</h4>
-                  <p>Mixins, Variables, Nesting</p>
+                  <h4>{{ translations?.skills?.skills?.sass || 'SASS/SCSS' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.sass || 'Mixins, Variables, Nesting' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 88%"></div>
                   </div>
@@ -92,8 +93,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🎨</div>
                 <div class="skill-info">
-                  <h4>Material Design</h4>
-                  <p>Angular Material, Theming</p>
+                  <h4>{{ translations?.skills?.skills?.materialDesign || 'Material Design' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.materialDesign || 'Angular Material, Theming' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 85%"></div>
                   </div>
@@ -103,8 +104,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🎪</div>
                 <div class="skill-info">
-                  <h4>Bootstrap</h4>
-                  <p>Responsive Design, Components</p>
+                  <h4>{{ translations?.skills?.skills?.bootstrap || 'Bootstrap' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.bootstrap || 'Responsive Design, Components' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 80%"></div>
                   </div>
@@ -114,8 +115,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🎭</div>
                 <div class="skill-info">
-                  <h4>CSS Frameworks</h4>
-                  <p>Tailwind, Bulma, Foundation</p>
+                  <h4>{{ translations?.skills?.skills?.cssFrameworks || 'CSS Frameworks' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.cssFrameworks || 'Tailwind, Bulma, Foundation' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 75%"></div>
                   </div>
@@ -128,14 +129,14 @@ import { CommonModule } from '@angular/common';
           <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
             <h3 class="category-title">
               <i class="fas fa-database"></i>
-              State Management
+              {{ translations?.skills?.categories?.stateManagement || 'State Management' }}
             </h3>
             <div class="skills-list">
               <div class="skill-item">
                 <div class="skill-icon">🔄</div>
                 <div class="skill-info">
-                  <h4>RxJS</h4>
-                  <p>Observables, Operators, Subjects</p>
+                  <h4>{{ translations?.skills?.skills?.rxjs || 'RxJS' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.rxjs || 'Observables, Operators, Subjects' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 92%"></div>
                   </div>
@@ -145,8 +146,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">📦</div>
                 <div class="skill-info">
-                  <h4>NgRx</h4>
-                  <p>Store, Effects, Selectors</p>
+                  <h4>{{ translations?.skills?.skills?.ngrx || 'NgRx' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.ngrx || 'Store, Effects, Selectors' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 85%"></div>
                   </div>
@@ -156,8 +157,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">📡</div>
                 <div class="skill-info">
-                  <h4>Angular Signals</h4>
-                  <p>Reactive Programming</p>
+                  <h4>{{ translations?.skills?.skills?.angularSignals || 'Angular Signals' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.angularSignals || 'Reactive Programming' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 88%"></div>
                   </div>
@@ -167,8 +168,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🏪</div>
                 <div class="skill-info">
-                  <h4>State Management</h4>
-                  <p>Redux, MobX, Zustand</p>
+                  <h4>{{ translations?.skills?.skills?.stateManagement || 'State Management' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.stateManagement || 'Redux, MobX, Zustand' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 80%"></div>
                   </div>
@@ -181,14 +182,14 @@ import { CommonModule } from '@angular/common';
           <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
             <h3 class="category-title">
               <i class="fas fa-vial"></i>
-              Testing
+              {{ translations?.skills?.categories?.testing || 'Testing' }}
             </h3>
             <div class="skills-list">
               <div class="skill-item">
                 <div class="skill-icon">🧪</div>
                 <div class="skill-info">
-                  <h4>Jest</h4>
-                  <p>Unit Testing, Mocking</p>
+                  <h4>{{ translations?.skills?.skills?.jest || 'Jest' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.jest || 'Unit Testing, Mocking' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 85%"></div>
                   </div>
@@ -198,8 +199,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🎭</div>
                 <div class="skill-info">
-                  <h4>Karma</h4>
-                  <p>Test Runner, Coverage</p>
+                  <h4>{{ translations?.skills?.skills?.karma || 'Karma' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.karma || 'Test Runner, Coverage' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 80%"></div>
                   </div>
@@ -209,8 +210,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🌲</div>
                 <div class="skill-info">
-                  <h4>Cypress</h4>
-                    <p>E2E Testing, Component Testing</p>
+                  <h4>{{ translations?.skills?.skills?.cypress || 'Cypress' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.cypress || 'E2E Testing, Component Testing' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 82%"></div>
                   </div>
@@ -220,8 +221,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">📖</div>
                 <div class="skill-info">
-                  <h4>Storybook</h4>
-                  <p>Component Documentation</p>
+                  <h4>{{ translations?.skills?.skills?.storybook || 'Storybook' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.storybook || 'Component Documentation' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 78%"></div>
                   </div>
@@ -234,14 +235,14 @@ import { CommonModule } from '@angular/common';
           <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
             <h3 class="category-title">
               <i class="fas fa-tachometer-alt"></i>
-              Performance & SEO
+              {{ translations?.skills?.categories?.performanceSEO || 'Performance & SEO' }}
             </h3>
             <div class="skills-list">
               <div class="skill-item">
                 <div class="skill-icon">⚡</div>
                 <div class="skill-info">
-                  <h4>SSR (Server-Side Rendering)</h4>
-                  <p>Angular Universal</p>
+                  <h4>{{ translations?.skills?.skills?.ssr || 'SSR (Server-Side Rendering)' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.ssr || 'Angular Universal' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 85%"></div>
                   </div>
@@ -251,8 +252,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🚀</div>
                 <div class="skill-info">
-                  <h4>Performance Optimization</h4>
-                  <p>Lazy Loading, Tree Shaking</p>
+                  <h4>{{ translations?.skills?.skills?.performanceOptimization || 'Performance Optimization' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.performanceOptimization || 'Lazy Loading, Tree Shaking' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 88%"></div>
                   </div>
@@ -262,8 +263,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🔍</div>
                 <div class="skill-info">
-                  <h4>SEO</h4>
-                  <p>Meta Tags, Structured Data</p>
+                  <h4>{{ translations?.skills?.skills?.seo || 'SEO' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.seo || 'Meta Tags, Structured Data' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 80%"></div>
                   </div>
@@ -273,8 +274,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">📊</div>
                 <div class="skill-info">
-                  <h4>Analytics</h4>
-                  <p>Google Analytics, Performance Monitoring</p>
+                  <h4>{{ translations?.skills?.skills?.analytics || 'Analytics' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.analytics || 'Google Analytics, Performance Monitoring' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 75%"></div>
                   </div>
@@ -287,14 +288,14 @@ import { CommonModule } from '@angular/common';
           <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
             <h3 class="category-title">
               <i class="fas fa-tools"></i>
-              Tools & DevOps
+              {{ translations?.skills?.categories?.toolsDevOps || 'Tools & DevOps' }}
             </h3>
             <div class="skills-list">
               <div class="skill-item">
                 <div class="skill-icon">📦</div>
                 <div class="skill-info">
-                  <h4>Nx Monorepo</h4>
-                  <p>Workspace Management</p>
+                  <h4>{{ translations?.skills?.skills?.nxMonorepo || 'Nx Monorepo' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.nxMonorepo || 'Workspace Management' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 85%"></div>
                   </div>
@@ -304,8 +305,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🐙</div>
                 <div class="skill-info">
-                  <h4>Git & GitHub</h4>
-                    <p>Version Control, CI/CD</p>
+                  <h4>{{ translations?.skills?.skills?.gitGithub || 'Git & GitHub' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.gitGithub || 'Version Control, CI/CD' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 90%"></div>
                   </div>
@@ -315,8 +316,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">🏗️</div>
                 <div class="skill-info">
-                  <h4>CI/CD</h4>
-                  <p>Jenkins, GitHub Actions, Azure DevOps</p>
+                  <h4>{{ translations?.skills?.skills?.cicd || 'CI/CD' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.cicd || 'Jenkins, GitHub Actions, Azure DevOps' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 80%"></div>
                   </div>
@@ -326,8 +327,8 @@ import { CommonModule } from '@angular/common';
               <div class="skill-item">
                 <div class="skill-icon">☁️</div>
                 <div class="skill-info">
-                  <h4>Cloud Platforms</h4>
-                  <p>AWS, Azure, Google Cloud</p>
+                  <h4>{{ translations?.skills?.skills?.cloudPlatforms || 'Cloud Platforms' }}</h4>
+                  <p>{{ translations?.skills?.descriptions?.cloudPlatforms || 'AWS, Azure, Google Cloud' }}</p>
                   <div class="skill-level">
                     <div class="skill-bar" style="width: 70%"></div>
                   </div>
@@ -339,24 +340,24 @@ import { CommonModule } from '@angular/common';
         
         <div class="skills-summary" data-aos="fade-up">
           <div class="summary-card">
-            <h3>Nível de Expertise</h3>
+            <h3>{{ translations?.skills?.summary?.title || 'Nível de Expertise' }}</h3>
             <div class="expertise-levels">
               <div class="level-item">
-                <span class="level-label">Expert</span>
+                <span class="level-label">{{ translations?.skills?.summary?.expert || 'Expert' }}</span>
                 <span class="level-percentage">90%+</span>
                 <div class="level-bar">
                   <div class="level-fill expert"></div>
                 </div>
               </div>
               <div class="level-item">
-                <span class="level-label">Advanced</span>
+                <span class="level-label">{{ translations?.skills?.summary?.advanced || 'Advanced' }}</span>
                 <span class="level-percentage">80-89%</span>
                 <div class="level-bar">
                   <div class="level-fill advanced"></div>
                 </div>
               </div>
               <div class="level-item">
-                <span class="level-label">Intermediate</span>
+                <span class="level-label">{{ translations?.skills?.summary?.intermediate || 'Intermediate' }}</span>
                 <span class="level-percentage">70-79%</span>
                 <div class="level-bar">
                   <div class="level-fill intermediate"></div>
@@ -579,4 +580,14 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class SkillsComponent {} 
+export class SkillsComponent implements OnInit {
+  translations: any;
+
+  constructor(private languageService: LanguageService) {}
+
+  ngOnInit(): void {
+    this.languageService.currentLanguage$.subscribe((lang: Language) => {
+      this.translations = this.languageService.getTranslations();
+    });
+  }
+} 
