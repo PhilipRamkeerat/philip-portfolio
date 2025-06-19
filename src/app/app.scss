@@ -94,11 +94,11 @@
     }
   }
   
-  // Light mode header styling
+  // Light mode header styling - lighter and more subtle
   .header {
-    background: rgba(255, 255, 255, 0.95); // Clean white background for light mode
-    border-bottom: 1.5px solid rgba(226, 232, 240, 0.6);
-    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.06), 0 1px 3px 0 rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.75); // More transparent white background
+    border-bottom: 1.5px solid rgba(226, 232, 240, 0.3); // Lighter border
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.05); // Much softer shadow
   }
   
  
