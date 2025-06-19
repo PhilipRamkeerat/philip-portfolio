@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <section id="home" class="hero-section">
       <div class="hero-container">
@@ -32,23 +33,15 @@ import { LanguageService } from '../../services/language.service';
               <span class="stat-label">{{ translations?.home?.stats?.experience || 'Years of Experience' }}</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">{{ translations?.home?.stats?.projects || 'Projects Delivered' }}</span>
-            </div>
-            <div class="stat-item">
               <span class="stat-number">100%</span>
               <span class="stat-label">{{ translations?.home?.stats?.quality || 'Quality Focus' }}</span>
             </div>
           </div>
           
           <div class="hero-actions">
-            <a href="#about" class="btn btn-primary">
+            <a [routerLink]="['/about']" class="btn btn-primary">
               <i class="fas fa-arrow-right"></i>
               {{ translations?.home?.actions?.learnMore || 'Learn More' }}
-            </a>
-            <a href="#contact" class="btn btn-outline">
-              <i class="fas fa-envelope"></i>
-              {{ translations?.home?.actions?.contact || 'Get in Touch' }}
             </a>
           </div>
         </div>
@@ -122,14 +115,28 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       grid-template-columns: 1fr 1fr;
       gap: var(--spacing-xxl);
       align-items: center;
+      
+      @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
     
     .hero-content {
       z-index: 2;
+      
+      @media (max-width: 1024px) {
+        order: 2;
+      }
     }
     
     .hero-badge {
       margin-bottom: var(--spacing-lg);
+      
+      @media (max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+      }
     }
     
     .badge-text {
@@ -148,6 +155,10 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       font-weight: 700;
       margin-bottom: var(--spacing-md);
       line-height: 1.1;
+      
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
     }
     
     .hero-subtitle {
@@ -155,6 +166,10 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       color: var(--text-secondary);
       margin-bottom: var(--spacing-lg);
       font-weight: 400;
+      
+      @media (max-width: 768px) {
+        font-size: 1.25rem;
+      }
     }
     
     .hero-description {
@@ -163,12 +178,32 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       margin-bottom: var(--spacing-xl);
       line-height: 1.7;
       max-width: 500px;
+      
+      @media (max-width: 1024px) {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
     
     .hero-stats {
       display: flex;
       gap: var(--spacing-xl);
       margin-bottom: var(--spacing-xl);
+      
+      @media (max-width: 1024px) {
+        justify-content: center;
+      }
+      
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+      }
     }
     
     .stat-item {
@@ -178,6 +213,11 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       border-radius: var(--border-radius-lg);
       box-shadow: var(--shadow-soft);
       transition: var(--transition-normal);
+      
+      @media (max-width: 480px) {
+        width: 100%;
+        max-width: 200px;
+      }
       
       &:hover {
         transform: translateY(-5px);
@@ -202,12 +242,21 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
     .hero-actions {
       display: flex;
       gap: var(--spacing-md);
+      
+      @media (max-width: 1024px) {
+        justify-content: center;
+      }
     }
     
     .hero-visual {
       display: flex;
       justify-content: center;
       align-items: center;
+      
+      @media (max-width: 1024px) {
+        order: 1;
+        margin-bottom: var(--spacing-xl);
+      }
     }
     
     .code-window {
@@ -217,6 +266,12 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       overflow: hidden;
       box-shadow: var(--shadow-medium);
       transition: var(--transition-normal);
+      width: 100%;
+      max-width: 500px;
+      
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+      }
       
       &:hover {
         transform: translateY(-5px);
@@ -250,13 +305,25 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
     
     .window-title {
       font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-family: var(--font-mono);
-      margin-left: var(--spacing-sm);
+      color: var(--text-muted);
+      margin-left: var(--spacing-md);
     }
     
     .window-content {
-      padding: var(--spacing-md);
+      padding: var(--spacing-lg);
+      overflow-x: auto;
+    }
+    
+    .code-block {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+      }
     }
     
     .scroll-indicator {
@@ -268,98 +335,51 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       flex-direction: column;
       align-items: center;
       gap: var(--spacing-sm);
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 0.9rem;
-      animation: float 3s ease-in-out infinite;
+      opacity: 0.8;
+      transition: var(--transition-normal);
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+      }
+      
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
     
     .scroll-arrow {
-      width: 2px;
+      width: 20px;
       height: 20px;
-      background: var(--primary-color);
-      border-radius: 1px;
-      position: relative;
-      
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 6px solid var(--primary-color);
-      }
+      border-right: 2px solid var(--text-muted);
+      border-bottom: 2px solid var(--text-muted);
+      transform: rotate(45deg);
+      animation: bounce 2s infinite;
     }
     
-    // Responsividade
-    @media (max-width: 1024px) {
-      .hero-container {
-        gap: var(--spacing-lg);
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: rotate(45deg) translateY(0);
       }
-      
-      .hero-title {
-        font-size: 3rem;
+      40% {
+        transform: rotate(45deg) translateY(-10px);
       }
-    }
-    
-    @media (max-width: 768px) {
-      .hero-container {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
-      }
-      
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      
-      .hero-stats {
-        flex-direction: column;
-        gap: var(--spacing-md);
-      }
-      
-      .hero-actions {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-      }
-      
-      .hero-description {
-        max-width: 100%;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: 2rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-      
-      .hero-description {
-        font-size: 1rem;
-      }
-      
-      .stat-item {
-        padding: var(--spacing-sm);
-      }
-      
-      .stat-number {
-        font-size: 1.5rem;
+      60% {
+        transform: rotate(45deg) translateY(-5px);
       }
     }
   `]
 })
 export class HomeComponent implements OnInit {
   translations: any;
-
+  
   constructor(private languageService: LanguageService) {}
-
+  
   ngOnInit() {
+    this.translations = this.languageService.getTranslations();
     this.languageService.currentLanguage$.subscribe(() => {
       this.translations = this.languageService.getTranslations();
     });
