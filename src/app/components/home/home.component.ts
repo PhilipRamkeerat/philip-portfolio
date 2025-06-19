@@ -104,11 +104,6 @@ import { LanguageService } from '../../services/language.service';
           </div>
         </div>
       </div>
-      
-      <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
-        <div class="scroll-arrow"></div>
-        <span>{{ translations?.home?.scrollDown || 'Scroll down' }}</span>
-      </div>
     </section>
   `,
   styles: [`
@@ -387,52 +382,6 @@ import { LanguageService } from '../../services/language.service';
           color: var(--code-comment);
           font-style: italic;
         }
-      }
-    }
-    
-    .scroll-indicator {
-      position: absolute;
-      bottom: var(--spacing-xl);
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--spacing-sm);
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      opacity: 0.8;
-      transition: var(--transition-normal);
-      cursor: pointer;
-      
-      &:hover {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-5px);
-      }
-      
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-    
-    .scroll-arrow {
-      width: 20px;
-      height: 20px;
-      border-right: 2px solid var(--text-muted);
-      border-bottom: 2px solid var(--text-muted);
-      transform: rotate(45deg);
-      animation: bounce 2s infinite;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: rotate(45deg) translateY(0);
-      }
-      40% {
-        transform: rotate(45deg) translateY(-10px);
-      }
-      60% {
-        transform: rotate(45deg) translateY(-5px);
       }
     }
   `]
