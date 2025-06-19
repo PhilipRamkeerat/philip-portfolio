@@ -52,6 +52,35 @@ export interface Translations {
     responsibilitiesTitle: string;
     techStackTitle: string;
   };
+  contact: {
+    title: string;
+    subtitle: string;
+    heading: string;
+    description: string;
+    methods: {
+      email: string;
+      linkedin: string;
+      github: string;
+      location: string;
+    };
+    notes: {
+      emailResponse: string;
+      linkedinConnect: string;
+      githubProjects: string;
+      remoteAvailable: string;
+    };
+    availability: {
+      title: string;
+      status: string;
+      description: string;
+    };
+    cta: {
+      title: string;
+      description: string;
+      sendEmail: string;
+      connectLinkedin: string;
+    };
+  };
   footer: {
     copyright: string;
   };
@@ -113,6 +142,35 @@ export class LanguageService {
         responsibilitiesTitle: 'Main Responsibilities:',
         techStackTitle: 'Tech Stack:'
       },
+      contact: {
+        title: 'Get in Touch',
+        subtitle: 'Let\'s work together on your next project',
+        heading: 'Let\'s Talk!',
+        description: 'I\'m always interested in new challenges and collaboration opportunities. If you have a project in mind or would like to discuss possibilities, don\'t hesitate to get in touch.',
+        methods: {
+          email: 'Email',
+          linkedin: 'LinkedIn',
+          github: 'GitHub',
+          location: 'Location'
+        },
+        notes: {
+          emailResponse: 'Response within 24h',
+          linkedinConnect: 'Connect professionally',
+          githubProjects: 'See my projects',
+          remoteAvailable: 'Available for remote projects'
+        },
+        availability: {
+          title: 'Availability',
+          status: 'Available for new projects',
+          description: 'Currently working on freelance projects and open to interesting new opportunities.'
+        },
+        cta: {
+          title: 'Ready to get started?',
+          description: 'Let\'s transform your ideas into reality. Get in touch and let\'s discuss how I can help with your next project.',
+          sendEmail: 'Send Email',
+          connectLinkedin: 'Connect on LinkedIn'
+        }
+      },
       footer: {
         copyright: '© 2024 Philip Ramkeerat. All rights reserved.'
       }
@@ -164,6 +222,35 @@ export class LanguageService {
         subtitle: 'Jornada de 8+ anos em desenvolvimento frontend',
         responsibilitiesTitle: 'Principais Responsabilidades:',
         techStackTitle: 'Stack Tecnológica:'
+      },
+      contact: {
+        title: 'Entre em Contato',
+        subtitle: 'Vamos trabalhar juntos no seu próximo projeto',
+        heading: 'Vamos Conversar!',
+        description: 'Estou sempre interessado em novos desafios e oportunidades de colaboração. Se você tem um projeto em mente ou gostaria de discutir possibilidades, não hesite em entrar em contato.',
+        methods: {
+          email: 'Email',
+          linkedin: 'LinkedIn',
+          github: 'GitHub',
+          location: 'Localização'
+        },
+        notes: {
+          emailResponse: 'Resposta em até 24h',
+          linkedinConnect: 'Conecte-se profissionalmente',
+          githubProjects: 'Veja meus projetos',
+          remoteAvailable: 'Disponível para projetos remotos'
+        },
+        availability: {
+          title: 'Disponibilidade',
+          status: 'Disponível para novos projetos',
+          description: 'Atualmente trabalhando em projetos freelance e aberto a novas oportunidades interessantes.'
+        },
+        cta: {
+          title: 'Pronto para começar?',
+          description: 'Vamos transformar suas ideias em realidade. Entre em contato e vamos discutir como posso ajudar no seu próximo projeto.',
+          sendEmail: 'Enviar Email',
+          connectLinkedin: 'Conectar no LinkedIn'
+        }
       },
       footer: {
         copyright: '© 2024 Philip Ramkeerat. Todos os direitos reservados.'

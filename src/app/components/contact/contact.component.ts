@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService, Language } from '../../services/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,21 +11,19 @@ import { CommonModule } from '@angular/common';
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2 class="section-title">
-            <span class="text-gradient">Entre em Contato</span>
+            <span class="text-gradient">{{ translations?.contact?.title || 'Entre em Contato' }}</span>
           </h2>
           <p class="section-subtitle">
-            Vamos trabalhar juntos no seu próximo projeto
+            {{ translations?.contact?.subtitle || 'Vamos trabalhar juntos no seu próximo projeto' }}
           </p>
         </div>
         
         <div class="contact-content">
           <div class="contact-info" data-aos="fade-up">
             <div class="info-card">
-              <h3>Vamos Conversar!</h3>
+              <h3>{{ translations?.contact?.heading || 'Vamos Conversar!' }}</h3>
               <p>
-                Estou sempre interessado em novos desafios e oportunidades 
-                de colaboração. Se você tem um projeto em mente ou gostaria 
-                de discutir possibilidades, não hesite em entrar em contato.
+                {{ translations?.contact?.description || 'Estou sempre interessado em novos desafios e oportunidades de colaboração. Se você tem um projeto em mente ou gostaria de discutir possibilidades, não hesite em entrar em contato.' }}
               </p>
               
               <div class="contact-methods">
@@ -33,9 +32,9 @@ import { CommonModule } from '@angular/common';
                     <i class="fas fa-envelope"></i>
                   </div>
                   <div class="method-content">
-                    <h4>Email</h4>
+                    <h4>{{ translations?.contact?.methods?.email || 'Email' }}</h4>
                     <p>philip_ramkeerat&#64;hotmail.com</p>
-                    <span class="method-note">Resposta em até 24h</span>
+                    <span class="method-note">{{ translations?.contact?.notes?.emailResponse || 'Resposta em até 24h' }}</span>
                   </div>
                 </div>
                 
@@ -44,9 +43,9 @@ import { CommonModule } from '@angular/common';
                     <i class="fab fa-linkedin"></i>
                   </div>
                   <div class="method-content">
-                    <h4>LinkedIn</h4>
+                    <h4>{{ translations?.contact?.methods?.linkedin || 'LinkedIn' }}</h4>
                     <p>linkedin.com/in/philip-ramkeerat</p>
-                    <span class="method-note">Conecte-se profissionalmente</span>
+                    <span class="method-note">{{ translations?.contact?.notes?.linkedinConnect || 'Conecte-se profissionalmente' }}</span>
                   </div>
                 </div>
                 
@@ -55,9 +54,9 @@ import { CommonModule } from '@angular/common';
                     <i class="fab fa-github"></i>
                   </div>
                   <div class="method-content">
-                    <h4>GitHub</h4>
+                    <h4>{{ translations?.contact?.methods?.github || 'GitHub' }}</h4>
                     <p>github.com/philip-ramkeerat</p>
-                    <span class="method-note">Veja meus projetos</span>
+                    <span class="method-note">{{ translations?.contact?.notes?.githubProjects || 'Veja meus projetos' }}</span>
                   </div>
                 </div>
                 
@@ -66,23 +65,22 @@ import { CommonModule } from '@angular/common';
                     <i class="fas fa-map-marker-alt"></i>
                   </div>
                   <div class="method-content">
-                    <h4>Localização</h4>
+                    <h4>{{ translations?.contact?.methods?.location || 'Localização' }}</h4>
                     <p>Brasil</p>
-                    <span class="method-note">Disponível para projetos remotos</span>
+                    <span class="method-note">{{ translations?.contact?.notes?.remoteAvailable || 'Disponível para projetos remotos' }}</span>
                   </div>
                 </div>
               </div>
             </div>
             
             <div class="availability-card">
-              <h4>Disponibilidade</h4>
+              <h4>{{ translations?.contact?.availability?.title || 'Disponibilidade' }}</h4>
               <div class="availability-status">
                 <div class="status-indicator available"></div>
-                <span>Disponível para novos projetos</span>
+                <span>{{ translations?.contact?.availability?.status || 'Disponível para novos projetos' }}</span>
               </div>
               <p>
-                Atualmente trabalhando em projetos freelance e 
-                aberto a novas oportunidades interessantes.
+                {{ translations?.contact?.availability?.description || 'Atualmente trabalhando em projetos freelance e aberto a novas oportunidades interessantes.' }}
               </p>
             </div>
           </div>
@@ -90,20 +88,18 @@ import { CommonModule } from '@angular/common';
         
         <div class="cta-section" data-aos="fade-up">
           <div class="cta-card">
-            <h3>Pronto para começar?</h3>
+            <h3>{{ translations?.contact?.cta?.title || 'Pronto para começar?' }}</h3>
             <p>
-              Vamos transformar suas ideias em realidade. 
-              Entre em contato e vamos discutir como posso ajudar 
-              no seu próximo projeto.
+              {{ translations?.contact?.cta?.description || 'Vamos transformar suas ideias em realidade. Entre em contato e vamos discutir como posso ajudar no seu próximo projeto.' }}
             </p>
             <div class="cta-actions">
               <a href="mailto:philip_ramkeerat@hotmail.com" class="btn btn-primary">
                 <i class="fas fa-envelope"></i>
-                Enviar Email
+                {{ translations?.contact?.cta?.sendEmail || 'Enviar Email' }}
               </a>
               <a href="https://linkedin.com/in/philip-ramkeerat" target="_blank" class="btn btn-outline">
                 <i class="fab fa-linkedin"></i>
-                Conectar no LinkedIn
+                {{ translations?.contact?.cta?.connectLinkedin || 'Conectar no LinkedIn' }}
               </a>
             </div>
           </div>
@@ -328,5 +324,14 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+  translations: any;
+
+  constructor(private languageService: LanguageService) {}
+
+  ngOnInit(): void {
+    this.languageService.currentLanguage$.subscribe((lang: Language) => {
+      this.translations = this.languageService.getTranslations();
+    });
+  }
 } 
