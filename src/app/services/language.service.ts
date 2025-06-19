@@ -46,6 +46,12 @@ export interface Translations {
       satisfaction: string;
     };
   };
+  experience: {
+    title: string;
+    subtitle: string;
+    responsibilitiesTitle: string;
+    techStackTitle: string;
+  };
   footer: {
     copyright: string;
   };
@@ -101,6 +107,12 @@ export class LanguageService {
           satisfaction: 'Satisfaction'
         }
       },
+      experience: {
+        title: 'Professional Experience',
+        subtitle: '8+ years journey in frontend development',
+        responsibilitiesTitle: 'Main Responsibilities:',
+        techStackTitle: 'Tech Stack:'
+      },
       footer: {
         copyright: '© 2024 Philip Ramkeerat. All rights reserved.'
       }
@@ -146,6 +158,12 @@ export class LanguageService {
           projects: 'Projetos',
           satisfaction: 'Satisfação'
         }
+      },
+      experience: {
+        title: 'Experiência Profissional',
+        subtitle: 'Jornada de 8+ anos em desenvolvimento frontend',
+        responsibilitiesTitle: 'Principais Responsabilidades:',
+        techStackTitle: 'Stack Tecnológica:'
       },
       footer: {
         copyright: '© 2024 Philip Ramkeerat. Todos os direitos reservados.'

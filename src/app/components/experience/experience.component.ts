@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService, Language } from '../../services/language.service';
 
 @Component({
   selector: 'app-experience',
@@ -10,188 +11,45 @@ import { CommonModule } from '@angular/common';
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2 class="section-title">
-            <span class="text-gradient">Experiência Profissional</span>
+            <span class="text-gradient">{{ translations?.experience?.title || 'Experiência Profissional' }}</span>
           </h2>
           <p class="section-subtitle">
-            Jornada de 8+ anos em desenvolvimento frontend
+            {{ translations?.experience?.subtitle || 'Jornada de 8+ anos em desenvolvimento frontend' }}
           </p>
         </div>
         
         <div class="timeline" data-aos="fade-up">
-          <!-- Current Position -->
-          <div class="timeline-item current" data-aos="fade-right">
-            <div class="timeline-marker current">
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Senior Angular Developer</h3>
-                <span class="company">GFT Brazil</span>
-                <span class="period">2023 - Presente</span>
+          <ng-container *ngFor="let item of experiences; let i = index">
+            <div class="timeline-item" [ngClass]="{ current: i === 0 }" [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'">
+              <div class="timeline-marker" [ngClass]="{ current: i === 0 }">
+                <i class="fas" [ngClass]="i === 0 ? 'fa-star' : 'fa-briefcase'"></i>
               </div>
-              <div class="timeline-body">
-                <p>
-                  Atualmente trabalhando em um projeto estratégico para uma das maiores 
-                  redes varejistas do Brasil, gerenciando milhões de acessos e transações diárias.
-                </p>
-                <div class="responsibilities">
-                  <h4>Principais Responsabilidades:</h4>
-                  <ul>
-                    <li>Desenvolvimento e manutenção de aplicações Angular de alta performance</li>
-                    <li>Implementação de arquiteturas escaláveis usando Nx Monorepo</li>
-                    <li>Otimização de performance com SSR e Angular Signals</li>
-                    <li>Implementação de testes automatizados (Cypress, Jest, Karma)</li>
-                    <li>Documentação técnica com Storybook</li>
-                    <li>Mentoria técnica para desenvolvedores júnior e pleno</li>
-                  </ul>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>{{ item.title }}</h3>
+                  <span class="company">{{ item.company }}</span>
+                  <span class="period">{{ item.period }}</span>
                 </div>
-                <div class="tech-stack">
-                  <h4>Stack Tecnológica:</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Angular 17+</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">RxJS</span>
-                    <span class="tech-tag">NgRx</span>
-                    <span class="tech-tag">Nx</span>
-                    <span class="tech-tag">Cypress</span>
-                    <span class="tech-tag">Jest</span>
-                    <span class="tech-tag">Storybook</span>
+                <div class="timeline-body">
+                  <p>{{ item.description }}</p>
+
+                  <div class="responsibilities" *ngIf="item.responsibilities?.length">
+                    <h4>{{ translations?.experience?.responsibilitiesTitle || 'Principais Responsabilidades:' }}</h4>
+                    <ul>
+                      <li *ngFor="let resp of item.responsibilities">{{ resp }}</li>
+                    </ul>
+                  </div>
+
+                  <div class="tech-stack" *ngIf="item.techStack?.length">
+                    <h4>{{ translations?.experience?.techStackTitle || 'Stack Tecnológica:' }}</h4>
+                    <div class="tech-tags">
+                      <span class="tech-tag" *ngFor="let tech of item.techStack">{{ tech }}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <!-- Previous Position -->
-          <div class="timeline-item" data-aos="fade-left">
-            <div class="timeline-marker">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Angular Developer Senior</h3>
-                <span class="company">Tech Solutions Inc.</span>
-                <span class="period">2020 - 2023</span>
-              </div>
-              <div class="timeline-body">
-                <p>
-                  Desenvolvimento de aplicações web empresariais complexas, 
-                  focando em escalabilidade e experiência do usuário.
-                </p>
-                <div class="responsibilities">
-                  <h4>Principais Responsabilidades:</h4>
-                  <ul>
-                    <li>Liderança técnica em projetos Angular de grande escala</li>
-                    <li>Implementação de padrões de arquitetura (SCAM, Standalone Components)</li>
-                    <li>Desenvolvimento de bibliotecas de componentes reutilizáveis</li>
-                    <li>Otimização de performance e SEO</li>
-                    <li>Implementação de CI/CD pipelines</li>
-                    <li>Code review e mentoria técnica</li>
-                  </ul>
-                </div>
-                <div class="tech-stack">
-                  <h4>Stack Tecnológica:</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Angular 13-16</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Material Design</span>
-                    <span class="tech-tag">RxJS</span>
-                    <span class="tech-tag">NgRx</span>
-                    <span class="tech-tag">SASS</span>
-                    <span class="tech-tag">Jest</span>
-                    <span class="tech-tag">Git</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Earlier Position -->
-          <div class="timeline-item" data-aos="fade-right">
-            <div class="timeline-marker">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Frontend Developer</h3>
-                <span class="company">Digital Innovations</span>
-                <span class="period">2018 - 2020</span>
-              </div>
-              <div class="timeline-body">
-                <p>
-                  Desenvolvimento de aplicações web modernas e responsivas, 
-                  trabalhando com tecnologias frontend emergentes.
-                </p>
-                <div class="responsibilities">
-                  <h4>Principais Responsabilidades:</h4>
-                  <ul>
-                    <li>Desenvolvimento de interfaces de usuário responsivas</li>
-                    <li>Implementação de animações e interações complexas</li>
-                    <li>Integração com APIs RESTful</li>
-                    <li>Otimização de performance frontend</li>
-                    <li>Testes unitários e de integração</li>
-                    <li>Colaboração com designers e backend developers</li>
-                  </ul>
-                </div>
-                <div class="tech-stack">
-                  <h4>Stack Tecnológica:</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Angular 8-12</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">SASS</span>
-                    <span class="tech-tag">Bootstrap</span>
-                    <span class="tech-tag">Karma</span>
-                    <span class="tech-tag">Protractor</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- First Position -->
-          <div class="timeline-item" data-aos="fade-left">
-            <div class="timeline-marker">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Junior Frontend Developer</h3>
-                <span class="company">StartupTech</span>
-                <span class="period">2016 - 2018</span>
-              </div>
-              <div class="timeline-body">
-                <p>
-                  Primeira experiência profissional em desenvolvimento web, 
-                  aprendendo as melhores práticas e fundamentos do desenvolvimento frontend.
-                </p>
-                <div class="responsibilities">
-                  <h4>Principais Responsabilidades:</h4>
-                  <ul>
-                    <li>Desenvolvimento de páginas web estáticas e dinâmicas</li>
-                    <li>Implementação de layouts responsivos</li>
-                    <li>Manutenção de código legado</li>
-                    <li>Participação em code reviews</li>
-                    <li>Aprendizado de frameworks JavaScript</li>
-                    <li>Colaboração em projetos ágeis</li>
-                  </ul>
-                </div>
-                <div class="tech-stack">
-                  <h4>Stack Tecnológica:</h4>
-                  <div class="tech-tags">
-                    <span class="tech-tag">Angular 2-7</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">jQuery</span>
-                    <span class="tech-tag">Bootstrap</span>
-                    <span class="tech-tag">Git</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </ng-container>
         </div>
         
         <div class="achievements-section" data-aos="fade-up">
@@ -488,4 +346,106 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class ExperienceComponent {} 
+export class ExperienceComponent implements OnInit {
+  translations: any;
+  experiences: any[] = [];
+
+  private experiencesPt = [
+    {
+      title: 'Senior Frontend Developer | Angular',
+      company: 'GFT',
+      period: 'ago de 2021 - presente',
+      description: 'Atuo como Senior Frontend Developer na GFT, prestando serviços para uma das maiores empresas do Brasil, referência nacional no setor varejista, com milhões de transações anuais. Meu foco é o desenvolvimento e evolução de aplicações web de alto tráfego usando Angular em uma arquitetura de Micro Frontends, aproveitando Module Federation para entregas modulares e escaláveis.',
+      responsibilities: [
+        'Desenvolver e evoluir aplicações de alto tráfego em Angular dentro de uma arquitetura de Micro Frontends',
+        'Aproveitar Module Federation para entregas escaláveis e modulares',
+        'Garantir performance, escalabilidade e manutenibilidade',
+        'Escrever e manter testes unitários com Jest',
+        'Aplicar SCSS com metodologia BEM',
+        'Colaborar com equipes de design e backend',
+        'Aplicar princípios de Clean Code e SOLID'
+      ],
+      techStack: ['Angular 17+', 'TypeScript', 'RxJS', 'Module Federation', 'SCSS', 'Jest']
+    },
+    {
+      title: 'Software Developer II',
+      company: 'INDT',
+      period: 'nov de 2019 - ago de 2021',
+      description: 'Contribuí ativamente em diversos projetos com foco em frontend utilizando Angular em ambientes ágeis com SCRUM.',
+      responsibilities: [
+        'Desenvolvimento com JavaScript e TypeScript aplicando Clean Code e SOLID',
+        'Integração de APIs REST usando Node.js',
+        'Implementação de design responsivo com CSS, SCSS, LESS e HTML5',
+        'Experiência com Git, GitLab, Docker e pipelines CI/CD',
+        'Participação em projetos com Express, Spring Boot, JHipster, PostgreSQL, MongoDB e Java 8'
+      ],
+      techStack: ['Angular', 'TypeScript', 'Node.js', 'SCSS', 'Docker', 'GitLab', 'CI/CD']
+    },
+    {
+      title: 'Software Developer',
+      company: 'INDT',
+      period: 'mai de 2017 - nov de 2019',
+      description: 'Desenvolvimento e manutenção de aplicações web utilizando JavaScript, jQuery e Angular.',
+      responsibilities: [
+        'Implementação de novas funcionalidades e manutenção de código legado',
+        'Melhorias de performance e compatibilidade entre navegadores',
+        'Colaboração em equipes ágeis com SCRUM'
+      ],
+      techStack: ['Angular', 'JavaScript', 'jQuery', 'HTML5', 'CSS3']
+    }
+  ];
+
+  private experiencesEn = [
+    {
+      title: 'Senior Frontend Developer | Angular',
+      company: 'GFT',
+      period: 'Aug 2021 - Present',
+      description: 'I work as a Senior Frontend Developer at GFT, providing services for one of the largest companies in Brazil, a national reference in the retail sector, with millions of transactions conducted annually. My role focuses on the development and evolution of high-traffic web applications using the Angular framework within a Micro Frontend architecture, leveraging Module Federation for scalable and modular delivery.',
+      responsibilities: [
+        'Develop and evolve high-traffic web applications using Angular within a Micro Frontend architecture',
+        'Leverage Module Federation for scalable and modular delivery',
+        'Ensure performance, scalability and maintainability',
+        'Write and maintain unit tests with Jest',
+        'Style components using SCSS and BEM methodology',
+        'Collaborate with design and backend teams',
+        'Apply Clean Code and SOLID principles'
+      ],
+      techStack: ['Angular 17+', 'TypeScript', 'RxJS', 'Module Federation', 'SCSS', 'Jest']
+    },
+    {
+      title: 'Software Developer II',
+      company: 'INDT',
+      period: 'Nov 2019 - Aug 2021',
+      description: 'Actively contributed to various projects with a focus on frontend development using Angular in agile environments with SCRUM.',
+      responsibilities: [
+        'Developed web applications with JavaScript and TypeScript applying Clean Code and SOLID principles',
+        'Collaborated on the development and integration of REST APIs using Node.js',
+        'Implemented responsive design using CSS, SCSS, LESS and HTML5',
+        'Worked with Git, GitLab, Docker and CI/CD pipelines',
+        'Participated in projects involving Express, Spring Boot, JHipster, PostgreSQL, MongoDB and Java 8'
+      ],
+      techStack: ['Angular', 'TypeScript', 'Node.js', 'SCSS', 'Docker', 'GitLab', 'CI/CD']
+    },
+    {
+      title: 'Software Developer',
+      company: 'INDT',
+      period: 'May 2017 - Nov 2019',
+      description: 'Developed and maintained web applications using JavaScript, jQuery and Angular, focusing on delivering robust user interfaces and improving performance.',
+      responsibilities: [
+        'Developed new features and maintained existing Angular and jQuery codebases',
+        'Improved performance and cross-browser compatibility',
+        'Collaborated in agile teams adopting SCRUM methodology'
+      ],
+      techStack: ['Angular', 'JavaScript', 'jQuery', 'HTML5', 'CSS3']
+    }
+  ];
+
+  constructor(private languageService: LanguageService) {}
+
+  ngOnInit(): void {
+    this.languageService.currentLanguage$.subscribe((lang: Language) => {
+      this.translations = this.languageService.getTranslations();
+      this.experiences = lang === 'pt' ? this.experiencesPt : this.experiencesEn;
+    });
+  }
+} 
