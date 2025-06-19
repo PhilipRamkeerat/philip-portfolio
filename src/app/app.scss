@@ -50,6 +50,21 @@
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
   --text-inverse: #ffffff;
+  
+  // Code theme - Light mode
+  --bg-code: #ffffff;
+  --bg-code-header: #f5f5f5;
+  --border-code: #e2e8f0;
+  --text-code-muted: #64748b;
+  --code-keyword: #8b5cf6;
+  --code-class: #3b82f6;
+  --code-type: #0ea5e9;
+  --code-variable: #0d9488;
+  --code-property: #0891b2;
+  --code-string: #059669;
+  --code-comment: #94a3b8;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
 }
 
 [data-theme="light"] {
@@ -242,6 +257,21 @@ body {
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
   }
+  
+  // Code theme - Dark mode
+  --bg-code: #1e293b;
+  --bg-code-header: #0f172a;
+  --border-code: #334155;
+  --text-code-muted: #64748b;
+  --code-keyword: #c4b5fd;
+  --code-class: #93c5fd;
+  --code-type: #7dd3fc;
+  --code-variable: #5eead4;
+  --code-property: #67e8f9;
+  --code-string: #86efac;
+  --code-comment: #64748b;
+  --scrollbar-thumb: #475569;
+  --scrollbar-thumb-hover: #64748b;
 }
 
 // Main Content

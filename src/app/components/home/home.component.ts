@@ -57,33 +57,49 @@ import { LanguageService } from '../../services/language.service';
               <span class="window-title">portfolio.ts</span>
             </div>
             <div class="window-content">
-              <pre class="code-block"><code>interface Developer {{ '{' }}
-  name: 'Philip Ramkeerat';
-  role: 'Senior Angular Developer';
-  experience: '8+ years';
-  skills: [
-    'Angular', 'TypeScript', 'JavaScript',
-    'RxJS', 'NgRx', 'Material Design',
-    'Testing', 'Performance', 'Architecture'
+              <pre class="code-block"><code><span class="keyword">interface</span> <span class="interface-name">Developer</span> {{ '{' }}
+  <span class="property">name</span>: <span class="string">'Philip Ramkeerat'</span>;
+  <span class="property">role</span>: <span class="string">'Senior Angular Developer'</span>;
+  <span class="property">experience</span>: <span class="string">'8+ years'</span>;
+  <span class="property">expertise</span>: {{ '{' }}
+    <span class="property">frontend</span>: <span class="string">'Angular & TypeScript'</span>,
+    <span class="property">architecture</span>: <span class="string">'Enterprise Applications'</span>,
+    <span class="property">performance</span>: <span class="string">'High-Scale Solutions'</span>
+  {{ '}' }};
+  <span class="property">skills</span>: [
+    <span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>, 
+    <span class="string">'RxJS'</span>, <span class="string">'NgRx'</span>,
+    <span class="string">'Material Design'</span>, <span class="string">'SCSS'</span>
   ];
-  current: 'a leading tech company';
-  passion: 'Building amazing web experiences';
+  <span class="property">focus</span>: {{ '{' }}
+    <span class="property">quality</span>: <span class="string">'Clean Code & Best Practices'</span>,
+    <span class="property">innovation</span>: <span class="string">'Modern Solutions'</span>,
+    <span class="property">delivery</span>: <span class="string">'Efficient & Scalable'</span>
+  {{ '}' }};
 {{ '}' }}
 
-const philip: Developer = {{ '{' }}
-  name: 'Philip Ramkeerat',
-  role: 'Senior Angular Developer',
-  experience: '8+ years',
-  skills: [
-    'Angular', 'TypeScript', 'JavaScript',
-    'RxJS', 'NgRx', 'Material Design',
-    'Testing', 'Performance', 'Architecture'
+<span class="keyword">const</span> <span class="variable">philip</span>: <span class="type">Developer</span> = {{ '{' }}
+  <span class="property">name</span>: <span class="string">'Philip Ramkeerat'</span>,
+  <span class="property">role</span>: <span class="string">'Senior Angular Developer'</span>,
+  <span class="property">experience</span>: <span class="string">'8+ years'</span>,
+  <span class="property">expertise</span>: {{ '{' }}
+    <span class="property">frontend</span>: <span class="string">'Angular & TypeScript'</span>,
+    <span class="property">architecture</span>: <span class="string">'Enterprise Applications'</span>,
+    <span class="property">performance</span>: <span class="string">'High-Scale Solutions'</span>
+  {{ '}' }},
+  <span class="property">skills</span>: [
+    <span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>, 
+    <span class="string">'RxJS'</span>, <span class="string">'NgRx'</span>,
+    <span class="string">'Material Design'</span>, <span class="string">'SCSS'</span>
   ],
-  current: 'a leading tech company',
-  passion: 'Building amazing web experiences'
+  <span class="property">focus</span>: {{ '{' }}
+    <span class="property">quality</span>: <span class="string">'Clean Code & Best Practices'</span>,
+    <span class="property">innovation</span>: <span class="string">'Modern Solutions'</span>,
+    <span class="property">delivery</span>: <span class="string">'Efficient & Scalable'</span>
+  {{ '}' }}
 {{ '}' }};
 
-console.log('🚀 Ready to build something amazing!');</code></pre>
+<span class="comment">// Ready to build amazing web experiences! 🚀</span></code></pre>
             </div>
           </div>
         </div>
@@ -260,14 +276,14 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
     }
     
     .code-window {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
+      background: var(--bg-code);
+      border: 1px solid var(--border-code);
       border-radius: var(--border-radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-medium);
       transition: var(--transition-normal);
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       
       @media (max-width: 768px) {
         font-size: 0.9rem;
@@ -276,16 +292,17 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       &:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-large);
+        border-color: var(--primary-color);
       }
     }
     
     .window-header {
-      background: var(--bg-secondary);
+      background: var(--bg-code-header);
       padding: var(--spacing-sm) var(--spacing-md);
       display: flex;
       align-items: center;
       gap: var(--spacing-sm);
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-code);
     }
     
     .window-controls {
@@ -298,31 +315,78 @@ console.log('🚀 Ready to build something amazing!');</code></pre>
       height: 12px;
       border-radius: 50%;
       
-      &.red { background: #ef4444; }
-      &.yellow { background: #f59e0b; }
-      &.green { background: #10b981; }
+      &.red { background: #ff5f56; }
+      &.yellow { background: #ffbd2e; }
+      &.green { background: #27c93f; }
     }
     
     .window-title {
       font-size: 0.9rem;
-      color: var(--text-muted);
+      color: var(--text-code-muted);
       margin-left: var(--spacing-md);
+      font-family: var(--font-mono);
     }
     
     .window-content {
       padding: var(--spacing-lg);
       overflow-x: auto;
+      
+      &::-webkit-scrollbar {
+        height: 8px;
+        background-color: var(--bg-code);
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb);
+        border-radius: 4px;
+        
+        &:hover {
+          background-color: var(--scrollbar-thumb-hover);
+        }
+      }
     }
     
     .code-block {
       margin: 0;
       font-family: var(--font-mono);
       font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text-primary);
+      line-height: 1.6;
       
       @media (max-width: 768px) {
         font-size: 0.8rem;
+      }
+      
+      code {
+        .keyword {
+          color: var(--code-keyword);
+          font-weight: 600;
+        }
+        
+        .interface-name {
+          color: var(--code-class);
+          font-weight: 600;
+        }
+        
+        .type {
+          color: var(--code-type);
+        }
+        
+        .variable {
+          color: var(--code-variable);
+        }
+        
+        .property {
+          color: var(--code-property);
+        }
+        
+        .string {
+          color: var(--code-string);
+        }
+        
+        .comment {
+          color: var(--code-comment);
+          font-style: italic;
+        }
       }
     }
     
