@@ -81,6 +81,27 @@
   --code-bg: #f8fafc;
   --code-border: #e2e8f0;
   --text-inverse: #0f172a;
+  
+    // Improved nav-link colors for better readability in light mode
+  .nav-link {
+    color: #374151; // Darker gray for better contrast
+    font-weight: 600; // Slightly bolder for better visibility
+    
+    &:hover, &.active {
+      color: var(--primary-color);
+      background: rgba(99, 102, 241, 0.08); // Light purple background
+      box-shadow: var(--shadow-soft-inset);
+    }
+  }
+  
+  // Light mode header styling
+  .header {
+    background: rgba(255, 255, 255, 0.95); // Clean white background for light mode
+    border-bottom: 1.5px solid rgba(226, 232, 240, 0.6);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.06), 0 1px 3px 0 rgba(0,0,0,0.1);
+  }
+  
+ 
 }
 
 // Reset e estilos base
@@ -118,18 +139,13 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(34, 40, 49, 0.55); // semi-transparent for dark
+  background: rgba(30, 41, 59, 0.98); // Default dark mode background
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1.5px solid rgba(255,255,255,0.12);
   padding: var(--spacing-md) 0;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18), 0 1.5px 0 0 var(--border-light);
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-[data-theme="dark"] .header {
-  background: rgba(30, 41, 59, 0.98); // slightly lighter for contrast
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.40), 0 1.5px 0 0 var(--border-light);
+  transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .nav-container {
