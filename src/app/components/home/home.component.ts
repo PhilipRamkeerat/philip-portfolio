@@ -119,30 +119,6 @@ import { LanguageService } from '../../services/language.service';
         url('https://images.unsplash.com/photo-1527689368864-3a821dbbbb34?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     }
     
-    /* Light mode specific styles */
-    [data-theme="light"] .hero-section {
-      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    }
-    
-    [data-theme="light"] .hero-title {
-      color: var(--text-primary);
-    }
-    
-    [data-theme="light"] .hero-subtitle {
-      color: #64748b; // Cor mais clara e suave para light mode
-      font-weight: 500;
-    }
-    
-    [data-theme="light"] .hero-description {
-      color: #475569; // Cor ligeiramente mais escura que o subtitle para hierarquia visual
-      font-weight: 400;
-    }
-    
-    [data-theme="light"] .stat-label {
-      color: var(--text-primary);
-      opacity: 0.6;
-    }
-    
     .hero-container {
       max-width: 1200px;
       width: 100%;
@@ -432,6 +408,29 @@ import { LanguageService } from '../../services/language.service';
           font-style: italic;
         }
       }
+    }
+    
+    [data-theme="light"] .hero-section {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+    
+    [data-theme="light"] .hero-title {
+      color: var(--text-primary);
+    }
+    
+    [data-theme="light"] .hero-subtitle {
+      color: #64748b;
+      font-weight: 500;
+    }
+    
+    [data-theme="light"] .hero-description {
+      color: #475569;
+      font-weight: 400;
+    }
+    
+    [data-theme="light"] .stat-label {
+      color: var(--text-primary);
+      opacity: 0.6;
     }
   `]
 })

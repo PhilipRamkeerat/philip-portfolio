@@ -1,10 +1,7 @@
-// Importar fontes do Google Fonts - Professional fonts for frontend developers
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-// Variáveis CSS - Neumorphic Color Palette
 :root {
-  // Dark mode variables (default)
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --bg-tertiary: #334155;
@@ -17,7 +14,6 @@
   --border-dark: #64748b;
   --code-bg: #1e293b;
   --code-border: #334155;
-  // Neumorphic colors
   --primary-color: #6366f1;
   --primary-color-light: #818cf8;
   --primary-color-dark: #4f46e5;
@@ -26,7 +22,6 @@
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --error-color: #ef4444;
-  // Typography, spacing, radius, shadows, transitions (unchanged)
   --font-mono: 'Source Code Pro', 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   --font-sans: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Inter', 'Roboto', sans-serif;
@@ -51,7 +46,6 @@
   --transition-slow: 0.5s ease;
   --text-inverse: #ffffff;
   
-  // Code theme - Light mode
   --bg-code: #ffffff;
   --bg-code-header: #f5f5f5;
   --border-code: #e2e8f0;
@@ -82,29 +76,26 @@
   --code-border: #e2e8f0;
   --text-inverse: #0f172a;
   
-    // Improved nav-link colors for better readability in light mode
   .nav-link {
-    color: #374151; // Darker gray for better contrast
-    font-weight: 600; // Slightly bolder for better visibility
+    color: #374151;
+    font-weight: 600;
     
     &:hover, &.active {
       color: var(--primary-color);
-      background: rgba(99, 102, 241, 0.08); // Light purple background
+      background: rgba(99, 102, 241, 0.08);
       box-shadow: var(--shadow-soft-inset);
     }
   }
   
-  // Light mode header styling - lighter and more subtle
   .header {
-    background: rgba(255, 255, 255, 0.75); // More transparent white background
-    border-bottom: 1.5px solid rgba(226, 232, 240, 0.3); // Lighter border
-    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.05); // Much softer shadow
+    background: rgba(255, 255, 255, 0.75);
+    border-bottom: 1.5px solid rgba(226, 232, 240, 0.3);
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.03), 0 1px 2px 0 rgba(0,0,0,0.05);
   }
   
  
 }
 
-// Reset e estilos base
 * {
   margin: 0;
   padding: 0;
@@ -125,21 +116,19 @@ body {
   min-height: 100vh;
 }
 
-// Container principal
 .app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-// Header/Navigation with improved neumorphism and contrast
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(30, 41, 59, 0.98); // Default dark mode background
+  background: rgba(30, 41, 59, 0.98);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1.5px solid rgba(255,255,255,0.12);
@@ -253,7 +242,6 @@ body {
   }
 }
 
-// Neumorphic shadow improvements for dark mode
 [data-theme="dark"] {
   .card, .btn, .code-window, .stat-item, .about-card, .profile-card {
     box-shadow: 8px 8px 24px rgba(0,0,0,0.55), -8px -8px 24px rgba(255,255,255,0.03), var(--shadow-soft-inset);
@@ -274,7 +262,6 @@ body {
     border: 2px solid var(--primary-color);
   }
   
-  // Code theme - Dark mode
   --bg-code: #1e293b;
   --bg-code-header: #0f172a;
   --border-code: #334155;
@@ -290,13 +277,11 @@ body {
   --scrollbar-thumb-hover: #64748b;
 }
 
-// Main Content
 .main-content {
   flex: 1;
-  margin-top: 80px; // Espaço para o header fixo
+  margin-top: 80px;
 }
 
-// Footer com Neumorphism
 .footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-light);
@@ -340,7 +325,6 @@ body {
   }
 }
 
-// Utilitários
 .text-gradient {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   -webkit-background-clip: text;
@@ -360,7 +344,6 @@ body {
   box-shadow: var(--shadow-soft-inset);
 }
 
-// Cards Neumorphic
 .card {
   background: rgba(34, 40, 49, 0.45);
   border-radius: var(--border-radius-lg);
@@ -377,7 +360,6 @@ body {
   }
 }
 
-// Botões Neumorphic
 .btn {
   display: inline-flex;
   align-items: center;
@@ -447,7 +429,6 @@ body {
   }
 }
 
-// Responsividade Melhorada
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0 var(--spacing-md);
@@ -468,11 +449,11 @@ body {
   }
   
   .desktop-nav {
-    display: none; // Hide desktop navigation
+    display: none;
   }
   
   .desktop-language-switcher {
-    display: none; // Hide desktop language switcher
+    display: none;
   }
   
   .footer-content {
@@ -520,7 +501,6 @@ body {
   }
 }
 
-// Animações
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -562,7 +542,6 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-// Utilitários adicionais
 .text-center {
   text-align: center;
 }

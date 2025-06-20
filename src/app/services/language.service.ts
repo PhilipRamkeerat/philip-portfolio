@@ -778,7 +778,6 @@ export class LanguageService {
   };
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    // Load saved language preference or default to English
     if (isPlatformBrowser(this.platformId)) {
       const savedLanguage = localStorage.getItem('language') as Language;
       if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt')) {

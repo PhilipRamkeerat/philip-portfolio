@@ -34,7 +34,6 @@ export class App implements OnInit {
   }
 
   ngOnInit() {
-    // Inicializar AOS (Animate On Scroll) only in browser
     if (isPlatformBrowser(this.platformId)) {
       import('aos').then((AOS) => {
         AOS.default.init({
@@ -43,7 +42,6 @@ export class App implements OnInit {
           offset: 100
         });
       });
-      // Set dark mode by default if not set
       if (!document.documentElement.getAttribute('data-theme')) {
         this.themeService.setTheme('dark');
       }
