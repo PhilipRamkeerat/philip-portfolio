@@ -1,6 +1,6 @@
-# 🚀 Philip Ramkeerat - Senior Angular Developer Portfolio
+# Philip Ramkeerat - Senior Angular Developer Portfolio
 
-A modern, professional portfolio built with **Angular 20** and **standalone components**, showcasing Philip Ramkeerat's experience and skills as a Senior Angular Developer. Features a responsive design with dark/light theme support, internationalization (English/Portuguese), and server-side rendering capabilities.
+A modern, responsive portfolio website built with Angular 20, featuring a clean design and optimized performance for hosting on Apache servers like Hostinger.
 
 ## 📸 Screenshots
 
@@ -10,91 +10,34 @@ A modern, professional portfolio built with **Angular 20** and **standalone comp
 ### Light Theme
 ![Portfolio Light Theme](public/1-light-mode.png)
 
-## ✨ Features
+### Additional Views
+![Portfolio View 2](public/2.png)
+and more...
 
-- **Modern Angular 20**: Built with the latest Angular framework using standalone components
-- **Responsive Design**: Mobile-first approach with optimized layouts for all devices
-- **Theme Switching**: Dark and light theme support with persistent preferences using Angular Signals
-- **Internationalization**: Full English and Portuguese language support with reactive translations
-- **SSR Ready**: Server-side rendering configuration for better SEO and performance
-- **Performance Optimized**: Fast loading with optimized assets and code splitting
-- **Accessibility**: WCAG 2.1 AA compliance with keyboard navigation and screen reader support
-- **Smooth Animations**: AOS (Animate On Scroll) integration for engaging interactions
-- **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards, and structured data
-- **Modern UI/UX**: Neumorphic design with soft shadows and modern typography
+## 🚀 Features
 
-## 🛠️ Technology Stack
+- **Modern Angular 20** - Latest framework with SSR support
+- **Responsive Design** - Works perfectly on all devices
+- **SEO Optimized** - Pre-rendered pages for better search engine visibility
+- **Performance Optimized** - Compressed assets and efficient loading
+- **Dark/Light Theme** - Toggle between themes
+- **Multi-language Support** - Ready for internationalization
+- **Apache Optimized** - Configured for Hostinger and similar hosting
 
-### Core Framework
-- **Angular 20**: Latest version with standalone components and modern APIs
-- **TypeScript 5.8**: Type-safe development with strict configuration
-- **SCSS**: Advanced styling with CSS custom properties and design system
-- **RxJS 7.8**: Reactive programming patterns and state management
+## 🛠️ Tech Stack
 
-### Libraries & Tools
-- **AOS (Animate On Scroll)**: Scroll-triggered animations for enhanced UX
-- **Font Awesome 6.5**: Comprehensive icon library
-- **Express 5.1**: Server-side rendering support
-- **Angular SSR**: Built-in server-side rendering capabilities
+- **Frontend**: Angular 20, TypeScript, SCSS
+- **Styling**: Custom CSS with CSS Variables
+- **Icons**: Font Awesome 6
+- **Animations**: AOS (Animate On Scroll)
+- **Build**: Angular CLI with SSR
+- **Hosting**: Apache (Hostinger optimized)
 
-### Design System
-- **CSS Custom Properties**: Dynamic theming system with dark/light mode support
-- **Inter & Source Code Pro**: Modern typography for UI and code elements
-- **Neumorphic Design**: Soft UI elements with sophisticated shadow system
-- **Grid & Flexbox**: Modern layout techniques with responsive breakpoints
-
-## 🏗️ Architecture
-
-### Project Structure
-```
-src/
-├── app/
-│   ├── components/
-│   │   ├── home/          # Hero section with interactive code showcase
-│   │   ├── about/         # Personal information and education timeline
-│   │   ├── skills/        # Technical skills with proficiency indicators
-│   │   ├── experience/    # Professional experience timeline
-│   │   ├── contact/       # Contact information and availability
-│   │   ├── mobile-menu/   # Mobile navigation with language switcher
-│   │   └── theme-toggle/  # Theme switching component
-│   ├── services/
-│   │   ├── language.service.ts    # Internationalization with reactive translations
-│   │   └── theme.service.ts       # Theme management using Angular Signals
-│   ├── app.component.ts   # Main application component with navigation
-│   ├── app.routes.ts      # Angular routing configuration
-│   ├── app.config.ts      # Application configuration and providers
-│   └── app.scss          # Global styles and design system
-├── index.html            # Main HTML template with comprehensive SEO meta tags
-├── main.ts              # Application entry point
-├── main.server.ts       # SSR entry point
-└── server.ts            # Express server for SSR
-```
-
-### Component Architecture
-- **Standalone Components**: All components use Angular's standalone architecture
-- **Reactive Services**: Language and theme services use RxJS and Angular Signals
-- **Template-Driven**: Components use inline templates for better performance
-- **Scoped Styles**: Component-specific styles with global design system integration
-
-### State Management
-- **Angular Signals**: Modern reactive state management for theme switching
-- **RxJS Observables**: Language service with BehaviorSubject for translations
-- **Local Storage**: Persistent theme and language preferences
-- **Service Pattern**: Centralized state management through injectable services
-
-## 🚀 Getting Started
-
-### Prerequisites
-- **Node.js**: Version 18 or higher
-- **npm**: Package manager
-
-### Installation & Development
+## 📦 Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/philip-portfolio.git
-
-# Navigate to project directory
+git clone <repository-url>
 cd philip-portfolio
 
 # Install dependencies
@@ -104,244 +47,145 @@ npm install
 npm start
 ```
 
-The application will be available at `http://localhost:4200`
+## 🏗️ Build Commands
 
-### Build Commands
-
+### Development
 ```bash
-# Development build
-npm run build
-
-# Production build with SSR
-npm run build --configuration production
-
-# Watch mode for development
-npm run watch
-
-# Run tests
-npm test
-
-# SSR development server
-npm run serve:ssr:philip-portfolio
+npm start          # Start development server
+npm run watch      # Build with watch mode
+npm test           # Run tests
 ```
 
-## 🎨 Design System
+### Production Build
+```bash
+npm run build              # Standard production build
+npm run build:hostinger    # Build optimized for Hostinger
+```
 
-### Color Palette
-- **Primary**: `#6366f1` (Indigo) - Main brand color
-- **Secondary**: `#8b5cf6` (Purple) - Accent color
-- **Accent**: `#f59e0b` (Amber) - Highlight color
-- **Success**: `#10b981` (Emerald) - Success states
-- **Error**: `#ef4444` (Red) - Error states
+## 🚀 Deployment
 
-### Typography
-- **Primary Font**: Inter (UI elements and headings)
-- **Code Font**: Source Code Pro (code snippets and technical content)
-- **Display Font**: Inter (hero sections and large text)
+### Hostinger Deployment (Recommended)
 
-### Spacing System
-- **XS**: 0.25rem (4px)
-- **SM**: 0.5rem (8px)
-- **MD**: 1rem (16px)
-- **LG**: 1.5rem (24px)
-- **XL**: 2rem (32px)
-- **XXL**: 3rem (48px)
+1. **Build for Hostinger:**
+   ```bash
+   npm run build:hostinger
+   ```
 
-### Theme System
-- **Dark Theme**: Default theme with dark backgrounds and light text
-- **Light Theme**: Alternative theme with light backgrounds and dark text
-- **CSS Custom Properties**: Dynamic theming with smooth transitions
-- **Persistent Preferences**: Theme choice saved in localStorage
+2. **Upload Files:**
+   - Upload all files from `hostinger-upload/` folder
+   - Place them in the `public_html/` directory of your Hostinger account
+   - Ensure `.htaccess` file is included
 
-## 🌐 Internationalization
+3. **Test:**
+   - `https://yourdomain.com/` - Home page
+   - `https://yourdomain.com/about` - About page
+   - `https://yourdomain.com/contact` - Contact page
 
-The portfolio supports multiple languages with a comprehensive translation system:
+### Other Apache Hosting
 
-### Supported Languages
-- **English (en)**: Default language
-- **Portuguese (pt)**: Brazilian Portuguese
+The build is optimized for Apache servers. Upload the contents of `hostinger-upload/` to your web root directory.
 
-### Translation Features
-- **Reactive Updates**: Instant language switching without page reload
-- **Persistent Preferences**: Language choice saved across sessions
-- **Comprehensive Coverage**: All UI elements, content, and metadata translated
-- **Mobile Support**: Language switcher in mobile menu
+## 📁 Project Structure
 
-### Translation Structure
-```typescript
-interface Translations {
-  nav: NavigationTranslations;
-  home: HomeTranslations;
-  about: AboutTranslations;
-  skills: SkillsTranslations;
-  experience: ExperienceTranslations;
-  contact: ContactTranslations;
-  footer: FooterTranslations;
+```
+src/
+├── app/
+│   ├── components/          # Angular components
+│   │   ├── home/           # Home page component
+│   │   ├── about/          # About page component
+│   │   ├── contact/        # Contact page component
+│   │   ├── experience/     # Experience page component
+│   │   ├── skills/         # Skills page component
+│   │   └── theme-toggle/   # Theme toggle component
+│   ├── services/           # Angular services
+│   └── app.scss           # Global styles
+├── styles.scss            # Main stylesheet
+└── main.ts               # Application entry point
+
+scripts/
+└── prepare-hostinger.js  # Build preparation script
+
+hostinger-upload/         # Generated files for upload (git ignored)
+```
+
+## ⚙️ Configuration
+
+### Build Configuration
+- **Angular Budgets**: Optimized for performance
+- **Font Loading**: Optimized Google Fonts
+- **Asset Compression**: Enabled for all static files
+- **Security Headers**: Configured in `.htaccess`
+
+### Performance Optimizations
+- **Gzip Compression**: Enabled for all text files
+- **Cache Headers**: Optimized for static assets
+- **Pre-rendered Pages**: SEO-friendly static pages
+- **Lazy Loading**: Components loaded on demand
+
+## 🔧 Customization
+
+### Colors and Themes
+Edit CSS variables in `src/app/app.scss`:
+```scss
+:root {
+  --primary-color: #6366f1;
+  --bg-primary: #0f172a;
+  --text-primary: #f8fafc;
+  // ... more variables
 }
 ```
 
-## 🎯 Key Features
+### Content
+Update content in component templates:
+- `src/app/components/home/home.component.ts`
+- `src/app/components/about/about.component.ts`
+- etc.
 
-### Home Section
-- **Hero Section**: Animated introduction with professional statistics
-- **Interactive Code Showcase**: TypeScript interface display with syntax highlighting
-- **Professional Introduction**: 8+ years experience highlight
-- **Call-to-Action**: Direct navigation to about section
+### Styling
+Modify styles in:
+- `src/app/app.scss` - Global styles
+- Component-specific styles in each component
 
-### About Section
-- **Personal Background**: Professional journey and values
-- **Education Timeline**: Academic background (Uninorte, UFPA)
-- **Core Values**: Innovation, Quality, Collaboration, Growth
-- **Professional Statistics**: Years, projects, and satisfaction metrics
+## 📊 Performance
 
-### Skills Section
-- **Categorized Skills**: Organized by expertise level and technology type
-- **Proficiency Indicators**: Visual skill level bars
-- **Comprehensive Coverage**:
-  - Frontend Core (Angular, TypeScript, JavaScript, HTML/CSS)
-  - Styling & UI (SCSS, Material Design, Bootstrap, CSS Frameworks)
-  - State Management (RxJS, NgRx, Angular Signals)
-  - Testing (Jest, Karma, Cypress, Storybook)
-  - Performance & SEO (SSR, optimization, analytics)
-  - Tools & DevOps (Git, CI/CD, cloud platforms)
+- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
 
-### Experience Section
-- **Professional Timeline**: Chronological work experience
-- **Detailed Roles**: Responsibilities and achievements for each position
-- **Technology Stack**: Tech stack used in each role
-- **Company Information**: Current position at GFT Brazil
+## 🔒 Security
 
-### Contact Section
-- **Multiple Contact Methods**: Email, LinkedIn, GitHub, Location
-- **Availability Status**: Current availability for new projects
-- **Professional Information**: Remote work availability
-- **Direct Action Buttons**: Email and LinkedIn integration
+- **Content Security Policy**: Configured
+- **XSS Protection**: Enabled
+- **Frame Options**: DENY
+- **Content Type Options**: nosniff
 
-## 📱 Responsive Design
+## 📱 Browser Support
 
-The portfolio is fully responsive with comprehensive breakpoint system:
-
-### Breakpoints
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: Up to 767px
-
-### Mobile Features
-- **Mobile Menu**: Slide-out navigation with language switcher
-- **Touch Optimized**: Touch-friendly interactions and gestures
-- **Performance Optimized**: Optimized for mobile performance
-- **Accessibility**: Mobile accessibility compliance
-
-## 🔧 Configuration
-
-### Angular Configuration
-- **Standalone Components**: Modern Angular architecture
-- **SSR Support**: Server-side rendering for better SEO
-- **Asset Optimization**: Optimized images and fonts
-- **Bundle Analysis**: Built-in webpack bundle analyzer
-
-### Environment Setup
-The application uses Angular's built-in configuration system with:
-- Development and production configurations
-- SSR support for better SEO
-- Asset optimization and bundling
-- TypeScript strict mode
-
-### Theme Configuration
-Themes are managed through CSS custom properties and can be easily extended by modifying the `app.scss` file. The theme system supports:
-- Dynamic theme switching
-- Persistent preferences
-- Smooth transitions
-- Comprehensive color system
-
-## 📊 Performance Features
-
-- **Lazy Loading**: Route-based code splitting for optimal performance
-- **Optimized Assets**: Compressed images and optimized fonts
-- **CSS Optimization**: Purged unused styles in production builds
-- **Bundle Analysis**: Built-in webpack bundle analyzer
-- **Caching Strategy**: Optimized for CDN delivery and browser caching
-- **SSR Performance**: Server-side rendering for faster initial load
-
-## 🔍 SEO & Accessibility
-
-### SEO Features
-- **Meta Tags**: Comprehensive meta tags for all major search engines
-- **Open Graph**: Social media sharing optimization
-- **Twitter Cards**: Twitter-specific meta tags
-- **Structured Data**: Schema.org markup for rich snippets
-- **Sitemap Ready**: Configuration for sitemap generation
-
-### Accessibility Features
-- **WCAG 2.1 AA Compliance**: Full accessibility compliance
-- **Keyboard Navigation**: Complete keyboard navigation support
-- **Screen Reader Compatibility**: ARIA labels and semantic HTML
-- **High Contrast Mode**: Support for high contrast themes
-- **Focus Management**: Proper focus indicators and management
-
-## 🧪 Testing
-
-```bash
-# Unit tests
-npm test
-
-# Test coverage
-npm run test:coverage
-
-# E2E tests (if configured)
-npm run e2e
-```
-
-## 📦 Deployment
-
-### Vercel (Recommended)
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-### Netlify
-```bash
-# Build for production
-npm run build
-
-# Deploy dist/ folder
-```
-
-### Other Platforms
-The application is compatible with any static hosting service that supports Angular applications with SSR capabilities.
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
-## 👨‍💻 About the Developer
+## 👨‍💻 Author
 
-**Philip Ramkeerat** is a Senior Angular Developer with over 8 years of experience in frontend development. Currently working at **GFT Brazil** on strategic projects for major retail chains.
-
-### Professional Background
-- **8+ Years Experience**: Extensive experience in Angular ecosystem
-- **Enterprise Focus**: Specialized in large-scale applications
-- **Performance Expert**: Focus on high-performance web applications
-- **Team Leadership**: Experience leading development teams
-
-### Contact Information
-- **Email**: philip_ramkeerat@hotmail.com
-- **LinkedIn**: [linkedin.com/in/philip-ramkeerat](https://linkedin.com/in/philip-ramkeerat)
-- **GitHub**: [github.com/philip-ramkeerat](https://github.com/philip-ramkeerat)
-- **Portfolio**: [philip-ramkeerat.dev](https://philip-ramkeerat.dev)
+**Philip Ramkeerat**
+- Senior Angular Developer
+- 8+ years of experience
+- Specialized in high-performance web applications
 
 ---
 
-⭐ If you find this project helpful, please consider giving it a star!
+**Last updated:** ${new Date().toLocaleDateString('en-US')}

@@ -1,146 +1,145 @@
-# 🚀 Build para Hostinger - Philip Portfolio
+# 🚀 Build for Hostinger - Philip Portfolio
 
-## 📋 Como Usar
+## 📋 How to Use
 
-### Opção 1: Script Automático (Recomendado)
+### Option 1: Automatic Script (Recommended)
 ```bash
-# Execute o script batch (Windows)
+# Run the batch script (Windows)
 build-hostinger.bat
 
-# Ou use o comando npm diretamente
+# Or use npm command directly
 npm run build:hostinger
 ```
 
-### Opção 2: Comandos Manuais
+### Option 2: Manual Commands
 ```bash
-# 1. Fazer o build do Angular
+# 1. Build Angular
 npm run build
 
-# 2. Preparar arquivos para Hostinger
+# 2. Prepare for Hostinger
 npm run prepare:hostinger
 ```
 
-## 📁 O que é Gerado
+## 📁 What is Generated
 
-Após executar o comando, será criada a pasta `hostinger-upload/` contendo:
+After running the command, the `hostinger-upload/` folder will be created containing:
 
-### Arquivos Principais:
-- ✅ `.htaccess` - Configuração Apache otimizada para Hostinger
-- ✅ `index.html` - Redirecionamento para a aplicação
-- ✅ `index.csr.html` - Aplicação Angular principal
-- ✅ `main-*.js` - JavaScript principal
-- ✅ `styles-*.css` - Estilos CSS
-- ✅ `chunk-*.js` - Chunks JavaScript
+### Main Files:
+- ✅ `.htaccess` - Apache configuration optimized for Hostinger
+- ✅ `index.html` - Main application
+- ✅ `main-*.js` - Main JavaScript
+- ✅ `styles-*.css` - CSS styles
+- ✅ `chunk-*.js` - JavaScript chunks
 
 ### Assets:
-- ✅ `*.png` - Imagens do portfolio
-- ✅ `favicon.ico` - Ícone do site
+- ✅ `*.png` - Portfolio images
+- ✅ `favicon.ico` - Site icon
 
-### Páginas Pré-renderizadas:
-- ✅ `home/` - Página inicial
-- ✅ `about/` - Página sobre
-- ✅ `contact/` - Página contato
-- ✅ `experience/` - Página experiência
-- ✅ `skills/` - Página habilidades
+### Pre-rendered Pages:
+- ✅ `home/` - Home page
+- ✅ `about/` - About page
+- ✅ `contact/` - Contact page
+- ✅ `experience/` - Experience page
+- ✅ `skills/` - Skills page
 
-### Documentação:
-- ✅ `INSTRUCOES-HOSTINGER.md` - Instruções detalhadas para upload
+### Documentation:
+- ✅ `HOSTINGER-INSTRUCTIONS.md` - Detailed upload instructions
 
-## 🔄 Processo de Upload
+## 🔄 Upload Process
 
-### 1. Acesse sua conta Hostinger
-- Painel de controle → File Manager
-- Ou use FTP/SFTP
+### 1. Access your Hostinger account
+- Control panel → File Manager
+- Or use FTP/SFTP
 
-### 2. Navegue até public_html
-- Este é o diretório raiz do seu site
+### 2. Navigate to public_html
+- This is the root directory of your site
 
-### 3. Faça upload
-- **IMPORTANTE**: Upload de TODOS os arquivos da pasta `hostinger-upload/`
-- Mantenha a estrutura de pastas
-- **NÃO ESQUEÇA** do arquivo `.htaccess`
+### 3. Upload files
+- **IMPORTANT**: Upload ALL files from the `hostinger-upload/` folder
+- Keep the folder structure
+- **DON'T FORGET** the `.htaccess` file
 
-### 4. Teste o site
-- `https://seudominio.com/` - Página inicial
-- `https://seudominio.com/about` - Página sobre
-- `https://seudominio.com/contact` - Página contato
+### 4. Test the site
+- `https://yourdomain.com/` - Home page
+- `https://yourdomain.com/about` - About page
+- `https://yourdomain.com/contact` - Contact page
 
-## ⚙️ Configurações Automáticas
+## ⚙️ Automatic Configurations
 
-O script automaticamente:
+The script automatically:
 
-### Otimizações de Performance:
-- ✅ Compressão gzip para arquivos estáticos
-- ✅ Headers de cache otimizados
-- ✅ Headers de segurança configurados
+### Performance Optimizations:
+- ✅ Gzip compression for static files
+- ✅ Optimized cache headers
+- ✅ Security headers configured
 
-### Roteamento Angular:
-- ✅ Configuração `.htaccess` para SPA
-- ✅ Redirecionamento automático para rotas
-- ✅ Suporte a páginas pré-renderizadas
+### Angular Routing:
+- ✅ `.htaccess` configuration for SPA
+- ✅ Automatic route redirection
+- ✅ Pre-rendered page support
 
-## 🔧 Solução de Problemas
+## 🔧 Troubleshooting
 
-### Erro 500 (Internal Server Error)
-- Verifique se o arquivo `.htaccess` foi uploadado
-- Verifique se o `mod_rewrite` está habilitado na Hostinger
+### Error 500 (Internal Server Error)
+- Check if the `.htaccess` file was uploaded
+- Check if `mod_rewrite` is enabled on Hostinger
 
-### Página não encontrada (404)
-- Verifique se todos os arquivos foram uploadados
-- Verifique se estão na raiz do `public_html`
+### Page not found (404)
+- Check if all files were uploaded
+- Check if they are in the root of `public_html`
 
-### Rotas não funcionam
-- Verifique se o `.htaccess` está na raiz
-- Entre em contato com o suporte da Hostinger
+### Routes don't work
+- Check if `.htaccess` is in the root
+- Contact Hostinger support
 
-## 📊 Vantagens do Sistema
+## 📊 System Advantages
 
-### Para Desenvolvimento:
-- ✅ Build automatizado
-- ✅ Arquivos otimizados
-- ✅ Configuração automática
-- ✅ Não trackeado no Git
+### For Development:
+- ✅ Automated build
+- ✅ Optimized files
+- ✅ Automatic configuration
+- ✅ Not tracked in Git
 
-### Para Produção:
-- ✅ Performance otimizada
-- ✅ SEO melhorado (pré-renderização)
-- ✅ Segurança configurada
-- ✅ Cache otimizado
+### For Production:
+- ✅ Optimized performance
+- ✅ Improved SEO (pre-rendering)
+- ✅ Security configured
+- ✅ Optimized cache
 
-## 🎯 Comandos Disponíveis
+## 🎯 Available Commands
 
 ```bash
-# Build normal
+# Normal build
 npm run build
 
-# Build para Hostinger (recomendado)
+# Build for Hostinger (recommended)
 npm run build:hostinger
 
-# Apenas preparar arquivos (se build já existe)
+# Only prepare files (if build already exists)
 npm run prepare:hostinger
 
-# Desenvolvimento
+# Development
 npm start
 
-# Testes
+# Tests
 npm test
 ```
 
-## 📝 Notas Importantes
+## 📝 Important Notes
 
-- A pasta `hostinger-upload/` é **ignorada pelo Git**
-- Sempre execute `npm run build:hostinger` antes de fazer upload
-- O arquivo `.htaccess` é **ESSENCIAL** para o funcionamento
-- Teste sempre após o upload
+- The `hostinger-upload/` folder is **ignored by Git**
+- Always run `npm run build:hostinger` before uploading
+- The `.htaccess` file is **ESSENTIAL** for functionality
+- Always test after upload
 
-## 🎉 Sucesso!
+## 🎉 Success!
 
-Após seguir todos os passos, seu portfolio Angular estará rodando perfeitamente na Hostinger com:
-- ✅ Performance otimizada
-- ✅ SEO melhorado
-- ✅ Roteamento funcionando
-- ✅ Segurança configurada
+After following all steps, your Angular portfolio will be running perfectly on Hostinger with:
+- ✅ Optimized performance
+- ✅ Improved SEO
+- ✅ Working routing
+- ✅ Security configured
 
 ---
 
-**Última atualização:** ${new Date().toLocaleDateString('pt-BR')} 
+**Last updated:** ${new Date().toLocaleDateString('en-US')} 

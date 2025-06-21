@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 Preparando arquivos para upload na Hostinger...\n');
+console.log('🚀 Preparing files for Hostinger upload...\n');
 
 // Configurações
 const sourceDir = 'dist/philip-portfolio/browser';
@@ -99,14 +99,14 @@ RewriteRule ^ index.html [L]
 // Função para criar arquivo index.html que carrega diretamente a aplicação
 function createIndexHtml() {
     const indexContent = `<!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Philip Ramkeerat - Senior Angular Developer | Portfólio</title>
+  <title>Philip Ramkeerat - Senior Angular Developer | Portfolio</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <meta name="description" content="Philip Ramkeerat - Senior Angular Developer com 8+ anos de experiência. Especialista em Angular, TypeScript, RxJS e desenvolvimento frontend de alta performance.">
+  <meta name="description" content="Philip Ramkeerat - Senior Angular Developer with 8+ years of experience. Specialist in Angular, TypeScript, RxJS and high-performance frontend development.">
   <meta name="keywords" content="Angular, TypeScript, Frontend Developer, Senior Developer, RxJS, NgRx, JavaScript, Web Development, Brazil">
   <meta name="author" content="Philip Ramkeerat">
   <meta name="robots" content="index, follow">
@@ -114,13 +114,13 @@ function createIndexHtml() {
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://philip-ramkeerat.dev/">
   <meta property="og:title" content="Philip Ramkeerat - Senior Angular Developer">
-  <meta property="og:description" content="Senior Angular Developer com 8+ anos de experiência em desenvolvimento frontend de alta performance.">
+  <meta property="og:description" content="Senior Angular Developer with 8+ years of experience in high-performance frontend development.">
   <meta property="og:image" content="https://philip-ramkeerat.dev/assets/og-image.jpg">
   
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://philip-ramkeerat.dev/">
   <meta property="twitter:title" content="Philip Ramkeerat - Senior Angular Developer">
-  <meta property="twitter:description" content="Senior Angular Developer com 8+ anos de experiência em desenvolvimento frontend de alta performance.">
+  <meta property="twitter:description" content="Senior Angular Developer with 8+ years of experience in high-performance frontend development.">
   <meta property="twitter:image" content="https://philip-ramkeerat.dev/assets/og-image.jpg">
   
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -140,7 +140,7 @@ function createIndexHtml() {
     "@type": "Person",
     "name": "Philip Ramkeerat",
     "jobTitle": "Senior Angular Developer",
-    "description": "Senior Angular Developer com 8+ anos de experiência em desenvolvimento frontend",
+    "description": "Senior Angular Developer with 8+ years of experience in frontend development",
     "url": "https://philip-ramkeerat.dev",
     "sameAs": [
       "https://linkedin.com/in/philip-ramkeerat",
@@ -184,63 +184,62 @@ function createIndexHtml() {
 
 // Função para criar arquivo de instruções
 function createInstructions() {
-    const instructions = `# 🚀 Upload para Hostinger - Instruções
+    const instructions = `# 🚀 Hostinger Upload Instructions
 
-## 📁 Arquivos Prontos para Upload
+## 📁 Files Ready for Upload
 
-Todos os arquivos nesta pasta estão prontos para serem enviados para o diretório \`public_html\` da sua conta Hostinger.
+All files in this folder are ready to be uploaded to the \`public_html\` directory of your Hostinger account.
 
-## 🔄 Como Fazer Upload:
+## 🔄 How to Upload:
 
-### Opção 1: File Manager da Hostinger
-1. Acesse o painel de controle da Hostinger
-2. Vá em "File Manager"
-3. Navegue até a pasta \`public_html\`
-4. Faça upload de TODOS os arquivos desta pasta
+### Option 1: Hostinger File Manager
+1. Access your Hostinger control panel
+2. Go to "File Manager"
+3. Navigate to the \`public_html\` folder
+4. Upload ALL files from this folder
 
-### Opção 2: FTP/SFTP
-1. Use um cliente FTP (FileZilla, WinSCP, etc.)
-2. Conecte-se ao seu servidor Hostinger
-3. Navegue até \`public_html\`
-4. Faça upload de TODOS os arquivos
+### Option 2: FTP/SFTP
+1. Use an FTP client (FileZilla, WinSCP, etc.)
+2. Connect to your Hostinger server
+3. Navigate to \`public_html\`
+4. Upload ALL files
 
-## ⚠️ IMPORTANTE:
+## ⚠️ IMPORTANT:
 
-- **NÃO ESQUEÇA** do arquivo \`.htaccess\` - ele é essencial para o roteamento funcionar
-- Mantenha a estrutura de pastas (home/, about/, contact/, etc.)
-- Todos os arquivos devem ir para a raiz do \`public_html\`
+- **DON'T FORGET** the \`.htaccess\` file - it's essential for routing to work
+- Keep the folder structure (home/, about/, contact/, etc.)
+- All files must go to the root of \`public_html\`
 
-## 🧪 Teste Após Upload:
+## 🧪 Test After Upload:
 
-- \`https://seudominio.com/\` - Página inicial
-- \`https://seudominio.com/about\` - Página sobre
-- \`https://seudominio.com/contact\` - Página contato
-- \`https://seudominio.com/experience\` - Página experiência
-- \`https://seudominio.com/skills\` - Página habilidades
+- \`https://yourdomain.com/\` - Home page
+- \`https://yourdomain.com/about\` - About page
+- \`https://yourdomain.com/contact\` - Contact page
+- \`https://yourdomain.com/experience\` - Experience page
+- \`https://yourdomain.com/skills\` - Skills page
 
-## 🔧 Se Algo Não Funcionar:
+## 🔧 If Something Doesn't Work:
 
-1. Verifique se o arquivo \`.htaccess\` foi uploadado
-2. Verifique se todos os arquivos estão na raiz do \`public_html\`
-3. Entre em contato com o suporte da Hostinger se necessário
+1. Check if the \`.htaccess\` file was uploaded
+2. Check if all files are in the root of \`public_html\`
+3. Contact Hostinger support if necessary
 
-## 📊 Arquivos Incluídos:
+## 📊 Files Included:
 
-- ✅ \`.htaccess\` - Configuração Apache
-- ✅ \`index.html\` - Redirecionamento
-- ✅ \`index.csr.html\` - Aplicação Angular
-- ✅ \`main-*.js\` - JavaScript principal
-- ✅ \`styles-*.css\` - Estilos CSS
-- ✅ \`chunk-*.js\` - Chunks JavaScript
-- ✅ \`*.png\` - Imagens
-- ✅ \`favicon.ico\` - Ícone
-- ✅ Pastas: \`home/\`, \`about/\`, \`contact/\`, \`experience/\`, \`skills/\`
+- ✅ \`.htaccess\` - Apache configuration
+- ✅ \`index.html\` - Main application
+- ✅ \`main-*.js\` - Main JavaScript
+- ✅ \`styles-*.css\` - CSS styles
+- ✅ \`chunk-*.js\` - JavaScript chunks
+- ✅ \`*.png\` - Images
+- ✅ \`favicon.ico\` - Icon
+- ✅ Folders: \`home/\`, \`about/\`, \`contact/\`, \`experience/\`, \`skills/\`
 
 ---
-Gerado automaticamente em: ${new Date().toLocaleString('pt-BR')}
+Generated automatically on: ${new Date().toLocaleString('en-US')}
 `;
 
-    fs.writeFileSync(path.join(targetDir, 'INSTRUCOES-HOSTINGER.md'), instructions);
+    fs.writeFileSync(path.join(targetDir, 'HOSTINGER-INSTRUCTIONS.md'), instructions);
 }
 
 // Função principal
@@ -248,8 +247,8 @@ function main() {
     try {
         // Verificar se o build existe
         if (!fs.existsSync(sourceDir)) {
-            console.error('❌ Erro: Pasta de build não encontrada!');
-            console.error('Execute primeiro: npm run build');
+            console.error('❌ Error: Build folder not found!');
+            console.error('Run first: npm run build');
             process.exit(1);
         }
 
@@ -261,10 +260,10 @@ function main() {
         // Criar pasta de destino
         fs.mkdirSync(targetDir, { recursive: true });
 
-        console.log('📁 Copiando arquivos...');
+        console.log('📁 Copying files...');
         copyFolderRecursiveSync(sourceDir, targetDir);
 
-        console.log('⚙️ Criando arquivos de configuração...');
+        console.log('⚙️ Creating configuration files...');
         createHtaccess();
         createIndexHtml();
         createInstructions();
@@ -286,18 +285,18 @@ function main() {
 
         const fileCount = countFiles(targetDir);
 
-        console.log('\n✅ Preparação concluída com sucesso!');
-        console.log(`📊 Total de arquivos: ${fileCount}`);
-        console.log(`📁 Pasta criada: ${targetDir}/`);
-        console.log('\n📋 Próximos passos:');
-        console.log('1. Faça upload de TODOS os arquivos da pasta \'hostinger-upload/\'');
-        console.log('2. Coloque-os no diretório \'public_html/\' da sua conta Hostinger');
-        console.log('3. Certifique-se que o arquivo .htaccess foi incluído');
-        console.log('4. Teste o site após o upload');
-        console.log('\n🎉 Seu portfolio estará online!');
+        console.log('\n✅ Preparation completed successfully!');
+        console.log(`📊 Total files: ${fileCount}`);
+        console.log(`📁 Folder created: ${targetDir}/`);
+        console.log('\n📋 Next steps:');
+        console.log('1. Upload ALL files from the \'hostinger-upload/\' folder');
+        console.log('2. Place them in the \'public_html/\' directory of your Hostinger account');
+        console.log('3. Make sure the .htaccess file was included');
+        console.log('4. Test the site after upload');
+        console.log('\n🎉 Your portfolio will be online!');
 
     } catch (error) {
-        console.error('❌ Erro durante a preparação:', error.message);
+        console.error('❌ Error during preparation:', error.message);
         process.exit(1);
     }
 }

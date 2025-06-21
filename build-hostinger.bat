@@ -1,39 +1,39 @@
 @echo off
 echo ========================================
-echo Build para Hostinger - Philip Portfolio
+echo Build for Hostinger - Philip Portfolio
 echo ========================================
 echo.
 
-echo 🔨 Executando build do Angular...
+echo 🔨 Running Angular build...
 call npm run build:hostinger
 
 if %ERRORLEVEL% NEQ 0 (
     echo.
-    echo ❌ Erro durante o build!
-    echo Verifique se todas as dependências estão instaladas.
+    echo ❌ Error during build!
+    echo Check if all dependencies are installed.
     pause
     exit /b 1
 )
 
 echo.
 echo ========================================
-echo ✅ Build concluído com sucesso!
+echo ✅ Build completed successfully!
 echo ========================================
 echo.
-echo 📁 Pasta criada: hostinger-upload/
+echo 📁 Folder created: hostinger-upload/
 echo.
-echo 📋 Próximos passos:
-echo 1. Abra a pasta 'hostinger-upload/'
-echo 2. Faça upload de TODOS os arquivos para o public_html da Hostinger
-echo 3. Certifique-se que o arquivo .htaccess foi incluído
-echo 4. Teste o site após o upload
+echo 📋 Next steps:
+echo 1. Open the 'hostinger-upload/' folder
+echo 2. Upload ALL files to the public_html folder on Hostinger
+echo 3. Make sure the .htaccess file was included
+echo 4. Test the site after upload
 echo.
-echo Pressione qualquer tecla para abrir a pasta...
+echo Press any key to open the folder...
 pause > nul
 
 if exist "hostinger-upload" (
     start hostinger-upload
 ) else (
-    echo ❌ Pasta hostinger-upload não encontrada!
+    echo ❌ hostinger-upload folder not found!
     pause
 ) 
