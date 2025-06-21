@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:hostinger": "ng build && npm run prepare:hostinger",
+    "prepare:hostinger": "node scripts/prepare-hostinger.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:philip-portfolio": "node dist/philip-portfolio/server/server.mjs"
