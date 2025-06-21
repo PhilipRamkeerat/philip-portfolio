@@ -1,42 +1,58 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, Inject, PLATFORM_ID, Renderer2, RendererFactory2 } from '@angular/core';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { signal, effect } from '@angular/core';
 
 export type Theme = 'dark' | 'light';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  private theme$ = new BehaviorSubject<Theme>('dark');
+  private renderer: Renderer2;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  /**
+   * Reactive theme signal. Whenever its value changes the HTML `data-theme`
+   * attribute is updated automatically and the preference is persisted in
+   * `localStorage` (browser only).
+   */
+  private readonly _theme = signal<Theme>('dark');
+  readonly theme = this._theme.asReadonly();
+
+  constructor(
+    rendererFactory: RendererFactory2,
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.renderer = rendererFactory.createRenderer(null, null);
+
+    // Restore saved preference (browser-side only)
     if (isPlatformBrowser(this.platformId)) {
-      const savedTheme = localStorage.getItem('theme') as Theme;
-      if (savedTheme === 'dark' || savedTheme === 'light') {
-        this.setTheme(savedTheme);
-      } else {
-        this.setTheme('dark');
+      const saved = localStorage.getItem('theme') as Theme | null;
+      if (saved === 'light' || saved === 'dark') {
+        this._theme.set(saved);
       }
     }
+
+    // Side-effect: keep DOM & localStorage in sync with current signal value
+    effect(() => {
+      const current = this._theme();
+      if (isPlatformBrowser(this.platformId)) {
+        this.renderer.setAttribute(this.document.documentElement, 'data-theme', current);
+        localStorage.setItem('theme', current);
+      }
+    });
   }
 
-  get currentTheme$() {
-    return this.theme$.asObservable();
+  /** Convenience accessor for the current value */
+  get current(): Theme {
+    return this._theme();
   }
 
-  setTheme(theme: Theme) {
-    this.theme$.next(theme);
-    if (isPlatformBrowser(this.platformId)) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-    }
+  /** Explicitly set the theme */
+  set(theme: Theme): void {
+    this._theme.set(theme);
   }
 
-  toggleTheme() {
-    const newTheme: Theme = this.theme$.value === 'dark' ? 'light' : 'dark';
-    this.setTheme(newTheme);
-  }
-
-  getCurrentTheme(): Theme {
-    return this.theme$.value;
+  /** Toggle between `light` and `dark` */
+  toggle(): void {
+    this._theme.set(this._theme() === 'dark' ? 'light' : 'dark');
   }
 } 

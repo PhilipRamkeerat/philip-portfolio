@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section" [class.light-theme]="isLightTheme" data-aos="fade-up">
       <div class="hero-container">
         <div class="hero-content" data-aos="fade-up">
           <div class="hero-badge">
@@ -409,9 +410,10 @@ import { LanguageService } from '../../services/language.service';
         }
       }
     }
-    
-    [data-theme="light"] .hero-section {
-      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+
+    .hero-section.light-theme {
+      background: yellow !important;
+      background-image: none !important;
     }
     
     [data-theme="light"] .hero-title {
@@ -436,13 +438,17 @@ import { LanguageService } from '../../services/language.service';
 })
 export class HomeComponent implements OnInit {
   translations: any;
+  isLightTheme = false;
   
-  constructor(private languageService: LanguageService) {}
+  constructor(private languageService: LanguageService, private themeService: ThemeService) {}
   
   ngOnInit() {
     this.translations = this.languageService.getTranslations();
     this.languageService.currentLanguage$.subscribe(() => {
       this.translations = this.languageService.getTranslations();
     });
+    
+    // Check current theme
+    this.isLightTheme = this.themeService.current === 'light';
   }
 } 
