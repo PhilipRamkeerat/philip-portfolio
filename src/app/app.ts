@@ -18,6 +18,7 @@ export class App implements OnInit {
   protected currentLanguage: Language = 'en';
   protected translations: any;
   protected isMobileMenuOpen = false;
+  protected currentYear: number = new Date().getFullYear();
 
   constructor(
     private languageService: LanguageService,
