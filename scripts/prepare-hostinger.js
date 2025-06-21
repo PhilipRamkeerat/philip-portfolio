@@ -3,15 +3,12 @@ const path = require('path');
 
 console.log('🚀 Preparing files for Hostinger upload...\n');
 
-// Configurações
 const sourceDir = 'dist/philip-portfolio/browser';
 const targetDir = 'hostinger-upload';
 
-// Função para copiar arquivos recursivamente
 function copyFileSync(source, target) {
     let targetFile = target;
 
-    // Se o target for um diretório, copie o arquivo com o mesmo nome
     if (fs.existsSync(target) && fs.lstatSync(target).isDirectory()) {
         targetFile = path.join(target, path.basename(source));
     }
@@ -19,16 +16,13 @@ function copyFileSync(source, target) {
     fs.writeFileSync(targetFile, fs.readFileSync(source));
 }
 
-// Função para copiar diretórios recursivamente
 function copyFolderRecursiveSync(source, target) {
     let files = [];
 
-    // Verificar se a pasta precisa ser criada
     if (!fs.existsSync(target)) {
         fs.mkdirSync(target, { recursive: true });
     }
 
-    // Copiar arquivos
     if (fs.lstatSync(source).isDirectory()) {
         files = fs.readdirSync(source);
         files.forEach(function (file) {
@@ -42,7 +36,6 @@ function copyFolderRecursiveSync(source, target) {
     }
 }
 
-// Função para criar arquivo .htaccess otimizado para Hostinger
 function createHtaccess() {
     const htaccessContent = `RewriteEngine On
 
@@ -96,7 +89,6 @@ RewriteRule ^ index.html [L]
     fs.writeFileSync(path.join(targetDir, '.htaccess'), htaccessContent);
 }
 
-// Função para criar arquivo index.html que carrega diretamente a aplicação
 function createIndexHtml() {
     const indexContent = `<!doctype html>
 <html lang="en">
@@ -182,7 +174,6 @@ function createIndexHtml() {
     fs.writeFileSync(path.join(targetDir, 'index.html'), indexContent);
 }
 
-// Função para criar arquivo de instruções
 function createInstructions() {
     const instructions = `# 🚀 Hostinger Upload Instructions
 
@@ -242,22 +233,18 @@ Generated automatically on: ${new Date().toLocaleString('en-US')}
     fs.writeFileSync(path.join(targetDir, 'HOSTINGER-INSTRUCTIONS.md'), instructions);
 }
 
-// Função principal
 function main() {
     try {
-        // Verificar se o build existe
         if (!fs.existsSync(sourceDir)) {
             console.error('❌ Error: Build folder not found!');
             console.error('Run first: npm run build');
             process.exit(1);
         }
 
-        // Limpar pasta de destino se existir
         if (fs.existsSync(targetDir)) {
             fs.rmSync(targetDir, { recursive: true, force: true });
         }
 
-        // Criar pasta de destino
         fs.mkdirSync(targetDir, { recursive: true });
 
         console.log('📁 Copying files...');
@@ -268,7 +255,6 @@ function main() {
         createIndexHtml();
         createInstructions();
 
-        // Contar arquivos
         const countFiles = (dir) => {
             let count = 0;
             const items = fs.readdirSync(dir);
@@ -301,5 +287,4 @@ function main() {
     }
 }
 
-// Executar
 main(); 

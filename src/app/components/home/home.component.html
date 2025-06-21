@@ -1,0 +1,97 @@
+<section id="home" class="hero-section" data-aos="fade-up">
+  <div class="hero-container">
+    <div class="hero-content" data-aos="fade-up">
+      <div class="hero-badge">
+        <span class="badge-text">{{ translations?.home?.greeting || '👋 Hello, I am' }}</span>
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="text-gradient">{{ translations?.home?.title || 'Philip Ramkeerat' }}</span>
+      </h1>
+      
+      <h2 class="hero-subtitle">
+        {{ translations?.home?.subtitle || 'Senior Angular Developer' }}
+      </h2>
+      
+      <p class="hero-description">
+        {{ translations?.home?.description || 'With over 8 years of experience in frontend development, specialized in Angular and high-performance web applications. Currently working at a leading tech company on strategic projects for one of the largest retail chains in the country.' }}
+      </p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">8+</span>
+          <span class="stat-label">{{ translations?.home?.stats?.experience || 'Years of Experience' }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">{{ translations?.home?.stats?.quality || 'Quality Focus' }}</span>
+        </div>
+      </div>
+      
+      <div class="hero-actions">
+        <a [routerLink]="['/about']" class="btn btn-primary">
+          <i class="fas fa-arrow-right"></i>
+          {{ translations?.home?.actions?.learnMore || 'Learn More' }}
+        </a>
+      </div>
+    </div>
+    
+    <div class="hero-visual" data-aos="fade-left">
+      <div class="code-window">
+        <div class="window-header">
+          <div class="window-controls">
+            <span class="control red"></span>
+            <span class="control yellow"></span>
+            <span class="control green"></span>
+          </div>
+          <span class="window-title">portfolio.ts</span>
+        </div>
+        <div class="window-content">
+          <pre class="code-block"><code><span class="keyword">{{ translations?.home?.codeSnippet?.interface || 'interface' }}</span> <span class="interface-name">{{ translations?.home?.codeSnippet?.developer || 'Developer' }}</span> {{ '{' }}
+  <span class="property">{{ translations?.home?.codeSnippet?.name || 'name' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.nameValue || "'Philip Ramkeerat'" }}</span>;
+  <span class="property">{{ translations?.home?.codeSnippet?.role || 'role' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.roleValue || "'Senior Angular Developer'" }}</span>;
+  <span class="property">{{ translations?.home?.codeSnippet?.experience || 'experience' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.experienceValue || "'8+ years'" }}</span>;
+  <span class="property">{{ translations?.home?.codeSnippet?.expertise || 'expertise' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.frontend || 'frontend' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.frontendValue || "'Angular & TypeScript'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.architecture || 'architecture' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.architectureValue || "'Enterprise Applications'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.performance || 'performance' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.performanceValue || "'High-Scale Solutions'" }}</span>
+  {{ '}' }};
+  <span class="property">{{ translations?.home?.codeSnippet?.skills || 'skills' }}</span>: [
+    <span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>, 
+    <span class="string">'RxJS'</span>, <span class="string">'NgRx'</span>,
+    <span class="string">'Material Design'</span>, <span class="string">'SCSS'</span>
+  ];
+  <span class="property">{{ translations?.home?.codeSnippet?.focus || 'focus' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.quality || 'quality' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.qualityValue || "'Clean Code & Best Practices'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.innovation || 'innovation' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.innovationValue || "'Modern Solutions'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.delivery || 'delivery' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.deliveryValue || "'Efficient & Scalable'" }}</span>
+  {{ '}' }};
+{{ '}' }}
+
+<span class="keyword">{{ translations?.home?.codeSnippet?.const || 'const' }}</span> <span class="variable">{{ translations?.home?.codeSnippet?.philip || 'philip' }}</span>: <span class="type">{{ translations?.home?.codeSnippet?.developer || 'Developer' }}</span> = {{ '{' }}
+  <span class="property">{{ translations?.home?.codeSnippet?.name || 'name' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.nameValue || "'Philip Ramkeerat'" }}</span>,
+  <span class="property">{{ translations?.home?.codeSnippet?.role || 'role' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.roleValue || "'Senior Angular Developer'" }}</span>,
+  <span class="property">{{ translations?.home?.codeSnippet?.experience || 'experience' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.experienceValue || "'8+ years'" }}</span>,
+  <span class="property">{{ translations?.home?.codeSnippet?.expertise || 'expertise' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.frontend || 'frontend' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.frontendValue || "'Angular & TypeScript'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.architecture || 'architecture' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.architectureValue || "'Enterprise Applications'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.expertiseValue?.performance || 'performance' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.expertiseValue?.performanceValue || "'High-Scale Solutions'" }}</span>
+  {{ '}' }},
+  <span class="property">{{ translations?.home?.codeSnippet?.skills || 'skills' }}</span>: [
+    <span class="string">'Angular'</span>, <span class="string">'TypeScript'</span>, 
+    <span class="string">'RxJS'</span>, <span class="string">'NgRx'</span>,
+    <span class="string">'Material Design'</span>, <span class="string">'SCSS'</span>
+  ],
+  <span class="property">{{ translations?.home?.codeSnippet?.focus || 'focus' }}</span>: {{ '{' }}
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.quality || 'quality' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.qualityValue || "'Clean Code & Best Practices'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.innovation || 'innovation' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.innovationValue || "'Modern Solutions'" }}</span>,
+    <span class="property">{{ translations?.home?.codeSnippet?.focusValue?.delivery || 'delivery' }}</span>: <span class="string">{{ translations?.home?.codeSnippet?.focusValue?.deliveryValue || "'Efficient & Scalable'" }}</span>
+  {{ '}' }}
+{{ '}' }};
+
+<span class="comment">{{ translations?.home?.codeSnippet?.comment || '// Ready to build amazing web experiences! 🚀' }}</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

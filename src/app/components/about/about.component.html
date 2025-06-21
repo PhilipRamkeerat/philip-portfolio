@@ -1,0 +1,110 @@
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">
+        <span class="text-gradient">{{ translations?.about?.title || 'About Me' }}</span>
+      </h2>
+      <p class="section-subtitle">{{ translations?.about?.subtitle || 'Get to know me better' }}</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text" data-aos="fade-right">
+        <div class="about-card">
+          <h3>{{ translations?.about?.heading || 'Who I Am' }}</h3>
+          <p>{{ translations?.about?.description || 'I am a passionate Senior Angular Developer with over 8 years of experience in creating exceptional web applications. My journey in software development has been driven by a deep curiosity for technology and a commitment to delivering high-quality solutions.' }}</p>
+          
+          <div class="about-features">
+            <div class="feature-item">
+              <i class="fas fa-code"></i>
+              <span>{{ translations?.about?.features?.code || 'Clean Code' }}</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-rocket"></i>
+              <span>{{ translations?.about?.features?.performance || 'Performance' }}</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-users"></i>
+              <span>{{ translations?.about?.features?.teamwork || 'Teamwork' }}</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-lightbulb"></i>
+              <span>{{ translations?.about?.features?.innovation || 'Innovation' }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-card">
+          <h3>{{ translations?.about?.education?.title || 'Formação Acadêmica' }}</h3>
+          <div class="education-item">
+            <div class="education-content">
+              <h4>{{ translations?.about?.education?.uninorte?.title }}</h4>
+              <p class="education-degree">{{ translations?.about?.education?.uninorte?.degree }}</p>
+              <p class="education-period">{{ translations?.about?.education?.uninorte?.period }}</p>
+              <p class="education-activities">{{ translations?.about?.education?.uninorte?.activities }}</p>
+              <p class="education-description">{{ translations?.about?.education?.uninorte?.description }}</p>
+            </div>
+          </div>
+          <div class="education-item">
+            <div class="education-content">
+              <h4>{{ translations?.about?.education?.ufpa?.title }}</h4>
+              <p class="education-degree">{{ translations?.about?.education?.ufpa?.degree }}</p>
+              <p class="education-period">{{ translations?.about?.education?.ufpa?.period }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-visual" data-aos="fade-left">
+        <div class="profile-card">
+          <div class="profile-image">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="profile-info">
+            <h4>Philip Ramkeerat</h4>
+            <p>{{ translations?.about?.role || 'Senior Angular Developer' }}</p>
+            <div class="profile-stats">
+              <div class="stat">
+                <span class="stat-value">8+</span>
+                <span class="stat-label">{{ translations?.about?.stats?.years || 'Years' }}</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">50+</span>
+                <span class="stat-label">{{ translations?.about?.stats?.projects || 'Projects' }}</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">{{ translations?.about?.stats?.satisfaction || 'Satisfaction' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="values-section" data-aos="fade-up">
+      <h3>{{ translations?.about?.values?.title || 'Meus Valores' }}</h3>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🚀</div>
+          <h4>{{ translations?.about?.values?.innovation?.title || 'Inovação' }}</h4>
+          <p>{{ translations?.about?.values?.innovation?.description || 'Sempre buscando as melhores práticas e tecnologias emergentes' }}</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h4>{{ translations?.about?.values?.quality?.title || 'Qualidade' }}</h4>
+          <p>{{ translations?.about?.values?.quality?.description || 'Comprometido com código limpo, testável e manutenível' }}</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h4>{{ translations?.about?.values?.collaboration?.title || 'Colaboração' }}</h4>
+          <p>{{ translations?.about?.values?.collaboration?.description || 'Trabalho em equipe e compartilhamento de conhecimento' }}</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📈</div>
+          <h4>{{ translations?.about?.values?.growth?.title || 'Crescimento' }}</h4>
+          <p>{{ translations?.about?.values?.growth?.description || 'Aprendizado contínuo e evolução profissional' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
