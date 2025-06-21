@@ -6,15 +6,7 @@ import { ThemeService } from '../../services/theme.service';
   selector: 'app-theme-toggle',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <button
-      class="theme-toggle"
-      type="button"
-      (click)="theme.toggle()"
-      [attr.aria-label]="theme.current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
-      <i class="theme-toggle__icon" [ngClass]="theme.current === 'dark' ? 'fas fa-moon' : 'fas fa-sun'"></i>
-    </button>
-  `,
+  templateUrl: './theme-toggle.component.html',
   styleUrls: ['./theme-toggle.component.scss']
 })
 export class ThemeToggleComponent {

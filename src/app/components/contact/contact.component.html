@@ -1,0 +1,99 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">
+        <span class="text-gradient">{{ translations?.contact?.title || 'Entre em Contato' }}</span>
+      </h2>
+      <p class="section-subtitle">
+        {{ translations?.contact?.subtitle || 'Vamos trabalhar juntos no seu próximo projeto' }}
+      </p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info" data-aos="fade-up">
+        <div class="info-card">
+          <h3>{{ translations?.contact?.heading || 'Vamos Conversar!' }}</h3>
+          <p>
+            {{ translations?.contact?.description || 'Estou sempre interessado em novos desafios e oportunidades de colaboração. Se você tem um projeto em mente ou gostaria de discutir possibilidades, não hesite em entrar em contato.' }}
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="method-content">
+                <h4>{{ translations?.contact?.methods?.email || 'Email' }}</h4>
+                <p>philip_ramkeerat&#64;hotmail.com</p>
+                <span class="method-note">{{ translations?.contact?.notes?.emailResponse || 'Resposta em até 24h' }}</span>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="method-content">
+                <h4>{{ translations?.contact?.methods?.linkedin || 'LinkedIn' }}</h4>
+                <p>linkedin.com/in/philip-ramkeerat</p>
+                <span class="method-note">{{ translations?.contact?.notes?.linkedinConnect || 'Conecte-se profissionalmente' }}</span>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="method-content">
+                <h4>{{ translations?.contact?.methods?.github || 'GitHub' }}</h4>
+                <p>github.com/philip-ramkeerat</p>
+                <span class="method-note">{{ translations?.contact?.notes?.githubProjects || 'Veja meus projetos' }}</span>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="method-content">
+                <h4>{{ translations?.contact?.methods?.location || 'Localização' }}</h4>
+                <p>Brasil</p>
+                <span class="method-note">{{ translations?.contact?.notes?.remoteAvailable || 'Disponível para projetos remotos' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="availability-card">
+          <h4>{{ translations?.contact?.availability?.title || 'Disponibilidade' }}</h4>
+          <div class="availability-status">
+            <div class="status-indicator available"></div>
+            <span>{{ translations?.contact?.availability?.status || 'Disponível para novos projetos' }}</span>
+          </div>
+          <p>
+            {{ translations?.contact?.availability?.description || 'Atualmente trabalhando em projetos freelance e aberto a novas oportunidades interessantes.' }}
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-section" data-aos="fade-up">
+      <div class="cta-card">
+        <h3>{{ translations?.contact?.cta?.title || 'Pronto para começar?' }}</h3>
+        <p>
+          {{ translations?.contact?.cta?.description || 'Vamos transformar suas ideias em realidade. Entre em contato e vamos discutir como posso ajudar no seu próximo projeto.' }}
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:philip_ramkeerat@hotmail.com" class="btn btn-primary">
+            <i class="fas fa-envelope"></i>
+            {{ translations?.contact?.cta?.sendEmail || 'Enviar Email' }}
+          </a>
+          <a href="https://linkedin.com/in/philip-ramkeerat" target="_blank" class="btn btn-outline">
+            <i class="fab fa-linkedin"></i>
+            {{ translations?.contact?.cta?.connectLinkedin || 'Conectar no LinkedIn' }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

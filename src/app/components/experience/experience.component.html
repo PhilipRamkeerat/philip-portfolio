@@ -1,0 +1,45 @@
+<section id="experience" class="experience-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">
+        <span class="text-gradient">{{ translations?.experience?.title || 'Experiência Profissional' }}</span>
+      </h2>
+      <p class="section-subtitle">
+        {{ translations?.experience?.subtitle || 'Jornada de 8+ anos em desenvolvimento frontend' }}
+      </p>
+    </div>
+    
+    <div class="timeline" data-aos="fade-up">
+      <ng-container *ngFor="let item of experiences; let i = index">
+        <div class="timeline-item" [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'">
+          <div class="timeline-marker">
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>{{ item.title }}</h3>
+              <span class="company">{{ item.company }}</span>
+              <span class="period">{{ item.period }}</span>
+            </div>
+            <div class="timeline-body">
+              <p>{{ item.description }}</p>
+
+              <div class="responsibilities" *ngIf="item.responsibilities?.length">
+                <h4>{{ translations?.experience?.responsibilitiesTitle || 'Principais Responsabilidades:' }}</h4>
+                <ul>
+                  <li *ngFor="let resp of item.responsibilities">{{ resp }}</li>
+                </ul>
+              </div>
+
+              <div class="tech-stack" *ngIf="item.techStack?.length">
+                <h4>{{ translations?.experience?.techStackTitle || 'Stack Tecnológica:' }}</h4>
+                <div class="tech-tags">
+                  <span class="tech-tag" *ngFor="let tech of item.techStack">{{ tech }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section> 

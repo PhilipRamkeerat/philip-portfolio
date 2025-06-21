@@ -1,0 +1,7 @@
+<button
+  class="theme-toggle"
+  type="button"
+  (click)="theme.toggle()"
+  [attr.aria-label]="theme.current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+  <i class="theme-toggle__icon" [ngClass]="theme.current === 'dark' ? 'fas fa-moon' : 'fas fa-sun'"></i>
+</button> 
