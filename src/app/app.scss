@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 :root {
@@ -22,9 +22,9 @@
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --error-color: #ef4444;
-  --font-mono: 'Source Code Pro', 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  --font-sans: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Inter', 'Roboto', sans-serif;
+  --font-mono: 'Source Code Pro', 'Courier New', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter', sans-serif;
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -576,4 +576,449 @@ h1, h2, h3, h4, h5, h6 {
 }
 pre, code, kbd, samp {
   font-family: var(--font-mono);
+}
+
+// Common component styles to reduce component-specific CSS
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-mono);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+
+.about-card, .profile-card {
+  background: var(--bg-card);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-normal);
+  border: 1px solid var(--border-light);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-family: var(--font-sans);
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft-inset);
+  transition: var(--transition-normal);
+  
+  &:hover {
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+  }
+  
+  i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+  }
+  
+  span {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+  }
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-light);
+  transition: var(--transition-normal);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-2px);
+  }
+}
+
+.education-content {
+  width: 100%;
+  
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-mono);
+  }
+  
+  .education-degree {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+  }
+  
+  .education-period {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-mono);
+  }
+  
+  .education-activities {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+  }
+  
+  .education-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}
+
+.profile-image {
+  margin-bottom: var(--spacing-lg);
+  
+  i {
+    font-size: 4rem;
+    color: var(--primary-color);
+  }
+}
+
+.profile-info h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.profile-info p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-sans);
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacing-md);
+}
+
+.stat {
+  text-align: center;
+  
+  .stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-family: var(--font-sans);
+  }
+}
+
+.values-section h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .value-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    font-family: var(--font-mono);
+  }
+  
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-family: var(--font-sans);
+  }
+}
+
+// Hero section common styles
+.hero-section {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  z-index: 2;
+  
+  @media (max-width: 1024px) {
+    order: 1;
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+.hero-badge {
+  margin-bottom: var(--spacing-lg);
+  
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.badge-text {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-xl);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-soft-inset);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.1;
+  color: var(--text-primary);
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 400;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.7;
+  max-width: 500px;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+.stat-item {
+  text-align: center;
+  
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-family: var(--font-sans);
+  }
+}
+
+.hero-actions {
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hero-visual {
+  @media (max-width: 1024px) {
+    order: 2;
+  }
+}
+
+.code-window {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.window-header {
+  background: var(--bg-secondary);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.window-controls {
+  display: flex;
+  gap: var(--spacing-xs);
+  
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    
+    &.red { background: #ff5f56; }
+    &.yellow { background: #ffbd2e; }
+    &.green { background: #27ca3f; }
+  }
+}
+
+.window-title {
+  margin-left: var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.window-content {
+  padding: var(--spacing-lg);
+}
+
+.code-block {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  overflow-x: auto;
+  box-shadow: var(--shadow-soft-inset);
+  
+  .keyword { color: var(--code-keyword); }
+  .interface-name { color: var(--code-class); }
+  .property { color: var(--code-property); }
+  .string { color: var(--code-string); }
+  .comment { color: var(--code-comment); }
+  .type { color: var(--code-type); }
+  .variable { color: var(--code-variable); }
 }

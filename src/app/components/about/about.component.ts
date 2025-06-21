@@ -420,22 +420,19 @@ import { LanguageService } from '../../services/language.service';
     
     @media (max-width: 1024px) {
       .about-content {
-        gap: var(--spacing-lg);
-      }
-      
-      .section-title {
-        font-size: 2rem;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
       }
       
       .profile-card {
         position: static;
+        order: -1;
       }
     }
     
     @media (max-width: 768px) {
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+      .about-section {
+        padding: var(--spacing-xl) var(--spacing-md);
       }
       
       .section-title {

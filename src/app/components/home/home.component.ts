@@ -219,7 +219,6 @@ import { LanguageService } from '../../services/language.service';
     }
     
     .stat-item {
-      text-align: center;
       padding: var(--spacing-md);
       background: var(--bg-card);
       border-radius: var(--border-radius-lg);
@@ -273,12 +272,6 @@ import { LanguageService } from '../../services/language.service';
     }
     
     .code-window {
-      background: var(--bg-code);
-      border: 1px solid var(--border-code);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-medium);
-      transition: var(--transition-normal);
       width: 100%;
       max-width: 600px;
       text-align: left;
@@ -335,9 +328,7 @@ import { LanguageService } from '../../services/language.service';
     }
     
     .window-content {
-      padding: var(--spacing-lg);
       overflow-x: auto;
-      background: var(--bg-code);
       
       @media (max-width: 768px) {
         padding: var(--spacing-md);
@@ -409,6 +400,25 @@ import { LanguageService } from '../../services/language.service';
           color: var(--code-comment);
           font-style: italic;
         }
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.25rem;
+      }
+      
+      .hero-description {
+        font-size: 1rem;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: var(--spacing-md);
       }
     }
   `]
