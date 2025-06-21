@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
-import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <section id="home" class="hero-section" [class.light-theme]="isLightTheme" data-aos="fade-up">
+    <section id="home" class="hero-section" data-aos="fade-up">
       <div class="hero-container">
         <div class="hero-content" data-aos="fade-up">
           <div class="hero-badge">
@@ -109,15 +108,14 @@ import { ThemeService } from '../../services/theme.service';
   `,
   styles: [`
     .hero-section {
+      background: var(--bg-primary);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: var(--spacing-xxl) var(--spacing-lg);
       position: relative;
-      overflow: hidden;
-      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
-        url('https://images.unsplash.com/photo-1527689368864-3a821dbbbb34?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      overflow: hidden;     
     }
     
     .hero-container {
@@ -167,6 +165,7 @@ import { ThemeService } from '../../services/theme.service';
       font-weight: 700;
       margin-bottom: var(--spacing-md);
       line-height: 1.1;
+      color: var(--text-primary);
       
       @media (max-width: 768px) {
         font-size: 2.5rem;
@@ -225,6 +224,7 @@ import { ThemeService } from '../../services/theme.service';
       border-radius: var(--border-radius-lg);
       box-shadow: var(--shadow-soft);
       transition: var(--transition-normal);
+      border: 1px solid var(--border-light);
       
       @media (max-width: 480px) {
         width: 100%;
@@ -234,6 +234,7 @@ import { ThemeService } from '../../services/theme.service';
       &:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-medium);
+        border-color: var(--primary-color);
       }
     }
     
@@ -410,45 +411,17 @@ import { ThemeService } from '../../services/theme.service';
         }
       }
     }
-
-    .hero-section.light-theme {
-      background: yellow !important;
-      background-image: none !important;
-    }
-    
-    [data-theme="light"] .hero-title {
-      color: var(--text-primary);
-    }
-    
-    [data-theme="light"] .hero-subtitle {
-      color: #64748b;
-      font-weight: 500;
-    }
-    
-    [data-theme="light"] .hero-description {
-      color: #475569;
-      font-weight: 400;
-    }
-    
-    [data-theme="light"] .stat-label {
-      color: var(--text-primary);
-      opacity: 0.6;
-    }
   `]
 })
 export class HomeComponent implements OnInit {
   translations: any;
-  isLightTheme = false;
   
-  constructor(private languageService: LanguageService, private themeService: ThemeService) {}
+  constructor(private languageService: LanguageService) {}
   
   ngOnInit() {
     this.translations = this.languageService.getTranslations();
     this.languageService.currentLanguage$.subscribe(() => {
       this.translations = this.languageService.getTranslations();
     });
-    
-    // Check current theme
-    this.isLightTheme = this.themeService.current === 'light';
   }
 } 

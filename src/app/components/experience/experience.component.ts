@@ -56,7 +56,7 @@ import { LanguageService, Language } from '../../services/language.service';
   styles: [`
     .experience-section {
       padding: var(--spacing-xxl) 0;
-      background: var(--dark-bg);
+      background: var(--bg-primary);
     }
     
     .container {
