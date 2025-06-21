@@ -14,7 +14,7 @@
 </p>
 
 <div align="center">
-  <a href="https://philipramkeerat.com.br/home"><strong>➥ Visit the Live Demo »</strong></a>
+  <a href="https://philipramkeerat.com.br/home" target="_blank"><strong>➥ Visit the Live Demo »</strong></a>
 </div>
 
 <br>
