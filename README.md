@@ -14,6 +14,14 @@ A modern, professional portfolio built with Angular 20, showcasing Philip Ramkee
 - **Smooth Animations**: AOS (Animate On Scroll) integration for engaging interactions
 - **SEO Optimized**: Meta tags, Open Graph, and structured data
 
+## 📸 Screenshots
+
+### Dark Theme
+![Portfolio Dark Theme](public/1.png)
+
+### Light Theme
+![Portfolio Light Theme](public/1-light-mode.png)
+
 ## 🛠️ Technology Stack
 
 ### Core Framework
