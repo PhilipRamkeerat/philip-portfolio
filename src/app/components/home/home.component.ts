@@ -136,7 +136,8 @@ import { LanguageService } from '../../services/language.service';
       z-index: 2;
       
       @media (max-width: 1024px) {
-        order: 2;
+        order: 1;
+        margin-bottom: var(--spacing-xl);
       }
     }
     
@@ -267,8 +268,7 @@ import { LanguageService } from '../../services/language.service';
       align-items: center;
       
       @media (max-width: 1024px) {
-        order: 1;
-        margin-bottom: var(--spacing-xl);
+        order: 2;
       }
     }
     
