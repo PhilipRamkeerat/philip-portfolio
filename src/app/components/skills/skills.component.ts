@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageService, Language } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,14 +9,12 @@ import { LanguageService, Language } from '../../services/language.service';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent {
   translations: any;
 
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.languageService.currentLanguage$.subscribe((lang: Language) => {
-      this.translations = this.languageService.getTranslations();
+  constructor(private languageService: LanguageService) {
+    effect(() => {
+      this.translations = this.languageService.translations();
     });
   }
-} 
+}

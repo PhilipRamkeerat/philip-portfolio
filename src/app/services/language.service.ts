@@ -1,6 +1,5 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, signal, computed } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { BehaviorSubject } from 'rxjs';
 
 export type Language = 'en' | 'pt';
 
@@ -263,10 +262,10 @@ export interface Translations {
   providedIn: 'root'
 })
 export class LanguageService {
-  private currentLanguage = new BehaviorSubject<Language>('en');
-  currentLanguage$ = this.currentLanguage.asObservable();
+  private readonly _language = signal<Language>('en');
+  readonly language = this._language.asReadonly();
 
-  private translations: Record<Language, Translations> = {
+  private readonly translationsData: Record<Language, Translations> = {
     en: {
       nav: {
         home: 'Home',
@@ -777,33 +776,35 @@ export class LanguageService {
     }
   };
 
+  readonly translations = computed(() => this.translationsData[this._language()]);
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       const savedLanguage = localStorage.getItem('language') as Language;
       if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt')) {
-        this.currentLanguage.next(savedLanguage);
+        this._language.set(savedLanguage);
       }
     }
   }
 
   getCurrentLanguage(): Language {
-    return this.currentLanguage.value;
+    return this._language();
   }
 
   setLanguage(language: Language): void {
-    this.currentLanguage.next(language);
+    this._language.set(language);
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('language', language);
     }
   }
 
   getTranslations(): Translations {
-    return this.translations[this.currentLanguage.value];
+    return this.translations();
   }
 
   translate(key: string): string {
     const keys = key.split('.');
-    let value: any = this.translations[this.currentLanguage.value];
+    let value: any = this.translations();
     
     for (const k of keys) {
       value = value?.[k];

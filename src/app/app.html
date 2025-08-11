@@ -31,7 +31,7 @@
       <app-theme-toggle></app-theme-toggle>
       
       <app-mobile-menu
-        [isOpen]="isMobileMenuOpen"
+        [isOpen]="isMobileMenuOpen()"
         [currentLanguage]="currentLanguage"
         [translations]="translations"
         (menuToggle)="toggleMobileMenu()"
