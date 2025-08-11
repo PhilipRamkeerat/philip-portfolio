@@ -194,9 +194,9 @@ You can easily customize the color scheme and theme of the application by editin
 ```scss
 /* Example theme variables in src/app/app.scss */
 :root {
-  --primary-color: #6366f1;
-  --bg-primary: #0f172a;
-  --text-primary: #f8fafc;
+  --primary-color: #3b82f6;
+  --bg-primary: #0d1117;
+  --text-primary: #e6edf3;
   /* ... and more ... */
 }
 ```
