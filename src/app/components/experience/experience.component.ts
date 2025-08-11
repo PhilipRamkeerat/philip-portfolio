@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageService, Language } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-experience',
@@ -9,7 +9,7 @@ import { LanguageService, Language } from '../../services/language.service';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent {
   translations: any;
   experiences: any[] = [];
 
@@ -103,12 +103,11 @@ export class ExperienceComponent implements OnInit {
     }
   ];
 
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.languageService.currentLanguage$.subscribe((lang: Language) => {
-      this.translations = this.languageService.getTranslations();
+  constructor(private languageService: LanguageService) {
+    effect(() => {
+      const lang = this.languageService.language();
+      this.translations = this.languageService.translations();
       this.experiences = lang === 'pt' ? this.experiencesPt : this.experiencesEn;
     });
   }
-} 
+}

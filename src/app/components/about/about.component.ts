@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 
@@ -9,14 +9,12 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   translations: any;
 
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit() {
-    this.languageService.currentLanguage$.subscribe(() => {
-      this.translations = this.languageService.getTranslations();
+  constructor(private languageService: LanguageService) {
+    effect(() => {
+      this.translations = this.languageService.translations();
     });
   }
-} 
+}

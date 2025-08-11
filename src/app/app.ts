@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, signal, effect } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LanguageService, Language } from './services/language.service';
@@ -17,7 +17,7 @@ export class App implements OnInit {
   protected title = 'Philip Ramkeerat - Senior Angular Developer';
   protected currentLanguage: Language = 'en';
   protected translations: any;
-  protected isMobileMenuOpen = false;
+  protected isMobileMenuOpen = signal(false);
   protected currentYear: number = new Date().getFullYear();
 
   constructor(
@@ -25,9 +25,9 @@ export class App implements OnInit {
     private themeService: ThemeService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.languageService.currentLanguage$.subscribe(lang => {
-      this.currentLanguage = lang;
-      this.translations = this.languageService.getTranslations();
+    effect(() => {
+      this.currentLanguage = this.languageService.language();
+      this.translations = this.languageService.translations();
     });
   }
 
@@ -48,7 +48,7 @@ export class App implements OnInit {
   }
 
   toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.isMobileMenuOpen.update(open => !open);
   }
 
   onMobileLanguageChange(language: string): void {

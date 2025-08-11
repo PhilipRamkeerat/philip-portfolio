@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageService, Language } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,14 +9,12 @@ import { LanguageService, Language } from '../../services/language.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   translations: any;
 
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.languageService.currentLanguage$.subscribe((lang: Language) => {
-      this.translations = this.languageService.getTranslations();
+  constructor(private languageService: LanguageService) {
+    effect(() => {
+      this.translations = this.languageService.translations();
     });
   }
-} 
+}
