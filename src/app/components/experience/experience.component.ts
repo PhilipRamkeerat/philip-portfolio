@@ -1,8 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { LanguageService, Language, Translations } from '../../services/language.service';
+import { LanguageService, Translations } from '../../services/language.service';
 
 interface Experience {
   title: string;
@@ -20,11 +18,11 @@ interface Experience {
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit, OnDestroy {
+export class ExperienceComponent {
   translations: Translations | null = null;
   experiences: Experience[] = [];
 
-  private experiencesPt: Experience[] = [
+  private readonly experiencesPt: Experience[] = [
     {
       title: 'Senior Frontend Developer | Angular',
       company: 'GFT',
@@ -69,12 +67,12 @@ export class ExperienceComponent implements OnInit, OnDestroy {
     }
   ];
 
-  private experiencesEn: Experience[] = [
+  private readonly experiencesEn: Experience[] = [
     {
       title: 'Senior Frontend Developer | Angular',
       company: 'GFT',
       period: 'Aug 2021 – Present',
-      description: 'I work as a Senior Frontend Developer at GFT, providing services for one of the largest companies in Brazil — a national reference in the retail sector with millions of transactions annually. My role focuses on developing high-traffic web applications using Angular within a Micro Frontend architecture, leveraging Module Federation for scalable and modular delivery.',
+      description: "I work as a Senior Frontend Developer at GFT, providing services for one of the largest companies in Brazil — a national reference in the retail sector with millions of transactions annually. My role focuses on developing high-traffic web applications using Angular within a Micro Frontend architecture, leveraging Module Federation for scalable and modular delivery.",
       responsibilities: [
         'Develop and evolve high-traffic web applications using Angular within a Micro Frontend architecture',
         'Leverage Module Federation for scalable and modular delivery',
@@ -114,25 +112,11 @@ export class ExperienceComponent implements OnInit, OnDestroy {
     }
   ];
 
-  private destroy$ = new Subject<void>();
-
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit(): void {
-    const lang = this.languageService.getCurrentLanguage();
-    this.translations = this.languageService.getTranslations();
-    this.experiences = lang === 'pt' ? this.experiencesPt : this.experiencesEn;
-
-    this.languageService.currentLanguage$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((currentLang: Language) => {
-        this.translations = this.languageService.getTranslations();
-        this.experiences = currentLang === 'pt' ? this.experiencesPt : this.experiencesEn;
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+  constructor(private languageService: LanguageService) {
+    effect(() => {
+      const lang = this.languageService.language();
+      this.translations = this.languageService.translations();
+      this.experiences = lang === 'pt' ? this.experiencesPt : this.experiencesEn;
+    });
   }
 }

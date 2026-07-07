@@ -1,8 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { LanguageService, Language, Translations } from '../../services/language.service';
+import { LanguageService, Translations } from '../../services/language.service';
 
 @Component({
   selector: 'app-skills',
@@ -11,24 +9,12 @@ import { LanguageService, Language, Translations } from '../../services/language
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit, OnDestroy {
+export class SkillsComponent {
   translations: Translations | null = null;
 
-  private destroy$ = new Subject<void>();
-
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.translations = this.languageService.getTranslations();
-    this.languageService.currentLanguage$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((_lang: Language) => {
-        this.translations = this.languageService.getTranslations();
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+  constructor(private languageService: LanguageService) {
+    effect(() => {
+      this.translations = this.languageService.translations();
+    });
   }
 }
