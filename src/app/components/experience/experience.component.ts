@@ -1,6 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageService, Language } from '../../services/language.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { LanguageService, Language, Translations } from '../../services/language.service';
+
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  responsibilities: string[];
+  techStack: string[];
+}
 
 @Component({
   selector: 'app-experience',
@@ -9,11 +20,11 @@ import { LanguageService, Language } from '../../services/language.service';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit {
-  translations: any;
-  experiences: any[] = [];
+export class ExperienceComponent implements OnInit, OnDestroy {
+  translations: Translations | null = null;
+  experiences: Experience[] = [];
 
-  private experiencesPt = [
+  private experiencesPt: Experience[] = [
     {
       title: 'Senior Frontend Developer | Angular',
       company: 'GFT',
@@ -58,12 +69,12 @@ export class ExperienceComponent implements OnInit {
     }
   ];
 
-  private experiencesEn = [
+  private experiencesEn: Experience[] = [
     {
       title: 'Senior Frontend Developer | Angular',
       company: 'GFT',
-      period: 'Aug 2021 - Present',
-      description: 'I work as a Senior Frontend Developer at GFT, providing services for one of the largest companies in Brazil, a national reference in the retail sector, with millions of transactions conducted annually. My role focuses on the development and evolution of high-traffic web applications using the Angular framework within a Micro Frontend architecture, leveraging Module Federation for scalable and modular delivery.',
+      period: 'Aug 2021 – Present',
+      description: 'I work as a Senior Frontend Developer at GFT, providing services for one of the largest companies in Brazil — a national reference in the retail sector with millions of transactions annually. My role focuses on developing high-traffic web applications using Angular within a Micro Frontend architecture, leveraging Module Federation for scalable and modular delivery.',
       responsibilities: [
         'Develop and evolve high-traffic web applications using Angular within a Micro Frontend architecture',
         'Leverage Module Federation for scalable and modular delivery',
@@ -78,7 +89,7 @@ export class ExperienceComponent implements OnInit {
     {
       title: 'Software Developer II',
       company: 'INDT',
-      period: 'Nov 2019 - Aug 2021',
+      period: 'Nov 2019 – Aug 2021',
       description: 'Actively contributed to various projects with a focus on frontend development using Angular in agile environments with SCRUM.',
       responsibilities: [
         'Developed web applications with JavaScript and TypeScript applying Clean Code and SOLID principles',
@@ -92,7 +103,7 @@ export class ExperienceComponent implements OnInit {
     {
       title: 'Software Developer',
       company: 'INDT',
-      period: 'May 2017 - Nov 2019',
+      period: 'May 2017 – Nov 2019',
       description: 'Developed and maintained web applications using JavaScript, jQuery and Angular, focusing on delivering robust user interfaces and improving performance.',
       responsibilities: [
         'Developed new features and maintained existing Angular and jQuery codebases',
@@ -103,12 +114,25 @@ export class ExperienceComponent implements OnInit {
     }
   ];
 
+  private destroy$ = new Subject<void>();
+
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
-    this.languageService.currentLanguage$.subscribe((lang: Language) => {
-      this.translations = this.languageService.getTranslations();
-      this.experiences = lang === 'pt' ? this.experiencesPt : this.experiencesEn;
-    });
+    const lang = this.languageService.getCurrentLanguage();
+    this.translations = this.languageService.getTranslations();
+    this.experiences = lang === 'pt' ? this.experiencesPt : this.experiencesEn;
+
+    this.languageService.currentLanguage$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((currentLang: Language) => {
+        this.translations = this.languageService.getTranslations();
+        this.experiences = currentLang === 'pt' ? this.experiencesPt : this.experiencesEn;
+      });
   }
-} 
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+}

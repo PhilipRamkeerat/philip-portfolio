@@ -5,13 +5,13 @@ import { takeUntil } from 'rxjs/operators';
 import { LanguageService, Translations } from '../../services/language.service';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-projects',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss']
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ProjectsComponent implements OnInit, OnDestroy {
   translations: Translations | null = null;
 
   private destroy$ = new Subject<void>();

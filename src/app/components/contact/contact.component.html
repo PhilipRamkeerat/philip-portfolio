@@ -1,99 +1,101 @@
 <section id="contact" class="contact-section">
   <div class="container">
+
     <div class="section-header" data-aos="fade-up">
       <h2 class="section-title">
-        <span class="text-gradient">{{ translations?.contact?.title || 'Entre em Contato' }}</span>
+        <span class="text-gradient">{{ translations?.contact?.title || 'Get in Touch' }}</span>
       </h2>
       <p class="section-subtitle">
-        {{ translations?.contact?.subtitle || 'Vamos trabalhar juntos no seu próximo projeto' }}
+        {{ translations?.contact?.subtitle || "Let's work together on your next project" }}
       </p>
+      <div class="section-divider"></div>
     </div>
-    
-    <div class="contact-content">
-      <div class="contact-info" data-aos="fade-up">
+
+    <div class="contact-layout">
+      <div class="contact-info" data-aos="fade-right">
         <div class="info-card">
-          <h3>{{ translations?.contact?.heading || 'Vamos Conversar!' }}</h3>
-          <p>
-            {{ translations?.contact?.description || 'Estou sempre interessado em novos desafios e oportunidades de colaboração. Se você tem um projeto em mente ou gostaria de discutir possibilidades, não hesite em entrar em contato.' }}
-          </p>
-          
+          <h3>{{ translations?.contact?.heading || "Let's Talk!" }}</h3>
+          <p>{{ translations?.contact?.description }}</p>
+
           <div class="contact-methods">
-            <div class="contact-method">
+            <a href="mailto:philip_ramkeerat@hotmail.com" class="contact-method" aria-label="Send email to philip_ramkeerat@hotmail.com">
               <div class="method-icon">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
               </div>
               <div class="method-content">
                 <h4>{{ translations?.contact?.methods?.email || 'Email' }}</h4>
                 <p>philip_ramkeerat&#64;hotmail.com</p>
-                <span class="method-note">{{ translations?.contact?.notes?.emailResponse || 'Resposta em até 24h' }}</span>
+                <span class="method-note">{{ translations?.contact?.notes?.emailResponse }}</span>
               </div>
-            </div>
-            
-            <div class="contact-method">
+              <i class="fas fa-arrow-right method-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" rel="noopener noreferrer" class="contact-method" aria-label="LinkedIn profile">
               <div class="method-icon">
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
               </div>
               <div class="method-content">
                 <h4>{{ translations?.contact?.methods?.linkedin || 'LinkedIn' }}</h4>
                 <p>linkedin.com/in/philip-ramkeerat</p>
-                <span class="method-note">{{ translations?.contact?.notes?.linkedinConnect || 'Conecte-se profissionalmente' }}</span>
+                <span class="method-note">{{ translations?.contact?.notes?.linkedinConnect }}</span>
               </div>
-            </div>
-            
-            <div class="contact-method">
+              <i class="fas fa-arrow-right method-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://github.com/PhilipRamkeerat" target="_blank" rel="noopener noreferrer" class="contact-method" aria-label="GitHub profile">
               <div class="method-icon">
-                <i class="fab fa-github"></i>
+                <i class="fab fa-github" aria-hidden="true"></i>
               </div>
               <div class="method-content">
                 <h4>{{ translations?.contact?.methods?.github || 'GitHub' }}</h4>
-                <p>github.com/philip-ramkeerat</p>
-                <span class="method-note">{{ translations?.contact?.notes?.githubProjects || 'Veja meus projetos' }}</span>
+                <p>github.com/PhilipRamkeerat</p>
+                <span class="method-note">{{ translations?.contact?.notes?.githubProjects }}</span>
               </div>
-            </div>
-            
-            <div class="contact-method">
+              <i class="fas fa-arrow-right method-arrow" aria-hidden="true"></i>
+            </a>
+
+            <div class="contact-method non-link" aria-label="Location">
               <div class="method-icon">
-                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
               </div>
               <div class="method-content">
-                <h4>{{ translations?.contact?.methods?.location || 'Localização' }}</h4>
-                <p>Brasil</p>
-                <span class="method-note">{{ translations?.contact?.notes?.remoteAvailable || 'Disponível para projetos remotos' }}</span>
+                <h4>{{ translations?.contact?.methods?.location || 'Location' }}</h4>
+                <p>Brazil</p>
+                <span class="method-note">{{ translations?.contact?.notes?.remoteAvailable }}</span>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="availability-card">
-          <h4>{{ translations?.contact?.availability?.title || 'Disponibilidade' }}</h4>
           <div class="availability-status">
-            <div class="status-indicator available"></div>
-            <span>{{ translations?.contact?.availability?.status || 'Disponível para novos projetos' }}</span>
+            <div class="status-indicator available" aria-label="Available"></div>
+            <span>{{ translations?.contact?.availability?.status }}</span>
           </div>
-          <p>
-            {{ translations?.contact?.availability?.description || 'Atualmente trabalhando em projetos freelance e aberto a novas oportunidades interessantes.' }}
-          </p>
+          <p>{{ translations?.contact?.availability?.description }}</p>
+        </div>
+      </div>
+
+      <div class="cta-col" data-aos="fade-left">
+        <div class="cta-card">
+          <div class="cta-icon" aria-hidden="true">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <h3>{{ translations?.contact?.cta?.title || 'Ready to get started?' }}</h3>
+          <p>{{ translations?.contact?.cta?.description }}</p>
+          <div class="cta-actions">
+            <a href="mailto:philip_ramkeerat@hotmail.com" class="btn btn-primary">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              {{ translations?.contact?.cta?.sendEmail || 'Send Email' }}
+            </a>
+            <a href="https://linkedin.com/in/philip-ramkeerat" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              {{ translations?.contact?.cta?.connectLinkedin || 'Connect on LinkedIn' }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="cta-section" data-aos="fade-up">
-      <div class="cta-card">
-        <h3>{{ translations?.contact?.cta?.title || 'Pronto para começar?' }}</h3>
-        <p>
-          {{ translations?.contact?.cta?.description || 'Vamos transformar suas ideias em realidade. Entre em contato e vamos discutir como posso ajudar no seu próximo projeto.' }}
-        </p>
-        <div class="cta-actions">
-          <a href="mailto:philip_ramkeerat@hotmail.com" class="btn btn-primary">
-            <i class="fas fa-envelope"></i>
-            {{ translations?.contact?.cta?.sendEmail || 'Enviar Email' }}
-          </a>
-          <a href="https://linkedin.com/in/philip-ramkeerat" target="_blank" class="btn btn-outline">
-            <i class="fab fa-linkedin"></i>
-            {{ translations?.contact?.cta?.connectLinkedin || 'Conectar no LinkedIn' }}
-          </a>
-        </div>
-      </div>
-    </div>
+
   </div>
-</section> 
+</section>

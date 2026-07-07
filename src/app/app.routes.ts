@@ -1,16 +1,30 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ExperienceComponent } from './components/experience/experience.component';
-import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'experience', component: ExperienceComponent },
-  { path: 'contact', component: ContactComponent },
+  {
+    path: 'home',
+    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent)
+  },
+  {
+    path: 'about',
+    loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent)
+  },
+  {
+    path: 'skills',
+    loadComponent: () => import('./components/skills/skills.component').then(m => m.SkillsComponent)
+  },
+  {
+    path: 'experience',
+    loadComponent: () => import('./components/experience/experience.component').then(m => m.ExperienceComponent)
+  },
+  {
+    path: 'projects',
+    loadComponent: () => import('./components/projects/projects.component').then(m => m.ProjectsComponent)
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent)
+  },
   { path: '**', redirectTo: '' }
 ];

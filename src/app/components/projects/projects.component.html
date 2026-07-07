@@ -1,0 +1,58 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">
+        <span class="text-gradient">{{ translations?.projects?.title || 'Projects' }}</span>
+      </h2>
+      <p class="section-subtitle">
+        {{ translations?.projects?.subtitle || 'A selection of work I\'ve built or contributed to' }}
+      </p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="projects-grid">
+      <article
+        class="project-card"
+        *ngFor="let project of translations?.projects?.items; let i = index"
+        [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="i * 100">
+
+        <div class="card-glow" aria-hidden="true"></div>
+
+        <div class="card-number" aria-hidden="true">
+          <span>{{ (i + 1).toString().padStart(2, '0') }}</span>
+        </div>
+
+        <div class="card-body">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-tags">
+            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <a
+            href="#"
+            class="btn btn-ghost btn-sm"
+            [attr.aria-label]="'View source code for ' + project.title"
+            (click)="$event.preventDefault()">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            {{ translations?.projects?.viewCode || 'View Code' }}
+          </a>
+          <a
+            href="#"
+            class="btn btn-outline btn-sm"
+            [attr.aria-label]="'View live demo for ' + project.title"
+            (click)="$event.preventDefault()">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            {{ translations?.projects?.viewLive || 'Live Demo' }}
+          </a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>

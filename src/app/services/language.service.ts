@@ -10,7 +10,19 @@ export interface Translations {
     about: string;
     skills: string;
     experience: string;
+    projects: string;
     contact: string;
+  };
+  projects: {
+    title: string;
+    subtitle: string;
+    viewCode: string;
+    viewLive: string;
+    items: Array<{
+      title: string;
+      description: string;
+      tags: string[];
+    }>;
   };
   home: {
     greeting: string;
@@ -273,7 +285,36 @@ export class LanguageService {
         about: 'About',
         skills: 'Skills',
         experience: 'Experience',
+        projects: 'Projects',
         contact: 'Contact'
+      },
+      projects: {
+        title: 'Projects',
+        subtitle: 'A selection of work I\'ve built or contributed to',
+        viewCode: 'View Code',
+        viewLive: 'Live Demo',
+        items: [
+          {
+            title: 'Retail Micro Frontend Platform',
+            description: 'High-traffic Angular application built with Module Federation for one of Brazil\'s largest retail chains. Served millions of users with sub-second load times.',
+            tags: ['Angular 17+', 'Module Federation', 'RxJS', 'SCSS', 'Jest']
+          },
+          {
+            title: 'Enterprise Angular Monorepo',
+            description: 'Full-stack Nx monorepo for a fintech company, featuring reusable component libraries, shared services, and automated CI/CD pipelines on Azure DevOps.',
+            tags: ['Nx', 'Angular', 'NgRx', 'TypeScript', 'Azure DevOps']
+          },
+          {
+            title: 'IoT Dashboard & Analytics',
+            description: 'Real-time monitoring dashboard for industrial IoT devices at INDT, integrating REST and WebSocket APIs with Angular Material UI components.',
+            tags: ['Angular', 'WebSockets', 'Node.js', 'Angular Material', 'Docker']
+          },
+          {
+            title: 'SSR Portfolio (This Site)',
+            description: 'Performance-focused personal portfolio built with Angular 20 and SSR. Achieves 100% Lighthouse scores with full EN/PT i18n and dark/light theming.',
+            tags: ['Angular 20', 'SSR', 'SCSS', 'i18n', 'TypeScript']
+          }
+        ]
       },
       home: {
         greeting: '👋 Hello, I am',
@@ -518,7 +559,7 @@ export class LanguageService {
         }
       },
       footer: {
-        copyright: '© 2024 Philip Ramkeerat. All rights reserved.'
+        copyright: `© ${new Date().getFullYear()} Philip Ramkeerat. All rights reserved.`
       }
     },
     pt: {
@@ -527,7 +568,36 @@ export class LanguageService {
         about: 'Sobre',
         skills: 'Habilidades',
         experience: 'Experiência',
+        projects: 'Projetos',
         contact: 'Contato'
+      },
+      projects: {
+        title: 'Projetos',
+        subtitle: 'Uma seleção de trabalhos que desenvolvi ou contribuí',
+        viewCode: 'Ver Código',
+        viewLive: 'Demo ao Vivo',
+        items: [
+          {
+            title: 'Plataforma Micro Frontend Varejista',
+            description: 'Aplicação Angular de alto tráfego construída com Module Federation para uma das maiores redes varejistas do Brasil. Atendendo milhões de usuários com carregamento sub-segundo.',
+            tags: ['Angular 17+', 'Module Federation', 'RxJS', 'SCSS', 'Jest']
+          },
+          {
+            title: 'Monorepo Angular Empresarial',
+            description: 'Monorepo Nx full-stack para uma fintech, com bibliotecas de componentes reutilizáveis, serviços compartilhados e pipelines CI/CD automatizados no Azure DevOps.',
+            tags: ['Nx', 'Angular', 'NgRx', 'TypeScript', 'Azure DevOps']
+          },
+          {
+            title: 'Dashboard IoT & Analytics',
+            description: 'Dashboard de monitoramento em tempo real para dispositivos IoT industriais no INDT, integrando APIs REST e WebSocket com componentes Angular Material.',
+            tags: ['Angular', 'WebSockets', 'Node.js', 'Angular Material', 'Docker']
+          },
+          {
+            title: 'Portfólio SSR (Este Site)',
+            description: 'Portfólio pessoal focado em performance com Angular 20 e SSR. Atinge 100% no Lighthouse com i18n EN/PT completo e temas claro/escuro.',
+            tags: ['Angular 20', 'SSR', 'SCSS', 'i18n', 'TypeScript']
+          }
+        ]
       },
       home: {
         greeting: '👋 Olá, eu sou',
@@ -772,7 +842,7 @@ export class LanguageService {
         }
       },
       footer: {
-        copyright: '© 2024 Philip Ramkeerat. Todos os direitos reservados.'
+        copyright: `© ${new Date().getFullYear()} Philip Ramkeerat. Todos os direitos reservados.`
       }
     }
   };

@@ -1,43 +1,64 @@
-<div class="mobile-menu-toggle" (click)="toggleMenu()">
-  <div class="hamburger" [class.active]="isOpen">
+<button
+  class="mobile-menu-toggle"
+  (click)="toggleMenu()"
+  [attr.aria-expanded]="isOpen"
+  [attr.aria-label]="isOpen ? 'Close navigation menu' : 'Open navigation menu'"
+  aria-controls="mobile-nav-panel">
+  <div class="hamburger" [class.active]="isOpen" aria-hidden="true">
     <span></span>
     <span></span>
     <span></span>
   </div>
-</div>
+</button>
 
-<div class="mobile-menu-overlay" [class.active]="isOpen" (click)="closeMenu()"></div>
+<div
+  class="mobile-menu-overlay"
+  [class.active]="isOpen"
+  (click)="closeMenu()"
+  aria-hidden="true"></div>
 
-<div class="mobile-menu" [class.active]="isOpen">
+<div
+  id="mobile-nav-panel"
+  class="mobile-menu"
+  [class.active]="isOpen"
+  role="dialog"
+  [attr.aria-hidden]="!isOpen"
+  aria-label="Mobile navigation">
+
   <div class="mobile-menu-header">
     <span class="brand-text">&lt;Philip/&gt;</span>
-    <button class="close-btn" (click)="closeMenu()">
-      <i class="fas fa-times"></i>
+    <button class="close-btn" (click)="closeMenu()" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
     </button>
   </div>
-  
-  <nav class="mobile-nav">
-    <ul class="mobile-nav-list">
+
+  <nav class="mobile-nav" aria-label="Mobile main navigation">
+    <ul class="mobile-nav-list" role="list">
       <li><a routerLink="/home" routerLinkActive="active" class="mobile-nav-link" (click)="closeMenu()">{{ translations?.nav?.home || 'Home' }}</a></li>
       <li><a routerLink="/about" routerLinkActive="active" class="mobile-nav-link" (click)="closeMenu()">{{ translations?.nav?.about || 'About' }}</a></li>
       <li><a routerLink="/skills" routerLinkActive="active" class="mobile-nav-link" (click)="closeMenu()">{{ translations?.nav?.skills || 'Skills' }}</a></li>
       <li><a routerLink="/experience" routerLinkActive="active" class="mobile-nav-link" (click)="closeMenu()">{{ translations?.nav?.experience || 'Experience' }}</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" class="mobile-nav-link" (click)="closeMenu()">{{ translations?.nav?.projects || 'Projects' }}</a></li>
       <li><a routerLink="/contact" routerLinkActive="active" class="mobile-nav-link" (click)="closeMenu()">{{ translations?.nav?.contact || 'Contact' }}</a></li>
     </ul>
   </nav>
-  
-  <div class="mobile-language-switcher">
-    <button 
-      class="mobile-language-btn" 
+
+  <div class="mobile-language-switcher" role="group" aria-label="Language selector">
+    <button
+      class="mobile-language-btn"
       [class.active]="currentLanguage === 'en'"
-      (click)="switchLanguage('en')">
+      (click)="switchLanguage('en')"
+      [attr.aria-pressed]="currentLanguage === 'en'"
+      aria-label="Switch to English">
       EN
     </button>
-    <button 
-      class="mobile-language-btn" 
+    <button
+      class="mobile-language-btn"
       [class.active]="currentLanguage === 'pt'"
-      (click)="switchLanguage('pt')">
+      (click)="switchLanguage('pt')"
+      [attr.aria-pressed]="currentLanguage === 'pt'"
+      aria-label="Mudar para Português">
       PT
     </button>
   </div>
-</div> 
+</div>
