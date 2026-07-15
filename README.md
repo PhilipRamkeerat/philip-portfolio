@@ -1,7 +1,7 @@
 <div align="center">
   <h1 align="center">Philip Ramkeerat - Senior Angular Developer Portfolio</h1>
   <p align="center">
-    A modern, responsive, and feature-rich portfolio website built with Angular, showcasing projects, skills, and professional experience.
+    A modern, responsive, and feature-rich portfolio website built with Angular 20, showcasing projects, skills, and professional experience.
   </p>
 </div>
 
@@ -10,36 +10,27 @@
   <img src="https://img.shields.io/badge/Angular-v20-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular v20" />
   <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="SCSS" />
-  <img src="https://img.shields.io/github/license/philip-ramkeerat/philip-portfolio?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/github/license/PhilipRamkeerat/philip-portfolio?style=for-the-badge" alt="License" />
 </p>
 
 <div align="center">
-  <a href="https://philipramkeerat.com.br/home" target="_blank"><strong>➥ Visit the Live Demo »</strong></a>
+  <a href="https://philipramkeerat.github.io/philip-portfolio/home" target="_blank"><strong>➥ Visit the Live Demo »</strong></a>
 </div>
 
 <br>
 
 ---
 
-## 📸 Screenshots
-
-### Dark Theme
-![Portfolio Dark Theme](public/1.png)
-
-### Light Theme
-![Portfolio Light Theme](public/1-light-mode.png)
-
----
-
 ## 📚 Table of Contents
-- [About The Project](#about-the-project)
-- [Tech Stack](#-tech-stack)
+
+- [About The Project](#-about-the-project)
+- [Tech Stack](#️-tech-stack)
 - [Features](#-features)
 - [Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#-usage)
-- [Building the Project](#-building-the-project)
+- [Building the Project](#️-building-the-project)
 - [Deployment](#-deployment)
 - [Project Structure](#-project-structure)
 - [Customization](#-customization)
@@ -49,14 +40,15 @@
 - [License](#-license)
 - [Contact](#-contact)
 
-
 ---
 
 ## 🎯 About The Project
 
-This project is a personal portfolio website designed to showcase my skills and experience as a Senior Angular Developer. It's built with modern web technologies and best practices, focusing on performance, SEO, and user experience.
+This project is a personal portfolio website designed to showcase my skills and experience as a Senior Angular Developer. It's built with modern web technologies and best practices, focusing on performance, accessibility, and a great user experience.
 
 The portfolio features sections for my professional experience, technical skills, a contact form, and a theme switcher for light and dark modes.
+
+🔗 **Live Demo:** [philipramkeerat.github.io/philip-portfolio/home](https://philipramkeerat.github.io/philip-portfolio/home)
 
 ---
 
@@ -64,24 +56,24 @@ The portfolio features sections for my professional experience, technical skills
 
 This project is built with a modern frontend stack:
 
-*   **[Angular](https://angular.io/):** A powerful framework for building dynamic web apps.
-*   **[TypeScript](https://www.typescriptlang.org/):** A typed superset of JavaScript that compiles to plain JavaScript.
-*   **[SCSS](https://sass-lang.com/):** A CSS preprocessor with more features than plain CSS.
-*   **[RxJS](https://rxjs.dev/):** A library for reactive programming using Observables.
-*   **[Express.js](https://expressjs.com/):** Used for server-side rendering (SSR) with Angular Universal.
-*   **[AOS](https://michalsnik.github.io/aos/):** Animate On Scroll library for animations.
+- **[Angular 20](https://angular.io/):** A powerful framework for building dynamic web apps.
+- **[TypeScript](https://www.typescriptlang.org/):** A typed superset of JavaScript that compiles to plain JavaScript.
+- **[SCSS](https://sass-lang.com/):** A CSS preprocessor with more features than plain CSS.
+- **[RxJS](https://rxjs.dev/):** A library for reactive programming using Observables.
+- **[Express.js](https://expressjs.com/):** Used for server-side rendering (SSR) with Angular SSR.
+- **[AOS](https://michalsnik.github.io/aos/):** Animate On Scroll library for animations.
 
 ---
 
 ## ✨ Features
 
--   **Modern UI/UX:** Clean, modern design with a great user experience.
--   **Responsive Design:** Fully responsive and works on all devices, from mobile to desktop.
--   **Server-Side Rendering (SSR):** With Angular Universal for better performance and SEO.
--   **Dark/Light Theme:** A theme switcher to toggle between dark and light modes.
--   **SEO Optimized:** Meta tags and structured data for better search engine visibility.
--   **Performance Optimized:** Optimized for fast loading times.
--   **Multi-language Support (i18n):** Ready for internationalization.
+- **Modern UI/UX:** Clean, modern design with a great user experience.
+- **Responsive Design:** Fully responsive and works on all devices, from mobile to desktop.
+- **Server-Side Rendering (SSR):** With Angular SSR for better performance and SEO.
+- **Dark/Light Theme:** A theme switcher to toggle between dark and light modes.
+- **SEO Optimized:** Meta tags and structured data for better search engine visibility.
+- **Performance Optimized:** Optimized for fast loading times.
+- **Multi-language Support (i18n):** Ready for internationalization.
 
 ---
 
@@ -93,26 +85,26 @@ To get a local copy up and running, follow these simple steps.
 
 Make sure you have the following installed on your machine:
 
-*   **Node.js:** [Download and install Node.js](https://nodejs.org/) (which includes npm).
-*   **Angular CLI:** Install the Angular CLI globally by running:
-    ```sh
-    npm install -g @angular/cli
-    ```
+- **Node.js:** [Download and install Node.js](https://nodejs.org/) (which includes npm).
+- **Angular CLI:** Install the Angular CLI globally by running:
+  ```sh
+  npm install -g @angular/cli
+  ```
 
 ### Installation
 
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/your-username/philip-portfolio.git
-    ```
-2.  **Navigate to the project directory:**
-    ```sh
-    cd philip-portfolio
-    ```
-3.  **Install NPM packages:**
-    ```sh
-    npm install
-    ```
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/PhilipRamkeerat/philip-portfolio.git
+   ```
+2. **Navigate to the project directory:**
+   ```sh
+   cd philip-portfolio
+   ```
+3. **Install NPM packages:**
+   ```sh
+   npm install
+   ```
 
 ---
 
@@ -142,23 +134,27 @@ This command will compile the application and output the production-ready files 
 
 ## 🚢 Deployment
 
-This project includes a custom script to prepare the application for deployment on an Apache server like Hostinger.
+The live demo is hosted on **GitHub Pages** at [philipramkeerat.github.io/philip-portfolio/home](https://philipramkeerat.github.io/philip-portfolio/home).
+
+This project also includes a custom script to prepare the application for deployment on an Apache server such as Hostinger.
 
 To create a deployment-ready package, run:
+
 ```bash
 npm run build:hostinger
 ```
 
 This command does the following:
-1.  Runs the standard `npm run build` command.
-2.  Executes the `scripts/prepare-hostinger.js` script which:
-    *   Copies the necessary build artifacts to the `hostinger-upload` directory.
-    *   Creates a custom `.htaccess` file with rules for routing, caching, and security.
-    *   Generates a `HOSTINGER-INSTRUCTIONS.md` with deployment steps.
+
+1. Runs the standard `npm run build` command.
+2. Executes the `scripts/prepare-hostinger.js` script which:
+   - Copies the necessary build artifacts to the `hostinger-upload` directory.
+   - Creates a custom `.htaccess` file with rules for routing, caching, and security.
+   - Generates a `HOSTINGER-INSTRUCTIONS.md` with deployment steps.
 
 To deploy the application, upload the contents of the `hostinger-upload` directory to the `public_html` folder of your web server.
 
-**Note:** The `prepare-hostinger.js` script currently relies on hardcoded file names for JS/CSS assets. For more robust deployments, consider modifying this script to dynamically read the filenames from the build output.
+> **Note:** The `prepare-hostinger.js` script currently relies on hardcoded file names for JS/CSS assets. For more robust deployments, consider modifying this script to dynamically read the filenames from the build output.
 
 ---
 
@@ -189,6 +185,7 @@ philip-portfolio/
 ## 🔧 Customization
 
 ### Colors and Themes
+
 You can easily customize the color scheme and theme of the application by editing the CSS variables in `src/app/app.scss`:
 
 ```scss
@@ -202,7 +199,8 @@ You can easily customize the color scheme and theme of the application by editin
 ```
 
 ### Content
-All content is managed within the Angular components located in `src/app/components/`. You can update the text, images, and other content by editing the HTML templates and TypeScript files in each component's directory.
+
+All content is managed within the Angular components located in `src/app/components/`. You can update the text, images, and other content by editing the HTML templates and TypeScript files in each component.
 
 ---
 
@@ -210,10 +208,10 @@ All content is managed within the Angular components located in `src/app/compone
 
 This project is highly optimized for performance, achieving excellent Lighthouse scores. Key performance features include:
 
--   **Gzip Compression:** Enabled for all text-based files via the `.htaccess` configuration.
--   **Cache Headers:** Optimized cache control for static assets to reduce load times for returning visitors.
--   **Pre-rendered Pages:** SSR ensures fast initial page loads and improved SEO.
--   **Lazy Loading:** Feature modules can be configured to load on demand.
+- **Gzip Compression:** Enabled for all text-based files via the `.htaccess` configuration.
+- **Cache Headers:** Optimized cache control for static assets to reduce load times for returning visitors.
+- **Pre-rendered Pages:** SSR ensures fast initial page loads and improved SEO.
+- **Lazy Loading:** Feature modules can be configured to load on demand.
 
 ---
 
@@ -221,10 +219,10 @@ This project is highly optimized for performance, achieving excellent Lighthouse
 
 The application includes several security measures to protect against common web vulnerabilities:
 
--   **Content Security Policy (CSP):** Helps prevent XSS attacks.
--   **X-Content-Type-Options:** Prevents MIME-sniffing.
--   **X-Frame-Options:** Protects against clickjacking.
--   **X-XSS-Protection:** Enables the cross-site scripting (XSS) filter in browsers.
+- **Content Security Policy (CSP):** Helps prevent XSS attacks.
+- **X-Content-Type-Options:** Prevents MIME-sniffing.
+- **X-Frame-Options:** Protects against clickjacking.
+- **X-XSS-Protection:** Enables the cross-site scripting (XSS) filter in browsers.
 
 These headers are configured in the `.htaccess` file generated by the deployment script.
 
@@ -236,11 +234,11 @@ Contributions are what make the open-source community such an amazing place to l
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
@@ -254,7 +252,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Philip Ramkeerat - [philip_ramkeerat@hotmail.com](mailto:philip_ramkeerat@hotmail.com)
 
-Project Link: [https://github.com/philip-ramkeerat/philip-portfolio](https://github.com/philip-ramkeerat/philip-portfolio)
+Project Link: [https://github.com/PhilipRamkeerat/philip-portfolio](https://github.com/PhilipRamkeerat/philip-portfolio)
 
 <p align="center">
   <a href="https://www.linkedin.com/in/philip-ramkeerat/">
