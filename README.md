@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/Zoneless-Signals-EC4899?style=flat-square" alt="Zoneless + Signals" />
   </p>
 
-  <p><a href="https://philipramkeerat.com.br"><strong>philipramkeerat.com.br »</strong></a></p>
+  <p><a href="https://philipramkeerat.github.io/philip-portfolio/"><strong>View it live »</strong></a></p>
 </div>
 
 ---
@@ -66,15 +66,17 @@ npm run serve:ssr:philip-portfolio   # serve the SSR build with Express
 
 ## Deployment
 
-For static Apache hosting (Hostinger):
+Deployed automatically to **GitHub Pages** on every push to `main` via
+[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml):
+the workflow prerenders a static build (`ng build --output-mode static`) with the
+`/philip-portfolio/` base href and publishes it with `actions/deploy-pages`.
+A `404.html` fallback redirects legacy multi-page URLs (`/home`, `/about`, …) to the root.
+
+To reproduce the deployed build locally:
 
 ```sh
-npm run build:hostinger
+npm run build:pages
 ```
-
-This builds the app and assembles `hostinger-upload/` with the prerendered output plus an
-`.htaccess` configured for SPA fallback, compression, caching and security headers.
-Upload its contents to `public_html/`.
 
 ## License
 
