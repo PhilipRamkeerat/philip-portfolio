@@ -1,0 +1,107 @@
+<div class="progress" aria-hidden="true">
+  <div class="progress__bar" [style.transform]="'scaleX(' + progress() + ')'"></div>
+</div>
+
+<header class="header" [class.header--scrolled]="scrolled() || menuOpen()">
+  <div class="container header__inner">
+    <a href="#hero" class="brand" (click)="closeMenu()" aria-label="Philip Ramkeerat — back to top">
+      <span class="brand__bracket">&lt;</span>Philip<span class="brand__bracket">&nbsp;/&gt;</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        @for (item of t().nav; track item.id) {
+          <li>
+            <a
+              class="nav__link"
+              [class.nav__link--active]="activeSection() === item.id"
+              [attr.aria-current]="activeSection() === item.id ? 'true' : null"
+              [href]="'#' + item.id">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang" role="group" [attr.aria-label]="t().ui.languageLabel">
+        <button
+          type="button"
+          class="lang__btn"
+          [class.lang__btn--active]="language() === 'en'"
+          [attr.aria-pressed]="language() === 'en'"
+          (click)="setLanguage('en')">
+          EN
+        </button>
+        <button
+          type="button"
+          class="lang__btn"
+          [class.lang__btn--active]="language() === 'pt'"
+          [attr.aria-pressed]="language() === 'pt'"
+          (click)="setLanguage('pt')">
+          PT
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="icon-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDark() ? t().ui.switchToLight : t().ui.switchToDark">
+        @if (isDark()) {
+          <app-icon name="sun" size="18" />
+        } @else {
+          <app-icon name="moon" size="18" />
+        }
+      </button>
+
+      <button
+        type="button"
+        class="icon-btn icon-btn--menu"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-nav"
+        [attr.aria-label]="menuOpen() ? t().ui.closeMenu : t().ui.openMenu">
+        @if (menuOpen()) {
+          <app-icon name="x" size="20" />
+        } @else {
+          <app-icon name="menu" size="20" />
+        }
+      </button>
+    </div>
+  </div>
+</header>
+
+@if (menuOpen()) {
+  <div id="mobile-nav" class="mobile-nav">
+    <nav [attr.aria-label]="'Mobile'" class="mobile-nav__inner container">
+      <ul class="mobile-nav__list">
+        @for (item of t().nav; track item.id; let i = $index) {
+          <li [style.--stagger]="i">
+            <a
+              class="mobile-nav__link"
+              [class.mobile-nav__link--active]="activeSection() === item.id"
+              [href]="'#' + item.id"
+              (click)="closeMenu()">
+              <span class="mobile-nav__index">0{{ i + 1 }}</span>
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <div class="mobile-nav__footer">
+        <a href="https://github.com/PhilipRamkeerat" target="_blank" rel="noopener noreferrer" class="mobile-nav__social" aria-label="GitHub">
+          <app-icon name="github" size="22" />
+        </a>
+        <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" rel="noopener noreferrer" class="mobile-nav__social" aria-label="LinkedIn">
+          <app-icon name="linkedin" size="22" />
+        </a>
+        <a href="mailto:philip_ramkeerat@hotmail.com" class="mobile-nav__social" aria-label="Email">
+          <app-icon name="mail" size="22" />
+        </a>
+      </div>
+    </nav>
+  </div>
+}

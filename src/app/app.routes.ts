@@ -1,30 +1,12 @@
 import { Routes } from '@angular/router';
 
+/**
+ * The portfolio is a single-page experience: every section lives on '/'
+ * and navigation happens via anchor scrolling. Legacy multi-page URLs
+ * (/about, /skills, …) are redirected to the root for backwards
+ * compatibility with old links and search-engine entries.
+ */
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  {
-    path: 'home',
-    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent)
-  },
-  {
-    path: 'about',
-    loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent)
-  },
-  {
-    path: 'skills',
-    loadComponent: () => import('./components/skills/skills.component').then(m => m.SkillsComponent)
-  },
-  {
-    path: 'experience',
-    loadComponent: () => import('./components/experience/experience.component').then(m => m.ExperienceComponent)
-  },
-  {
-    path: 'projects',
-    loadComponent: () => import('./components/projects/projects.component').then(m => m.ProjectsComponent)
-  },
-  {
-    path: 'contact',
-    loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent)
-  },
-  { path: '**', redirectTo: '' }
+  { path: '', children: [] },
+  { path: '**', redirectTo: '' },
 ];

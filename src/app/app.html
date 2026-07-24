@@ -1,70 +1,14 @@
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content">{{ t().ui.skipToContent }}</a>
 
-<div class="app-container">
-  <header class="header" role="banner">
-    <nav class="nav-container" aria-label="Main navigation">
-      <div class="nav-brand">
-        <a routerLink="/home" class="brand-text" aria-label="Philip Ramkeerat – home" style="text-decoration:none">&lt;Philip/&gt;</a>
-      </div>
+<app-header />
 
-      <ul class="nav-menu desktop-nav" role="list">
-        <li><a routerLink="/home" routerLinkActive="active" class="nav-link">{{ translations?.nav?.home || 'Home' }}</a></li>
-        <li><a routerLink="/about" routerLinkActive="active" class="nav-link">{{ translations?.nav?.about || 'About' }}</a></li>
-        <li><a routerLink="/skills" routerLinkActive="active" class="nav-link">{{ translations?.nav?.skills || 'Skills' }}</a></li>
-        <li><a routerLink="/experience" routerLinkActive="active" class="nav-link">{{ translations?.nav?.experience || 'Experience' }}</a></li>
-        <li><a routerLink="/projects" routerLinkActive="active" class="nav-link">{{ translations?.nav?.projects || 'Projects' }}</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active" class="nav-link">{{ translations?.nav?.contact || 'Contact' }}</a></li>
-      </ul>
+<main id="main-content">
+  <app-hero />
+  <app-about />
+  <app-skills />
+  <app-experience />
+  <app-projects />
+  <app-contact />
+</main>
 
-      <div class="language-switcher desktop-language-switcher" role="group" aria-label="Language selector">
-        <button
-          class="language-btn"
-          [class.active]="currentLanguage === 'en'"
-          (click)="switchLanguage('en')"
-          [attr.aria-pressed]="currentLanguage === 'en'"
-          aria-label="Switch to English">
-          EN
-        </button>
-        <button
-          class="language-btn"
-          [class.active]="currentLanguage === 'pt'"
-          (click)="switchLanguage('pt')"
-          [attr.aria-pressed]="currentLanguage === 'pt'"
-          aria-label="Mudar para Português">
-          PT
-        </button>
-      </div>
-
-      <app-theme-toggle></app-theme-toggle>
-
-      <app-mobile-menu
-        [isOpen]="isMobileMenuOpen"
-        [currentLanguage]="currentLanguage"
-        [translations]="translations"
-        (menuToggle)="toggleMobileMenu()"
-        (languageChange)="onMobileLanguageChange($event)">
-      </app-mobile-menu>
-    </nav>
-  </header>
-
-  <main id="main-content" class="main-content">
-    <router-outlet></router-outlet>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="footer-content">
-      <p>{{ translations?.footer?.copyright || ('© ' + currentYear + ' Philip Ramkeerat. All rights reserved.') }}</p>
-      <div class="footer-links">
-        <a href="https://github.com/PhilipRamkeerat" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:philip_ramkeerat@hotmail.com" class="social-link" aria-label="Send email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
-</div>
+<app-footer />

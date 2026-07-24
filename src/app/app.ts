@@ -1,58 +1,29 @@
-import { Component, OnInit, Inject, PLATFORM_ID, effect } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { LanguageService, Language, Translations } from './services/language.service';
-import { ThemeService } from './services/theme.service';
-import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
-import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LanguageService } from './core/language.service';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { AboutComponent } from './sections/about/about.component';
+import { ContactComponent } from './sections/contact/contact.component';
+import { ExperienceComponent } from './sections/experience/experience.component';
+import { HeroComponent } from './sections/hero/hero.component';
+import { ProjectsComponent } from './sections/projects/projects.component';
+import { SkillsComponent } from './sections/skills/skills.component';
 
 @Component({
   selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+    ContactComponent,
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, MobileMenuComponent, ThemeToggleComponent]
 })
-export class App implements OnInit {
-  protected title = 'Philip Ramkeerat - Senior Angular Developer';
-  protected currentLanguage: Language = 'en';
-  protected translations: Translations | null = null;
-  protected isMobileMenuOpen = false;
-  protected currentYear: number = new Date().getFullYear();
-
-  constructor(
-    private languageService: LanguageService,
-    private themeService: ThemeService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    effect(() => {
-      this.currentLanguage = this.languageService.language();
-      this.translations = this.languageService.translations();
-    });
-  }
-
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      import('aos').then((AOS) => {
-        AOS.default.init({
-          duration: 800,
-          once: true,
-          offset: 80,
-          easing: 'ease-out-cubic'
-        });
-      });
-    }
-  }
-
-  switchLanguage(language: Language): void {
-    this.languageService.setLanguage(language);
-  }
-
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  onMobileLanguageChange(language: string): void {
-    this.switchLanguage(language as Language);
-  }
+export class App {
+  protected readonly t = inject(LanguageService).t;
 }

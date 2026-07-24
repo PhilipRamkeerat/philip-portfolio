@@ -1,0 +1,85 @@
+<section id="hero" class="hero" [attr.aria-label]="t().ui.heroAriaLabel">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__orb hero__orb--violet"></div>
+    <div class="hero__orb hero__orb--pink"></div>
+  </div>
+
+  <div class="container hero__layout">
+    <div class="hero__content">
+      <p class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        {{ t().hero.availability }}
+      </p>
+
+      <p class="hero__greeting">{{ t().hero.greeting }}</p>
+
+      <h1 class="hero__title">
+        {{ roleParts().before }}<span class="text-gradient">Angular</span>{{ roleParts().after }}
+      </h1>
+
+      <p class="hero__tagline">{{ t().hero.tagline }}</p>
+
+      <p class="hero__description">{{ t().hero.description }}</p>
+
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">
+          {{ t().hero.ctaProjects }}
+          <app-icon name="arrow-right" size="17" />
+        </a>
+        <a href="#contact" class="btn btn--ghost">{{ t().hero.ctaContact }}</a>
+        <div class="hero__socials">
+          <a href="https://github.com/PhilipRamkeerat" target="_blank" rel="noopener noreferrer" class="hero__social" aria-label="GitHub">
+            <app-icon name="github" size="20" />
+          </a>
+          <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" rel="noopener noreferrer" class="hero__social" aria-label="LinkedIn">
+            <app-icon name="linkedin" size="20" />
+          </a>
+        </div>
+      </div>
+
+      <dl class="hero__stats">
+        @for (stat of t().hero.stats; track stat.label) {
+          <div class="hero__stat">
+            <dt class="hero__stat-label">{{ stat.label }}</dt>
+            <dd class="hero__stat-value">{{ stat.value }}</dd>
+          </div>
+        }
+      </dl>
+    </div>
+
+    <div class="hero__visual" appReveal>
+      <div class="code-window" role="img" aria-label="TypeScript code snippet describing Philip">
+        <div class="code-window__header">
+          <span class="code-window__dot code-window__dot--red"></span>
+          <span class="code-window__dot code-window__dot--yellow"></span>
+          <span class="code-window__dot code-window__dot--green"></span>
+          <span class="code-window__title">philip.ts</span>
+        </div>
+        <pre class="code-window__body"><code><span class="tok-keyword">import</span> {{ '{' }} signal, computed {{ '}' }} <span class="tok-keyword">from</span> <span class="tok-string">'&#64;angular/core'</span>;
+
+<span class="tok-keyword">const</span> yearsOfExperience = <span class="tok-fn">signal</span>(<span class="tok-number">8</span>);
+
+<span class="tok-keyword">export const</span> philip = <span class="tok-fn">computed</span>(() => ({{ '{' }}
+  <span class="tok-property">role</span>: <span class="tok-string">'Senior Angular Developer'</span>,
+  <span class="tok-property">experience</span>: <span class="tok-string">`${{ '{' }}yearsOfExperience(){{ '}' }}+ years`</span>,
+  <span class="tok-property">focus</span>: [<span class="tok-string">'Micro Frontends'</span>, <span class="tok-string">'Performance'</span>],
+  <span class="tok-property">openToWork</span>: <span class="tok-keyword">true</span>,
+{{ '}' }}));
+
+<span class="tok-comment">// Building for the modern web since 2017 🚀</span></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__marquee" aria-hidden="true">
+    <div class="hero__marquee-track">
+      @for (item of marqueeItems; track item) {
+        <span class="hero__marquee-item">{{ item }}<span class="hero__marquee-sep">✦</span></span>
+      }
+      @for (item of marqueeItems; track item) {
+        <span class="hero__marquee-item">{{ item }}<span class="hero__marquee-sep">✦</span></span>
+      }
+    </div>
+  </div>
+</section>

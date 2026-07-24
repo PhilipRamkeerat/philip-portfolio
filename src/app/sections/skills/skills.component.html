@@ -1,0 +1,36 @@
+<section id="skills" class="section skills">
+  <div class="container">
+    <header class="section-head" appReveal>
+      <p class="overline">{{ t().skills.overline }}</p>
+      <h2 class="section-title">{{ t().skills.title }}</h2>
+      <p class="section-subtitle">{{ t().skills.subtitle }}</p>
+    </header>
+
+    <div class="skills__core card" appReveal>
+      <h3 class="skills__core-title">{{ t().skills.coreTitle }}</h3>
+      <ul class="skills__core-list" role="list">
+        @for (skill of t().skills.core; track skill) {
+          <li class="skills__core-item">{{ skill }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="skills__grid">
+      @for (category of t().skills.categories; track category.title; let i = $index) {
+        <article class="card card--hover skills__category" appReveal [revealDelay]="i * 70">
+          <div class="skills__category-head">
+            <span class="skills__category-icon">
+              <app-icon [name]="category.icon" size="20" />
+            </span>
+            <h3>{{ category.title }}</h3>
+          </div>
+          <ul class="skills__list" role="list">
+            @for (skill of category.skills; track skill) {
+              <li class="chip">{{ skill }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

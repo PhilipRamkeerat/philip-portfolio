@@ -1,0 +1,53 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <header class="section-head" appReveal>
+      <p class="overline">{{ t().projects.overline }}</p>
+      <h2 class="section-title">{{ t().projects.title }}</h2>
+      <p class="section-subtitle">{{ t().projects.subtitle }}</p>
+    </header>
+
+    <div class="projects__grid">
+      @for (project of t().projects.items; track project.title; let i = $index) {
+        <article class="card card--hover projects__card" appReveal [revealDelay]="(i % 2) * 80">
+          <header class="projects__header">
+            <span class="projects__number" aria-hidden="true">{{ (i + 1 < 10 ? '0' : '') + (i + 1) }}</span>
+            <span
+              class="projects__badge"
+              [class.projects__badge--open-source]="project.badge === 'open-source'">
+              {{ project.badge === 'client' ? t().projects.clientBadge : t().projects.openSourceBadge }}
+            </span>
+          </header>
+
+          <p class="projects__category">{{ project.category }}</p>
+          <h3 class="projects__title">{{ project.title }}</h3>
+          <p class="projects__description">{{ project.description }}</p>
+
+          <ul class="projects__impact" role="list">
+            @for (item of project.impact; track item) {
+              <li>
+                <app-icon name="check" size="15" />
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
+
+          <footer class="projects__footer">
+            <ul class="projects__stack" role="list">
+              @for (tech of project.stack; track tech) {
+                <li class="chip">{{ tech }}</li>
+              }
+            </ul>
+
+            @if (project.link; as link) {
+              <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="projects__link">
+                <app-icon name="github" size="17" />
+                {{ link.label }}
+                <app-icon name="arrow-up-right" size="15" />
+              </a>
+            }
+          </footer>
+        </article>
+      }
+    </div>
+  </div>
+</section>

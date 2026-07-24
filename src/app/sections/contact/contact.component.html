@@ -1,0 +1,53 @@
+<section id="contact" class="section contact">
+  <div class="container contact__container">
+    <header class="section-head contact__head" appReveal>
+      <p class="overline">{{ t().contact.overline }}</p>
+      <h2 class="section-title">{{ t().contact.title }}</h2>
+      <p class="section-subtitle">{{ t().contact.description }}</p>
+    </header>
+
+    <p class="contact__availability" appReveal>
+      <span class="contact__availability-dot" aria-hidden="true"></span>
+      <strong>{{ t().contact.availabilityStatus }}</strong>
+      <span class="contact__availability-note">· {{ t().contact.availabilityNote }}</span>
+    </p>
+
+    <div class="contact__actions" appReveal revealDelay="60">
+      <a href="mailto:philip_ramkeerat@hotmail.com" class="btn btn--primary">
+        <app-icon name="mail" size="17" />
+        {{ t().contact.emailCta }}
+      </a>
+      <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+        <app-icon name="linkedin" size="17" />
+        {{ t().contact.linkedinCta }}
+      </a>
+    </div>
+
+    <ul class="contact__channels" role="list">
+      @for (channel of t().contact.channels; track channel.label; let i = $index) {
+        <li appReveal [revealDelay]="i * 60">
+          @if (channel.url; as url) {
+            <a [href]="url" [target]="url.startsWith('http') ? '_blank' : null" [rel]="url.startsWith('http') ? 'noopener noreferrer' : null" class="card card--hover contact__channel">
+              <span class="contact__channel-icon"><app-icon [name]="channel.icon" size="19" /></span>
+              <span class="contact__channel-body">
+                <span class="contact__channel-label">{{ channel.label }}</span>
+                <span class="contact__channel-value">{{ channel.value }}</span>
+                <span class="contact__channel-note">{{ channel.note }}</span>
+              </span>
+              <app-icon name="arrow-up-right" size="16" class="contact__channel-arrow" />
+            </a>
+          } @else {
+            <div class="card contact__channel contact__channel--static">
+              <span class="contact__channel-icon"><app-icon [name]="channel.icon" size="19" /></span>
+              <span class="contact__channel-body">
+                <span class="contact__channel-label">{{ channel.label }}</span>
+                <span class="contact__channel-value">{{ channel.value }}</span>
+                <span class="contact__channel-note">{{ channel.note }}</span>
+              </span>
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</section>

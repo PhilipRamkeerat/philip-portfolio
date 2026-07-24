@@ -1,39 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <title>Philip Ramkeerat - Senior Angular Developer | Portfolio</title>
+  <title>Philip Ramkeerat — Senior Angular Developer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Philip Ramkeerat - Senior Angular Developer with 8+ years of experience. Specialist in Angular, TypeScript, RxJS, and high-performance frontend development.">
-  <meta name="keywords" content="Angular, TypeScript, Frontend Developer, Senior Developer, RxJS, NgRx, JavaScript, Web Development, Brazil">
+  <meta name="description" content="Philip Ramkeerat — Senior Angular Developer with 8+ years of experience building high-performance, large-scale web applications with Angular, TypeScript and micro frontends.">
   <meta name="author" content="Philip Ramkeerat">
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://philipramkeerat.com.br/home">
+  <link rel="canonical" href="https://philipramkeerat.com.br/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://philipramkeerat.com.br/">
-  <meta property="og:title" content="Philip Ramkeerat - Senior Angular Developer">
-  <meta property="og:description" content="Senior Angular Developer with 8+ years of experience in high-performance frontend development.">
-  <meta property="og:image" content="https://philipramkeerat.com.br/assets/og-image.jpg">
+  <meta property="og:title" content="Philip Ramkeerat — Senior Angular Developer">
+  <meta property="og:description" content="Senior Angular Developer with 8+ years of experience building high-performance, large-scale web applications.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
 
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://philipramkeerat.com.br/">
-  <meta property="twitter:title" content="Philip Ramkeerat - Senior Angular Developer">
-  <meta property="twitter:description" content="Senior Angular Developer with 8+ years of experience in high-performance frontend development.">
-  <meta property="twitter:image" content="https://philipramkeerat.com.br/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Philip Ramkeerat — Senior Angular Developer">
+  <meta name="twitter:description" content="Senior Angular Developer with 8+ years of experience building high-performance, large-scale web applications.">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+  <!-- Resolve the theme before first paint to avoid a flash of the wrong theme -->
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme');
+        if (theme !== 'dark' && theme !== 'light') {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* default stays dark */ }
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -43,13 +50,14 @@
     "jobTitle": "Senior Angular Developer",
     "description": "Senior Angular Developer with 8+ years of experience in frontend development",
     "url": "https://philipramkeerat.com.br",
+    "email": "mailto:philip_ramkeerat@hotmail.com",
     "sameAs": [
-      "https://linkedin.com/in/philip-ramkeerat",
+      "https://www.linkedin.com/in/philip-ramkeerat/",
       "https://github.com/PhilipRamkeerat"
     ],
     "worksFor": {
       "@type": "Organization",
-      "name": "GFT Brazil"
+      "name": "GFT Technologies"
     },
     "knowsAbout": [
       "Angular",
@@ -57,8 +65,9 @@
       "JavaScript",
       "RxJS",
       "NgRx",
-      "Frontend Development",
-      "Web Development"
+      "Micro Frontends",
+      "Server-Side Rendering",
+      "Frontend Architecture"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -67,10 +76,8 @@
   }
   </script>
 
-  <meta name="theme-color" content="#6366f1">
-  <meta name="msapplication-TileColor" content="#6366f1">
-
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a10">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 </head>
 <body>
   <app-root></app-root>

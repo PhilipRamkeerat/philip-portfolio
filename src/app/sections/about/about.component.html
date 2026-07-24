@@ -1,0 +1,57 @@
+<section id="about" class="section about">
+  <div class="container">
+    <header class="section-head" appReveal>
+      <p class="overline">{{ t().about.overline }}</p>
+      <h2 class="section-title">{{ t().about.title }}</h2>
+    </header>
+
+    <div class="about__grid">
+      <article class="card about__story" appReveal>
+        @for (paragraph of t().about.paragraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </article>
+
+      <aside class="card about__facts" appReveal revealDelay="80">
+        <h3 class="about__card-title">{{ t().about.factsTitle }}</h3>
+        <dl class="about__facts-list">
+          @for (fact of t().about.facts; track fact.label) {
+            <div class="about__fact">
+              <dt>{{ fact.label }}</dt>
+              <dd>{{ fact.value }}</dd>
+            </div>
+          }
+        </dl>
+      </aside>
+
+      <aside class="card about__education" appReveal revealDelay="120">
+        <h3 class="about__card-title">
+          <app-icon name="graduation-cap" size="18" />
+          {{ t().about.educationTitle }}
+        </h3>
+        @for (item of t().about.education; track item.institution) {
+          <div class="about__edu-item">
+            <p class="about__edu-degree">{{ item.degree }}</p>
+            <p class="about__edu-institution">{{ item.institution }}</p>
+            <p class="about__edu-period">{{ item.period }}</p>
+          </div>
+        }
+      </aside>
+
+      <div class="card about__values" appReveal revealDelay="160">
+        <h3 class="about__card-title">{{ t().about.valuesTitle }}</h3>
+        <div class="about__values-grid">
+          @for (value of t().about.values; track value.title) {
+            <div class="about__value">
+              <span class="about__value-dot" aria-hidden="true"></span>
+              <div>
+                <h4>{{ value.title }}</h4>
+                <p>{{ value.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

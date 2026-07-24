@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__main">
+      <a href="#hero" class="footer__brand" aria-label="Philip Ramkeerat — back to top">
+        <span class="footer__bracket">&lt;</span>Philip<span class="footer__bracket">&nbsp;/&gt;</span>
+      </a>
+      <p class="footer__tagline">{{ t().footer.tagline }}</p>
+      <p class="footer__built">{{ t().footer.builtWith }}</p>
+    </div>
+
+    <div class="footer__side">
+      <div class="footer__socials">
+        <a href="https://github.com/PhilipRamkeerat" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="GitHub">
+          <app-icon name="github" size="18" />
+        </a>
+        <a href="https://www.linkedin.com/in/philip-ramkeerat/" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="LinkedIn">
+          <app-icon name="linkedin" size="18" />
+        </a>
+        <a href="mailto:philip_ramkeerat@hotmail.com" class="footer__social" aria-label="Email">
+          <app-icon name="mail" size="18" />
+        </a>
+      </div>
+      <a href="#hero" class="footer__top">
+        {{ t().footer.backToTop }}
+        <app-icon name="arrow-up" size="15" />
+      </a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>{{ t().footer.rights }}</p>
+  </div>
+</footer>
